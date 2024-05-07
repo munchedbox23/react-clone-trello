@@ -18,7 +18,6 @@ export const ForgotPasswordPage: FC = () => {
         placeholder="Email"
         className={styles.input}
       />
-
       <AuthButton text="Recover" />
     </Form>
   );

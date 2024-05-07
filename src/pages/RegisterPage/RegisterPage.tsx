@@ -15,7 +15,7 @@ export const RegisterPage: FC = () => {
         autoComplete="name"
         type="text"
         name="name"
-        placeholder="Name"
+        placeholder="Name and Surname"
         className={styles.input}
         onChange={() => console.log(1)}
       />

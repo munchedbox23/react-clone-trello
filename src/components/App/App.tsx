@@ -10,20 +10,27 @@ import {
 } from "../../pages";
 import { useLocation } from "react-router-dom";
 import { AuthLayout } from "../../layouts/AuthLayout/AuthLayout";
+import { ROUTE } from "../../utils/constants";
 
 const App = () => {
   const location = useLocation();
 
   return (
     <Routes location={location}>
-      <Route path="/" element={<MainLayout />}>
-        <Route path="/boards" element={<BoardPage />} />
+      <Route path={ROUTE.home} element={<MainLayout />}>
+        <Route path={ROUTE.mainLayout.boards} element={<BoardPage />} />
       </Route>
       <Route element={<AuthLayout />}>
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-        <Route path="/reset-password" element={<ResetPasswordPage />} />
+        <Route path={ROUTE.authLayout.login} element={<LoginPage />} />
+        <Route path={ROUTE.authLayout.register} element={<RegisterPage />} />
+        <Route
+          path={ROUTE.authLayout.forgotPassword}
+          element={<ForgotPasswordPage />}
+        />
+        <Route
+          path={ROUTE.authLayout.resetPassword}
+          element={<ResetPasswordPage />}
+        />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

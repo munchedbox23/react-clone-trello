@@ -7,6 +7,36 @@ import {
   faHouse,
 } from "@fortawesome/free-solid-svg-icons";
 
+export const ROUTE = Object.freeze({
+  home: "/",
+  mainLayout: {
+    profile: "profile",
+    boards: "boards",
+    members: "members",
+    settigns: "settings",
+    info: "info",
+  },
+  authLayout: {
+    login: "/login",
+    register: "/register",
+    forgotPassword: "/forgot-password",
+    resetPassword: "/reset-password",
+  },
+});
+
+export const API = Object.freeze({
+  baseUrl: "https://norma.nomoreparties.space/api",
+  endpoints: {
+    login: "/auth/login",
+    register: "/auth/register",
+    logout: "/auth/logout",
+    forgotPassword: "/password-reset",
+    resetPassword: "/password-reset/reset",
+    userData: "/auth/user",
+    refreshToken: "/auth/token",
+  },
+});
+
 export const panelLinks: {
   id: number;
   name: string;
@@ -16,31 +46,31 @@ export const panelLinks: {
   {
     id: 1,
     name: "Home",
-    route: "/",
+    route: ROUTE.home,
     icon: faHouse,
   },
   {
     id: 2,
     name: "Boards",
-    route: "/boards",
+    route: `/${ROUTE.mainLayout.boards}`,
     icon: faChartSimple,
   },
   {
     id: 3,
     name: "Members",
-    route: "/members",
+    route: `/${ROUTE.mainLayout.members}`,
     icon: faPeopleRoof,
   },
   {
     id: 4,
     name: "Settings",
-    route: "/settings",
+    route: `/${ROUTE.mainLayout.settigns}`,
     icon: faGear,
   },
   {
     id: 5,
     name: "Information",
-    route: "/info",
+    route: `/${ROUTE.mainLayout.info}`,
     icon: faCircleInfo,
   },
 ];

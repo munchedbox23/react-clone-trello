@@ -18,7 +18,7 @@ export const AppHeader: FC = () => {
           <input
             className={headerStyles.input}
             type="text"
-            placeholder="Search"
+            placeholder="Search board"
             maxLength={500}
           />
         </div>

@@ -102,4 +102,5 @@ body {
   font-weight: 400;
   color: var(--ds-text);
   min-height: 100vh;
+  position: relative;
 }

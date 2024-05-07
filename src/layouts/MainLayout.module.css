@@ -1,0 +1,5 @@
+.contentWrapper {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+}

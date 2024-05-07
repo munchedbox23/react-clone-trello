@@ -1,9 +1,11 @@
 import { FC } from "react";
 import headerStyles from "./AppHeader.module.css";
 import Logo from "../../images/logo.png";
-import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMagnifyingGlass,
+  faPlus,
+} from "@fortawesome/free-solid-svg-icons";
 
 export const AppHeader: FC = () => {
   return (
@@ -23,20 +25,12 @@ export const AppHeader: FC = () => {
           />
         </div>
       </form>
-      <NavLink
-        to="/profile"
-        className={`${headerStyles.navLink} pt-2 pr-4 pb-2 pl-4`}
-      >
-        {({ isActive }) => (
-          <>
-            <FontAwesomeIcon
-              className={isActive ? headerStyles.active : headerStyles.inactive}
-              icon={faUser}
-            />
-            <span className={headerStyles.linkText}>Account</span>
-          </>
-        )}
-      </NavLink>
+      <div className={headerStyles.btnsContainer}>
+        <button className={`${headerStyles.navLink} pt-2 pr-4 pb-2 pl-4`}>
+          <FontAwesomeIcon icon={faPlus} />
+          <span>Create</span>
+        </button>
+      </div>
     </header>
   );
 };

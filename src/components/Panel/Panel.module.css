@@ -7,6 +7,7 @@
   height: calc(100vh - 86px);
   width: 12%;
   box-shadow: 5px 0px 5px -5px rgba(34, 60, 80, 0.43);
+  position: relative;
 }
 
 .links {
@@ -21,11 +22,28 @@
   width: 65px;
   height: 65px;
   background-color: var(--primary);
-  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .profileText {
   color: #fff;
-  position: absolute;
   font-size: 2rem;
+}
+
+.logOut {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  bottom: 30px;
+  cursor: pointer;
+  background: #d9d8d8;
+  border-radius: 16px;
+  transition: 0.3s ease;
+}
+
+.logOut:hover {
+  opacity: 0.8;
 }

@@ -32,7 +32,7 @@ export const userLogin = createAsyncThunk<IUserResponse, IUserLogin>(
       cookies.set("accessToken", response.accessToken.split("Bearer ")[1], {
         path: "/",
       });
-      cookies.set("refreshToken", response.refreshToken.split("Bearer ")[1], {
+      cookies.set("refreshToken", response.refreshToken, {
         path: "/",
       });
       return response as IUserResponse;
@@ -59,7 +59,7 @@ export const userRegister = createAsyncThunk<IUserResponse, IUserRegister>(
       cookies.set("accessToken", response.accessToken.split("Bearer ")[1], {
         path: "/",
       });
-      cookies.set("refreshToken", response.refreshToken.split("Bearer ")[1], {
+      cookies.set("refreshToken", response.refreshToken, {
         path: "/",
       });
       return response as IUserResponse;
@@ -134,7 +134,7 @@ export const checkUserAuth = createAsyncThunk<IUserAuth, undefined>(
     if (response.success) {
       return response;
     } else {
-      throw new Error("User login failed");
+      throw new Error("User check failed");
     }
   }
 );

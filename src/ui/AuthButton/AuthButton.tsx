@@ -1,14 +1,19 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import styles from "./AuthButton.module.css";
 
 type TAuthButtonProps = {
   text: string;
+  isDisabled: boolean;
 };
 
-export const AuthButton: FC<TAuthButtonProps> = ({ text }) => {
+export const AuthButton: FC<TAuthButtonProps> = memo(({ isDisabled, text }) => {
   return (
-    <button className={styles.authBtn} type="submit">
+    <button
+      disabled={isDisabled}
+      className={`${styles.authBtn} ${isDisabled && styles.disabled}`}
+      type="submit"
+    >
       {text}
     </button>
   );
-};
+});

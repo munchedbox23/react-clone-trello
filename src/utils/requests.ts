@@ -18,7 +18,7 @@ export const refreshToken = (): Promise<IRefreshTokenResponse> => {
     headers: {
       "Content-type": "application/json",
     },
-    body: JSON.stringify(cookies.get("refreshToken")),
+    body: JSON.stringify({ token: cookies.get("refreshToken") }),
   });
 };
 

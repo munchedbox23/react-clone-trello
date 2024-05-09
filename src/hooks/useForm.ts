@@ -1,10 +1,17 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { useAppDispatch } from "../services/store/hooks";
 import { useNavigate } from "react-router";
 import { ROUTE } from "../utils/constants";
 
-export const useForm = <T>(input: T) => {
+interface IFormValues {
+  email?: string;
+  name?: string;
+  password?: string;
+}
+
+export const useForm = <T extends IFormValues>(input: T) => {
   const [formState, setFormState] = useState(input);
+  const [isFormValid, setIsFormValid] = useState(true);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -16,6 +23,11 @@ export const useForm = <T>(input: T) => {
     });
   };
 
+  useEffect(() => {
+    const isValid = Object.values(formState).every((value) => !!value);
+    setIsFormValid(isValid);
+  }, [formState]);
+
   const onSubmit = (e: FormEvent<HTMLFormElement>, asyncThunk: any) => {
     e.preventDefault();
     dispatch(asyncThunk(formState))
@@ -24,5 +36,5 @@ export const useForm = <T>(input: T) => {
     setFormState(input);
   };
 
-  return { formState, setFormState, onChange, onSubmit };
+  return { formState, setFormState, onChange, onSubmit, isFormValid };
 };

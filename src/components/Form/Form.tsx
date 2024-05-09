@@ -4,7 +4,7 @@ import { PropsWithChildren, FC, FormEvent, ElementType } from "react";
 type TFormProps = {
   onSubmit: (e: FormEvent<HTMLFormElement>) => void;
   title?: string;
-  linkComponent: ElementType;
+  linkComponent?: ElementType;
 };
 
 export const Form: FC<PropsWithChildren<TFormProps>> = ({

@@ -1,8 +1,8 @@
 import styles from "./FormLinks.module.css";
 import { Link } from "react-router-dom";
-import { FC } from "react";
+import { FC, memo } from "react";
 
-export const LoginLinks: FC = () => {
+export const LoginLinks: FC = memo(() => {
   return (
     <main className={styles.links}>
       <div className={styles.linkContent}>
@@ -18,9 +18,9 @@ export const LoginLinks: FC = () => {
       </div>
     </main>
   );
-};
+});
 
-export const RegisterLinks: FC = (): JSX.Element => {
+export const RegisterLinks: FC = memo((): JSX.Element => {
   return (
     <main className={styles.links}>
       <div className={styles.linkContent}>
@@ -31,19 +31,17 @@ export const RegisterLinks: FC = (): JSX.Element => {
       </div>
     </main>
   );
-};
+});
 
-export const ForgotLinks: FC = (): JSX.Element => {
+export const ForgotLinks: FC = memo((): JSX.Element => {
   return (
     <main className={styles.links}>
       <div className={styles.linkContent}>
-        <span className="text text_type_main-default text_color_inactive mr-2">
-          Did you remember the password?
-        </span>
+        <span className="text-base mr-2">Did you remember the password?</span>
         <Link className={styles.link} to="/login">
           Sign In
         </Link>
       </div>
     </main>
   );
-};
+});

@@ -1,0 +1,23 @@
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 10px 20px 10px 20px;
+  color: #fff;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.saveBtn {
+  composes: btn;
+  background-color: var(--primary);
+}
+
+.cancelBtn {
+  composes: btn;
+  background-color: var(--ds-icon-accent-red);
+}

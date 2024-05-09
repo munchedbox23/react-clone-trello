@@ -1,26 +1,63 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import { MainLayout } from "../../layouts/MainLayout/MainLayout";
+import {
+  NotFound,
+  BoardPage,
+  LoginPage,
+  RegisterPage,
+  ForgotPasswordPage,
+  ResetPasswordPage,
+  ProfilePage,
+} from "../../pages";
+import { useLocation } from "react-router-dom";
+import { AuthLayout } from "../../layouts/AuthLayout/AuthLayout";
+import { ROUTE } from "../../utils/constants";
+import { useEffect } from "react";
+import { checkUserAuth } from "../../services/feature/user/auth";
+import { useAppDispatch } from "../../services/store/hooks";
+import { OnlyUnAuth, OnlyAuth } from "../WithProtectedRoute/WithProtectedRoute";
 
-function App() {
+const App = () => {
+  const location = useLocation();
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(checkUserAuth());
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes location={location}>
+      <Route
+        path={ROUTE.home}
+        element={<OnlyAuth component={<MainLayout />} />}
+      >
+        <Route index element={<OnlyAuth component={<BoardPage />} />} />
+        <Route
+          path={ROUTE.mainLayout.profile}
+          element={<OnlyAuth component={<ProfilePage />} />}
+        />
+      </Route>
+      <Route element={<AuthLayout />}>
+        <Route
+          path={ROUTE.authLayout.login}
+          element={<OnlyUnAuth component={<LoginPage />} />}
+        />
+        <Route
+          path={ROUTE.authLayout.register}
+          element={<OnlyUnAuth component={<RegisterPage />} />}
+        />
+        <Route
+          path={ROUTE.authLayout.forgotPassword}
+          element={<OnlyUnAuth component={<ForgotPasswordPage />} />}
+        />
+        <Route
+          path={ROUTE.authLayout.resetPassword}
+          element={<OnlyUnAuth component={<ResetPasswordPage />} />}
+        />
+      </Route>
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
-}
+};
 
 export default App;

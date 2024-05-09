@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@reduxjs/toolkit": "^2.2.3",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -12,14 +16,17 @@
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
     "@types/uuid": "^9.0.8",
+    "@ya.praktikum/react-developer-burger-ui-components": "^1.14.0",
     "classnames": "^2.5.1",
     "react": "^18.3.1",
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.3.1",
+    "react-redux": "^9.1.2",
     "react-router": "^6.23.0",
     "react-router-dom": "^6.23.0",
-    "react-scripts": "^3.0.1",
+    "react-scripts": "^5.0.1",
+    "react-transition-group": "^4.4.5",
     "redux": "^5.0.1",
     "typescript": "^4.9.5",
     "universal-cookie": "^7.1.4",
@@ -49,5 +56,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
   }
 }

@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+.panelLink {
+  width: 100%;
+  background: transparent;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  min-height: 20px;
+  color: #172b4d;
+  font-weight: 500;
+  font-size: 14px;
+  transition-property: background-color, border-color, box-shadow;
+  transition-duration: 85ms;
+  transition-timing-function: eases;
+}
+
+.panelLink:hover {
+  background-color: #091e4224;
+}
+
+.link {
+  display: block;
+  flex: 0 0 auto;
+  font-size: 25px;
+  color: #939496fd;
+  width: 24px;
+  height: 24px;
+  color: var(--ds-icon);
+}
+
+.primary {
+  background-color: var(--ds-background-selected);
+  color: var(--ds-text-selected);
+}

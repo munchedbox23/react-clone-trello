@@ -31,10 +31,7 @@ const App = () => {
         path={ROUTE.home}
         element={<OnlyAuth component={<MainLayout />} />}
       >
-        <Route
-          path={ROUTE.mainLayout.boards}
-          element={<OnlyAuth component={<BoardPage />} />}
-        />
+        <Route index element={<OnlyAuth component={<BoardPage />} />} />
         <Route
           path={ROUTE.mainLayout.profile}
           element={<OnlyAuth component={<ProfilePage />} />}

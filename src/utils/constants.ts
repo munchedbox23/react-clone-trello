@@ -45,30 +45,24 @@ export const panelLinks: {
 }[] = [
   {
     id: 1,
-    name: "Home",
-    route: ROUTE.home,
-    icon: faHouse,
-  },
-  {
-    id: 2,
     name: "Boards",
-    route: `/${ROUTE.mainLayout.boards}`,
+    route: `${ROUTE.home}`,
     icon: faChartSimple,
   },
   {
-    id: 3,
+    id: 2,
     name: "Members",
     route: `/${ROUTE.mainLayout.members}`,
     icon: faPeopleRoof,
   },
   {
-    id: 4,
+    id: 3,
     name: "Settings",
     route: `/${ROUTE.mainLayout.settigns}`,
     icon: faGear,
   },
   {
-    id: 5,
+    id: 4,
     name: "Information",
     route: `/${ROUTE.mainLayout.info}`,
     icon: faCircleInfo,

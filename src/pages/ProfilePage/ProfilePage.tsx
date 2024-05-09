@@ -1,25 +1,24 @@
 import styles from "./ProfilePage.module.css";
 import inputStyles from "../LoginPage/LoginPage.module.css";
-import { useAppSelector } from "../../services/store/hooks";
+import { useAppDispatch, useAppSelector } from "../../services/store/hooks";
 import { useForm } from "../../hooks/useForm";
 import { IUser } from "../../types/userTypes";
-import { FC, useEffect, useState } from "react";
+import { FormEvent, FC, useEffect, useState } from "react";
 import { editUser } from "../../services/feature/user/auth";
 import { ProfileButtons } from "../../ui/ProfileButtons/ProfileButtons";
 
-interface IProfileForm extends IUser {
+export interface IProfileForm extends IUser {
   password?: string;
 }
 
 export const ProfilePage: FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const { formState, onChange, setFormState, onSubmit } = useForm<IProfileForm>(
-    {
-      name: "",
-      email: "",
-      password: "",
-    }
-  );
+  const dispatch = useAppDispatch();
+  const { formState, onChange, setFormState } = useForm<IProfileForm>({
+    name: "",
+    email: "",
+    password: "",
+  });
   const user = useAppSelector((store) => store.user.user);
 
   useEffect(() => {
@@ -48,9 +47,14 @@ export const ProfilePage: FC = () => {
     });
   };
 
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    dispatch(editUser(formState));
+  };
+
   return (
     <section className={`${styles.profilePage} pt-20`}>
-      <form onSubmit={(e) => onSubmit(e, editUser)} className={styles.form}>
+      <form onSubmit={onSubmit} className={styles.form}>
         <h1 className="text-4xl font-medium underline">Profile Info</h1>
         <input
           value={formState?.name || ""}

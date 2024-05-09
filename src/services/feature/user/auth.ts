@@ -11,6 +11,7 @@ import {
 import { request } from "../../../utils/requests";
 import { API } from "../../../utils/constants";
 import { fetchWithRefresh } from "../../../utils/requests";
+import { IProfileForm } from "../../../pages/ProfilePage/ProfilePage";
 
 export const cookies = new Cookies();
 
@@ -139,7 +140,7 @@ export const checkUserAuth = createAsyncThunk<IUserAuth, undefined>(
   }
 );
 
-export const editUser = createAsyncThunk<IUserAuth, IUserRegister>(
+export const editUser = createAsyncThunk<IUserAuth, IProfileForm>(
   "user/editUserData",
   async (data) => {
     const response = await fetchWithRefresh<IUserAuth>(

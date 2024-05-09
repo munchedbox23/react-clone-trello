@@ -16,7 +16,7 @@ export const refreshToken = (): Promise<IRefreshTokenResponse> => {
   return request(`${API.baseUrl}${API.endpoints.refreshToken}`, {
     method: "POST",
     headers: {
-      "Content-type": "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({ token: cookies.get("refreshToken") }),
   });

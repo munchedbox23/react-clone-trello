@@ -16,10 +16,10 @@ export const MainLayout: FC = () => {
     <>
       <AppHeader />
 
-      <div className={styles.contentWrapper}>
+      <main className={styles.contentWrapper}>
         <Panel />
         <Outlet />
-      </div>
+      </main>
     </>
   );
 };

@@ -1,0 +1,10 @@
+.boardsList {
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}

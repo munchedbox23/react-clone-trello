@@ -36,7 +36,7 @@ export const Modal: FC<PropsWithChildren<TModalProps>> = ({
   return createPortal(
     <div className={modalStyles.modal}>
       <div className={`${modalStyles.modalWrapper} m`}>
-        <h2 className="text-2xl font-semibold mt-5">{title}</h2>
+        <h2 className="text-2xl font-semibold mt-5 mb-9">{title}</h2>
         <FontAwesomeIcon
           className={modalStyles.icon}
           onClick={onClose}

@@ -8,27 +8,6 @@
   cursor: grab;
 }
 
-.cardInfo {
-  width: 100%;
-  border-radius: 8px;
-  min-height: 40px;
-  background: #d9d9d9;
-  text-align: left;
-}
-
-.cardIcon {
-  position: absolute;
-  top: 6px;
-  right: 0;
-  z-index: 2;
-}
-
-.constructorList {
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-}
-
 .addColumn {
   color: #fff;
   border-radius: 4px;
@@ -37,4 +16,16 @@
   height: 38px;
   font-size: 1rem;
   background: var(--primary);
+}
+
+.createBoard {
+  width: 300px;
+  min-height: 120px;
+  background-color: #f5f5f5;
+  border-radius: 16px;
+  border: 1px solid #d9d9d9;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

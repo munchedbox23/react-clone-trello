@@ -4,7 +4,6 @@ import {
   faPeopleRoof,
   faGear,
   faCircleInfo,
-  faHouse,
 } from "@fortawesome/free-solid-svg-icons";
 
 export const ROUTE = Object.freeze({

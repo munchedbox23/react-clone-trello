@@ -1,0 +1,20 @@
+{
+  "boards": [],
+  "boardColumns": [
+    {
+      "id": "58fba37b-c3a6-4300-936b-4b361449e028",
+      "name": "To Do",
+      "purpose": "future cases"
+    },
+    {
+      "id": "29b8e9b8-259c-4b35-826e-651a68fc5ee7",
+      "name": "It is being done",
+      "purpose": "they are being executed now"
+    },
+    {
+      "id": "a895bc9a-e7ad-4870-89e4-859d674b3deb",
+      "name": "Completed",
+      "purpose": "completed tasks"
+    }
+  ]
+}

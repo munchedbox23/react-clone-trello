@@ -16,7 +16,10 @@ import { useEffect } from "react";
 import { checkUserAuth } from "../../services/feature/user/auth";
 import { useAppDispatch } from "../../services/store/hooks";
 import { OnlyUnAuth, OnlyAuth } from "../WithProtectedRoute/WithProtectedRoute";
-import { getColumns } from "../../services/feature/board/boardSlice";
+import {
+  getColumns,
+  getTemplates,
+} from "../../services/feature/board/boardSlice";
 
 const App = () => {
   const location = useLocation();
@@ -25,6 +28,7 @@ const App = () => {
   useEffect(() => {
     dispatch(checkUserAuth());
     dispatch(getColumns());
+    dispatch(getTemplates());
   }, [dispatch]);
 
   return (

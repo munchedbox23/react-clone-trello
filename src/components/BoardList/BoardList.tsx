@@ -2,12 +2,12 @@ import { FC, PropsWithChildren } from "react";
 import styles from "./BoardList.module.css";
 import { BoardCard } from "../BoardCard/BoardCard";
 import { v4 as uuidv4 } from "uuid";
-import { IBoardColumn } from "../../types/boardTypes";
+import { IBoardColumn, IBoardTemplates } from "../../types/boardTypes";
 
 type TBoardListProps = {
   title?: string;
   subtitle?: string;
-  array?: IBoardColumn[];
+  array?: IBoardColumn[] | IBoardTemplates[];
 };
 
 export const BoardList: FC<PropsWithChildren<TBoardListProps>> = ({
@@ -27,8 +27,7 @@ export const BoardList: FC<PropsWithChildren<TBoardListProps>> = ({
           <>
             {array.map((item) => (
               <BoardCard
-                name={item.name}
-                descr={item?.purpose}
+                data={item}
                 key={uuidv4()}
               />
             ))}

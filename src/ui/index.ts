@@ -1,3 +1,3 @@
-import { AuthButton } from "./AuthButton/AuthButton";
+import { PrimaryButton } from "./PrimaryButton/PrimaryButton";
 
-export { AuthButton };
+export { PrimaryButton };

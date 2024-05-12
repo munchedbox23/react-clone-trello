@@ -67,7 +67,7 @@ export const ProfilePage: FC = () => {
           type="email"
           name="email"
           className={inputStyles.input}
-          autoComplete="off"
+          autoComplete="new-email"
           value={formState?.email || ""}
           onChange={onChange}
         />

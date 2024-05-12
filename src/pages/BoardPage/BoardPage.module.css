@@ -1,13 +1,3 @@
-.cardContent {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 100%;
-  height: 100%;
-  cursor: grab;
-}
-
 .addColumn {
   color: #fff;
   border-radius: 4px;
@@ -28,4 +18,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.modalInput {
+  composes: input from "../LoginPage/LoginPage.module.css";
+}
+
+.modalInput:focus {
+  border-color: var(--primary);
+}
+
+.selectColor {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }

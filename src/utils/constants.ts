@@ -9,10 +9,9 @@ import {
 export const ROUTE = Object.freeze({
   home: "/",
   mainLayout: {
-    profile: "profile",
+    profile: "profile-settings",
     boards: "boards",
     members: "members",
-    settigns: "settings",
     info: "info",
   },
   authLayout: {
@@ -57,7 +56,7 @@ export const panelLinks: {
   {
     id: 3,
     name: "Settings",
-    route: `/${ROUTE.mainLayout.settigns}`,
+    route: `/${ROUTE.mainLayout.profile}`,
     icon: faGear,
   },
   {

@@ -55,7 +55,7 @@ export const ProfilePage: FC = () => {
   return (
     <section className={`${styles.profilePage} pt-20`}>
       <form onSubmit={onSubmit} className={styles.form}>
-        <h1 className="text-4xl font-medium underline">Profile Info</h1>
+        <h1 className="text-4xl font-medium underline">Profile Settings</h1>
         <input
           value={formState?.name || ""}
           type="text"

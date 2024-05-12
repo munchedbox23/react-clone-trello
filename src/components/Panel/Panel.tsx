@@ -26,12 +26,18 @@ export const Panel: FC = () => {
 
   return (
     <nav className={`${styles.navMenu} pt-6 pl-3 pr-3`}>
-      <Link
-        to={`/${ROUTE.mainLayout.profile}`}
-        className={`${styles.profileLink} pt-2 pr-4 pb-2 pl-4`}
-      >
-        <span className={`${styles.profileText} text-center`}>{userName}</span>
-      </Link>
+      <div className={styles.profileInfo}>
+        <Link
+          to={`/${ROUTE.mainLayout.profile}`}
+          className={`${styles.profileLink} pt-2 pr-4 pb-2 pl-4`}
+        >
+          <span className={`${styles.profileText} text-center`}>
+            {userName}
+          </span>
+        </Link>
+        <h4 className="text-lg font-medium mt-3">{user?.name}</h4>
+        <small className="text-sm">{user?.email}</small>
+      </div>
       <ul className={styles.links}>
         {panelLinks.map((link) => (
           <PanelLink

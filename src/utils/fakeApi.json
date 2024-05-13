@@ -1,5 +1,12 @@
 {
-  "boards": [],
+  "boards": [
+    {
+      "id": "4ff0c2ab-475e-4267-9886-f6008e55aaaf",
+      "name": "Work",
+      "background": "#b3deff",
+      "description": ""
+    }
+  ],
   "boardColumns": [
     {
       "id": "58fba37b-c3a6-4300-936b-4b361449e028",
@@ -15,6 +22,12 @@
       "id": "a895bc9a-e7ad-4870-89e4-859d674b3deb",
       "name": "Completed",
       "purpose": "completed tasks"
+    },
+    {
+      "id": "2bb70c27-f3c8-4633-9888-570a8daeeedc",
+      "name": "Threads",
+      "background": "#000000",
+      "purpose": "for me"
     }
   ],
   "templates": [

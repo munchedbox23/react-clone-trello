@@ -9,33 +9,55 @@ import { setModalOpen } from "../../services/feature/modal/modalSlice";
 import { Form } from "../../components/Form/Form";
 import { PrimaryButton } from "../../ui/PrimaryButton/PrimaryButton";
 import { useForm } from "../../hooks/useForm";
+import { FormEvent } from "react";
+import {
+  postBoards,
+  postColumns,
+} from "../../services/feature/board/boardSlice";
 
-interface IBoardPageState {
+export interface IBoardPageState {
   name: string;
-  color: string;
-  description?: string;
+  background?: string;
+  purpose?: string;
 }
 
 export const BoardPage = () => {
   const dispatch = useAppDispatch();
-  const { formState, onChange, onSubmit, setFormState } =
-    useForm<IBoardPageState>({
-      name: "",
-      color: "",
-      description: "",
-    });
+  const { formState, onChange, setFormState } = useForm<IBoardPageState>({
+    name: "",
+    background: "#000000",
+    purpose: "",
+  });
 
   const boardColumns = useAppSelector((store) => store.board.boardColumns);
   const templates = useAppSelector((store) => store.board.templates);
+  const boards = useAppSelector((store) => store.board.boards);
+
   const isModalOpen = useAppSelector((store) => store.modal.isModalOpen);
   const modalContent = useAppSelector((store) => store.modal.modalContent);
 
   const handleModalOpen = (content?: string): void => {
     dispatch(setModalOpen(content));
   };
+
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (modalContent?.content === "create-board") {
+      dispatch(postBoards(formState));
+    } else {
+      dispatch(postColumns(formState));
+    }
+    setFormState({
+      name: "",
+      background: "#fff",
+      purpose: "",
+    });
+    dispatch(setModalOpen());
+  };
+
   return (
     <main className="pt-2">
-      <BoardList>
+      <BoardList array={boards}>
         <button
           onClick={() => handleModalOpen("create-board")}
           className={styles.createBoard}
@@ -67,13 +89,13 @@ export const BoardPage = () => {
         <Modal
           onClose={() => {
             handleModalOpen();
-            setFormState({ name: "", color: "" });
+            setFormState({ name: "", background: "" });
           }}
         >
           <Form
             title={modalContent?.title}
             modalForm={true}
-            onSubmit={() => console.log(1)}
+            onSubmit={onSubmit}
           >
             <input
               autoComplete="off"
@@ -91,8 +113,8 @@ export const BoardPage = () => {
                 </label>
                 <input
                   type="color"
-                  name="color"
-                  value={formState?.color}
+                  name="background"
+                  value={formState?.background}
                   onChange={onChange}
                 />
               </div>
@@ -100,10 +122,10 @@ export const BoardPage = () => {
               <input
                 autoComplete="off"
                 type="text"
-                name="description"
+                name="purpose"
                 placeholder="Column description"
                 className={styles.modalInput}
-                value={formState?.description}
+                value={formState?.purpose}
                 onChange={onChange}
               />
             )}

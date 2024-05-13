@@ -2,20 +2,17 @@ import { FC, PropsWithChildren } from "react";
 import styles from "./BoardList.module.css";
 import { BoardCard } from "../BoardCard/BoardCard";
 import { v4 as uuidv4 } from "uuid";
-import { IBoardColumn, IBoardTemplates } from "../../types/boardTypes";
+import { IBoard, IBoardTemplates } from "../../types/boardTypes";
 
-type TBoardListProps = {
+type TBoardListProps<T> = {
   title?: string;
   subtitle?: string;
-  array?: IBoardColumn[] | IBoardTemplates[];
+  array?: T[];
 };
 
-export const BoardList: FC<PropsWithChildren<TBoardListProps>> = ({
-  title,
-  subtitle,
-  array,
-  children,
-}) => {
+export const BoardList: FC<
+  PropsWithChildren<TBoardListProps<IBoard | IBoardTemplates>>
+> = ({ title, subtitle, array, children }) => {
   return (
     <article className={`${styles.boardsList} mb-6`}>
       <header className={styles.heading}>
@@ -26,10 +23,7 @@ export const BoardList: FC<PropsWithChildren<TBoardListProps>> = ({
         {array && (
           <>
             {array.map((item) => (
-              <BoardCard
-                data={item}
-                key={uuidv4()}
-              />
+              <BoardCard data={item} key={uuidv4()} />
             ))}
           </>
         )}

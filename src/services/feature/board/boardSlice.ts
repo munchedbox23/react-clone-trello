@@ -1,10 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { request } from "../../../utils/requests";
-import { IBoardColumn, IBoardTemplates } from "../../../types/boardTypes";
+import { IBoardTemplates, IBoard } from "../../../types/boardTypes";
+import { v4 as uuidv4 } from "uuid";
+import { IBoardPageState } from "../../../pages/BoardPage/BoardPage";
 
 type TBoardSliceState = {
-  boards: Array<string>;
-  boardColumns: IBoardColumn[];
+  boards: IBoard[];
+  boardColumns: IBoard[];
   color: string | null;
   isRequestFailed: boolean;
   isRequestLoading: boolean;
@@ -20,8 +22,39 @@ const initialState: TBoardSliceState = {
   isRequestFailed: false,
 };
 
+export const postBoards = createAsyncThunk<IBoard, IBoardPageState>(
+  "board/postBoards",
+  async (data) => {
+    const response = await request<IBoard>("http://localhost:3000/boards", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ id: uuidv4(), ...data }),
+    });
+    return response;
+  }
+);
+
+export const postColumns = createAsyncThunk<IBoard, IBoardPageState>(
+  "board/postColumns",
+  async (data) => {
+    const response = await request<IBoard>(
+      "http://localhost:3000/boardColumns",
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ id: uuidv4(), ...data }),
+      }
+    );
+    return response;
+  }
+);
+
 export const getColumns = createAsyncThunk("board/getColumns", async () => {
-  const response = await request<IBoardColumn[]>(
+  const response = await request<IBoard[]>(
     "http://localhost:3000/boardColumns",
     {
       method: "GET",
@@ -37,6 +70,13 @@ export const getTemplates = createAsyncThunk("board/getTemplates", async () => {
       method: "GET",
     }
   );
+  return response;
+});
+
+export const getBoards = createAsyncThunk("board/getBoards", async () => {
+  const response = await request<IBoard[]>("http://localhost:3000/boards", {
+    method: "GET",
+  });
   return response;
 });
 
@@ -67,6 +107,42 @@ export const boardSlice = createSlice({
         state.isRequestLoading = false;
       })
       .addCase(getTemplates.rejected, (state) => {
+        state.isRequestFailed = true;
+        state.isRequestLoading = false;
+      })
+      .addCase(postBoards.pending, (state) => {
+        state.isRequestLoading = true;
+      })
+      .addCase(postBoards.fulfilled, (state, { payload }) => {
+        state.boards = [...state.boards, payload];
+        state.isRequestFailed = false;
+        state.isRequestLoading = false;
+      })
+      .addCase(postBoards.rejected, (state) => {
+        state.isRequestFailed = true;
+        state.isRequestLoading = false;
+      })
+      .addCase(getBoards.pending, (state) => {
+        state.isRequestLoading = true;
+      })
+      .addCase(getBoards.fulfilled, (state, { payload }) => {
+        state.boards = payload;
+        state.isRequestFailed = false;
+        state.isRequestLoading = false;
+      })
+      .addCase(getBoards.rejected, (state) => {
+        state.isRequestFailed = true;
+        state.isRequestLoading = false;
+      })
+      .addCase(postColumns.pending, (state) => {
+        state.isRequestLoading = true;
+      })
+      .addCase(postColumns.fulfilled, (state, { payload }) => {
+        state.boardColumns = [...state.boardColumns, payload];
+        state.isRequestFailed = false;
+        state.isRequestLoading = false;
+      })
+      .addCase(postColumns.rejected, (state) => {
         state.isRequestFailed = true;
         state.isRequestLoading = false;
       });

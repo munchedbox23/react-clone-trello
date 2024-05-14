@@ -57,7 +57,7 @@ export const BoardPage = () => {
 
   return (
     <main className="pt-2">
-      <BoardList array={boards}>
+      <BoardList options array={boards}>
         <button
           onClick={() => handleModalOpen("create-board")}
           className={styles.createBoard}
@@ -70,6 +70,7 @@ export const BoardPage = () => {
         array={boardColumns}
         title="My Table"
         subtitle="Here you can set up the columns that will be on the board"
+        options
       >
         <button
           onClick={() => handleModalOpen("add-column")}
@@ -83,6 +84,7 @@ export const BoardPage = () => {
         title="Popular templates"
         subtitle=" Get doing faster with a template from the Trello community"
         array={templates}
+        options={false}
       />
 
       {isModalOpen && (
@@ -129,7 +131,7 @@ export const BoardPage = () => {
                 onChange={onChange}
               />
             )}
-            <PrimaryButton isDisabled={false} text={modalContent!.title} />
+            <PrimaryButton isDisabled={false} text="Save" />
           </Form>
         </Modal>
       )}

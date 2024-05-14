@@ -3,6 +3,7 @@ export interface IBoard {
   name: string;
   purpose: string;
   background: string | undefined;
+  type: string;
 }
 
 export interface ITemplatesColumn {

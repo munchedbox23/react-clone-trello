@@ -1,3 +1,8 @@
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in forwards;
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -22,6 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  composes: fade-in;
 }
 
 .header {
@@ -42,4 +48,13 @@
 
 .icon:hover {
   opacity: 0.6;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

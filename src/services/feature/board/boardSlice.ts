@@ -22,6 +22,32 @@ const initialState: TBoardSliceState = {
   isRequestFailed: false,
 };
 
+export const deleteBoard = createAsyncThunk<IBoard, string>(
+  "board/deleteBoard",
+  async (id) => {
+    const response = await request<IBoard>(
+      `http://localhost:3000/boards/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
+    return response;
+  }
+);
+
+export const deleteColumn = createAsyncThunk<IBoard, string>(
+  "board/deleteColumn",
+  async (id) => {
+    const response = await request<IBoard>(
+      `http://localhost:3000/boardColumns/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
+    return response;
+  }
+);
+
 export const postBoards = createAsyncThunk<IBoard, IBoardPageState>(
   "board/postBoards",
   async (data) => {
@@ -30,7 +56,7 @@ export const postBoards = createAsyncThunk<IBoard, IBoardPageState>(
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify({ id: uuidv4(), ...data }),
+      body: JSON.stringify({ id: uuidv4(), type: "board", ...data }),
     });
     return response;
   }
@@ -46,7 +72,7 @@ export const postColumns = createAsyncThunk<IBoard, IBoardPageState>(
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ id: uuidv4(), ...data }),
+        body: JSON.stringify({ id: uuidv4(), type: "column", ...data }),
       }
     );
     return response;
@@ -143,6 +169,32 @@ export const boardSlice = createSlice({
         state.isRequestLoading = false;
       })
       .addCase(postColumns.rejected, (state) => {
+        state.isRequestFailed = true;
+        state.isRequestLoading = false;
+      })
+      .addCase(deleteBoard.pending, (state) => {
+        state.isRequestLoading = true;
+      })
+      .addCase(deleteBoard.fulfilled, (state, { payload }) => {
+        state.boards = state.boards.filter((board) => board.id !== payload.id);
+        state.isRequestFailed = false;
+        state.isRequestLoading = false;
+      })
+      .addCase(deleteBoard.rejected, (state) => {
+        state.isRequestFailed = true;
+        state.isRequestLoading = false;
+      })
+      .addCase(deleteColumn.pending, (state) => {
+        state.isRequestLoading = true;
+      })
+      .addCase(deleteColumn.fulfilled, (state, { payload }) => {
+        state.boardColumns = state.boardColumns.filter(
+          (column) => column.id !== payload.id
+        );
+        state.isRequestFailed = false;
+        state.isRequestLoading = false;
+      })
+      .addCase(deleteColumn.rejected, (state) => {
         state.isRequestFailed = true;
         state.isRequestLoading = false;
       });

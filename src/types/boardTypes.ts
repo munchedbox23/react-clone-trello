@@ -1,8 +1,9 @@
-export interface IBoardColumn {
+export interface IBoard {
   id: string;
   name: string;
   purpose: string;
-  background: undefined;
+  background: string | undefined;
+  type: string;
 }
 
 export interface ITemplatesColumn {
@@ -11,8 +12,6 @@ export interface ITemplatesColumn {
   tasks: Array<string>;
 }
 
-export interface IBoardTemplates
-  extends Pick<IBoardColumn, "id" | "name" | "purpose"> {
-  background: string;
+export interface IBoardTemplates extends IBoard {
   columns: ITemplatesColumn[];
 }

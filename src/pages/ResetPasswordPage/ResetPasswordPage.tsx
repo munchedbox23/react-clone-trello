@@ -2,7 +2,7 @@ import styles from "../LoginPage/LoginPage.module.css";
 import { Form } from "../../components/Form/Form";
 import { ForgotLinks } from "../../components/Form/FormLinks/FormLinks";
 import { FC, FormEvent } from "react";
-import { AuthButton } from "../../ui/AuthButton/AuthButton";
+import { PrimaryButton } from "../../ui/PrimaryButton/PrimaryButton";
 import { resetPassword } from "../../services/feature/user/auth";
 import { Navigate, useNavigate } from "react-router";
 import { useForm } from "../../hooks/useForm";
@@ -60,7 +60,7 @@ export const ResetPasswordPage: FC = () => {
         value={formState.token}
         onChange={onChange}
       />
-      <AuthButton isDisabled={!isFormValid} text="Recover" />
+      <PrimaryButton isDisabled={!isFormValid} text="Recover" />
     </Form>
   ) : (
     <Navigate to={ROUTE.authLayout.forgotPassword} replace={true} />

@@ -17,6 +17,7 @@ import { checkUserAuth } from "../../services/feature/user/auth";
 import { useAppDispatch } from "../../services/store/hooks";
 import { OnlyUnAuth, OnlyAuth } from "../WithProtectedRoute/WithProtectedRoute";
 import {
+  getBoards,
   getColumns,
   getTemplates,
 } from "../../services/feature/board/boardSlice";
@@ -29,6 +30,7 @@ const App = () => {
     dispatch(checkUserAuth());
     dispatch(getColumns());
     dispatch(getTemplates());
+    dispatch(getBoards());
   }, [dispatch]);
 
   return (

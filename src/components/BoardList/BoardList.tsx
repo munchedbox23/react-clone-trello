@@ -2,20 +2,29 @@ import { FC, PropsWithChildren } from "react";
 import styles from "./BoardList.module.css";
 import { BoardCard } from "../BoardCard/BoardCard";
 import { v4 as uuidv4 } from "uuid";
-import { IBoardColumn, IBoardTemplates } from "../../types/boardTypes";
+import { IBoard, IBoardTemplates } from "../../types/boardTypes";
+import { useAppDispatch } from "../../services/store/hooks";
+import {
+  deleteBoard,
+  deleteColumn,
+} from "../../services/feature/board/boardSlice";
 
-type TBoardListProps = {
+type TBoardListProps<T> = {
   title?: string;
   subtitle?: string;
-  array?: IBoardColumn[] | IBoardTemplates[];
+  array: T[];
+  options: boolean;
 };
 
-export const BoardList: FC<PropsWithChildren<TBoardListProps>> = ({
-  title,
-  subtitle,
-  array,
-  children,
-}) => {
+export const BoardList: FC<
+  PropsWithChildren<TBoardListProps<IBoard | IBoardTemplates>>
+> = ({ title, subtitle, array, children, options }) => {
+  const dispatch = useAppDispatch();
+
+  const handleDelete = (id: string, type: string) => {
+    type === "board" ? dispatch(deleteBoard(id)) : dispatch(deleteColumn(id));
+  };
+
   return (
     <article className={`${styles.boardsList} mb-6`}>
       <header className={styles.heading}>
@@ -27,6 +36,8 @@ export const BoardList: FC<PropsWithChildren<TBoardListProps>> = ({
           <>
             {array.map((item) => (
               <BoardCard
+                onDelete={handleDelete}
+                hasOptions={options}
                 data={item}
                 key={uuidv4()}
               />

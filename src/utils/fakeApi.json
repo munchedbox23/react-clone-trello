@@ -2,19 +2,23 @@
   "boards": [],
   "boardColumns": [
     {
-      "id": "58fba37b-c3a6-4300-936b-4b361449e028",
-      "name": "To Do",
-      "purpose": "future cases"
-    },
-    {
       "id": "29b8e9b8-259c-4b35-826e-651a68fc5ee7",
       "name": "It is being done",
-      "purpose": "they are being executed now"
+      "purpose": "they are being executed now",
+      "type": "column"
     },
     {
       "id": "a895bc9a-e7ad-4870-89e4-859d674b3deb",
       "name": "Completed",
-      "purpose": "completed tasks"
+      "purpose": "completed tasks",
+      "type": "column"
+    },
+    {
+      "id": "b4fac733-cca9-4011-a306-aaea08227522",
+      "type": "column",
+      "name": "To Do",
+      "background": "#fff",
+      "purpose": "needs to be done"
     }
   ],
   "templates": [
@@ -22,7 +26,6 @@
       "id": "21b8e9b8-259c-4b65-826e-651a68fc5ee7",
       "name": "Company Overview",
       "background": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x320/4315f9a5b3c78f696d170e9b626a44d6/e2d2752f.jpg",
-      "purpose": "High-level overview of what's going on across the organization.",
       "columns": [
         {
           "id": "7d99ad56-ac67-4e1e-8a98-3043a8d97646",
@@ -50,7 +53,6 @@
       "id": "2295cde2-d54f-4af8-a7db-2bb271a8f89a",
       "name": "Design Huddle",
       "background": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x1920/e963f778758253bf4ee3214285303fee/photo-1500462918059-b1a0cb512f1d.jpg",
-      "purpose": "Use design huddles to create a safe space for feedback within your team.",
       "columns": [
         {
           "id": "385b7ef3-2515-4e87-afcb-0b57666cf514",
@@ -83,7 +85,6 @@
       "id": "6a5dc141-4e72-4a70-98a5-73d8e3d41faa",
       "name": "Kanban Template",
       "background": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2386x1600/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg",
-      "purpose": "Use this Kanban template to improve the productivity of your engineering team.",
       "columns": [
         {
           "id": "e91c7ea2-a88c-449b-a58e-b7b063f06aef",
@@ -111,7 +112,6 @@
       "id": "c52f12ad-18c4-474b-a929-d402f9c49822",
       "name": "Remote Team Mettings",
       "background": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/3059x2048/c9d5ee8cb6a7691ce11e89b0bd28c587/photo-1516553174826-d05833723cd4",
-      "purpose": "Bring focus and transparency to your remote team meetings.",
       "columns": [
         {
           "id": "e91c7ea2-a88c-449b-a58e-b7b063f06aef",

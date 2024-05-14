@@ -1,33 +1,68 @@
 import styles from "./BoardCard.module.css";
-import { FC, PropsWithChildren } from "react";
+import { FC, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
-import { IBoardColumn, IBoardTemplates } from "../../types/boardTypes";
+import {
+  faEllipsis,
+  faTrash,
+  faPenToSquare,
+} from "@fortawesome/free-solid-svg-icons";
+import { IBoard, IBoardTemplates } from "../../types/boardTypes";
 
 type TBoardCardProps = {
-  data: IBoardColumn | IBoardTemplates;
+  data: IBoard | IBoardTemplates;
+  hasOptions: boolean;
+  onDelete: (id: string, type: string) => void;
 };
 
-export const BoardCard: FC<PropsWithChildren<TBoardCardProps>> = ({
+export const BoardCard: FC<TBoardCardProps> = ({
   data,
-  children,
+  hasOptions,
+  onDelete,
 }) => {
-  
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleOpenMenu = (): void => {
+    setIsVisible(!isVisible);
+  };
+
   return (
-    <>
-      <div
-        style={{ backgroundImage: `url(${data.background})` }}
-        className={`${styles.boardBtn} p-4`}
-      >
-        <h4 className="font-medium text-lg mb-3">{data.name}</h4>
-        <FontAwesomeIcon icon={faEllipsis} className={styles.cardIcon} />
+    <div
+      style={{ backgroundImage: `url(${data.background})` }}
+      className={`${styles.boardBtn} p-4`}
+    >
+      {hasOptions && (
+        <FontAwesomeIcon
+          icon={faEllipsis}
+          className={`${styles.cardIcon} ${isVisible && styles.active}`}
+          onClick={handleOpenMenu}
+        />
+      )}
+      {isVisible && (
+        <div className={`${styles.cardMenu} p-4`}>
+          <button
+            onClick={() => onDelete(data.id, data.type)}
+            className={styles.menuBtn}
+          >
+            <span>Delete</span>
+            <FontAwesomeIcon icon={faTrash} style={{ color: "#ff0000" }} />
+          </button>
+          <button className={styles.menuBtn}>
+            <span>Edit</span>
+            <FontAwesomeIcon
+              icon={faPenToSquare}
+              style={{ color: "#477eff" }}
+            />
+          </button>
+        </div>
+      )}
+      <h4 className="font-medium text-lg mb-3">{data.name}</h4>
+      {data.purpose && (
         <span
           className={`${styles.cardInfo} font-normal text-base pt-2 pb-3 pl-2`}
         >
           {data.purpose}
         </span>
-        {children}
-      </div>
-    </>
+      )}
+    </div>
   );
 };

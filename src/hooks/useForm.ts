@@ -9,14 +9,13 @@ interface IFormValues {
   password?: string;
 }
 
-export const useForm = <T extends IFormValues>(input: T) => {
+export const useForm = <T>(input: T) => {
   const [formState, setFormState] = useState(input);
   const [isFormValid, setIsFormValid] = useState(true);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
     setFormState({
       ...formState,
       [e.target.name]: e.target.value,
@@ -24,7 +23,7 @@ export const useForm = <T extends IFormValues>(input: T) => {
   };
 
   useEffect(() => {
-    const isValid = Object.values(formState).every((value) => !!value);
+    const isValid = Object.values(!formState).every((value) => !!value);
     setIsFormValid(isValid);
   }, [formState]);
 

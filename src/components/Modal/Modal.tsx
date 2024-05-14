@@ -15,23 +15,25 @@ export const Modal: FC<PropsWithChildren<TModalProps>> = ({
   title,
   onClose,
 }) => {
-  const handleCloseByEscape = useCallback(
-    (e: KeyboardEvent) => {
-      e.preventDefault();
-      if (e.key === "Escape") {
-        onClose();
-      }
-    },
-    [onClose]
-  );
+  /* WE CAN TURN 0N THE LISTENER TO CLOSE THE MODAL WHEN PRESS ESCAPE, BUT WHEN ENTERING DATA INTO THE FORM, THE LISTENER WILL BE TRIGGERED */
 
-  useEffect(() => {
-    window.addEventListener("keydown", handleCloseByEscape);
+  // const handleCloseByEscape = useCallback(
+  //   (e: KeyboardEvent) => {
+  //     e.preventDefault();
+  //     if (e.key === "Escape") {
+  //       onClose();
+  //     }
+  //   },
+  //   [onClose]
+  // );
 
-    return () => {
-      window.removeEventListener("keydown", handleCloseByEscape);
-    };
-  }, [onClose, handleCloseByEscape]);
+  // useEffect(() => {
+  //   window.addEventListener("keydown", handleCloseByEscape);
+
+  //   return () => {
+  //     window.removeEventListener("keydown", handleCloseByEscape);
+  //   };
+  // }, [onClose, handleCloseByEscape]);
 
   return createPortal(
     <div className={modalStyles.modal}>

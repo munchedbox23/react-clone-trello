@@ -2,7 +2,7 @@ import styles from "../LoginPage/LoginPage.module.css";
 import { Form } from "../../components/Form/Form";
 import { ForgotLinks } from "../../components/Form/FormLinks/FormLinks";
 import { FC, FormEvent, useState } from "react";
-import { AuthButton } from "../../ui/AuthButton/AuthButton";
+import { PrimaryButton } from "../../ui/PrimaryButton/PrimaryButton";
 import { useForm } from "../../hooks/useForm";
 import { forgotPassword } from "../../services/feature/user/auth";
 import { useNavigate } from "react-router";
@@ -48,7 +48,7 @@ export const ForgotPasswordPage: FC = () => {
         value={formState?.email || ""}
         onChange={onChange}
       />
-      <AuthButton isDisabled={!isFormValid} text="Recover" />
+      <PrimaryButton isDisabled={!isFormValid} text="Recover" />
     </Form>
   );
 };

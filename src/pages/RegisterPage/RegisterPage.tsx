@@ -2,7 +2,7 @@ import styles from "../LoginPage/LoginPage.module.css";
 import { Form } from "../../components/Form/Form";
 import { RegisterLinks } from "../../components/Form/FormLinks/FormLinks";
 import { FC } from "react";
-import { AuthButton } from "../../ui/AuthButton/AuthButton";
+import { PrimaryButton } from "../../ui/PrimaryButton/PrimaryButton";
 import { useForm } from "../../hooks/useForm";
 import { userRegister } from "../../services/feature/user/auth";
 import { IUserRegister } from "../../types/userTypes";
@@ -51,7 +51,7 @@ export const RegisterPage: FC = () => {
         value={formState?.password}
         onChange={onChange}
       />
-      <AuthButton isDisabled={!isFormValid} text="Sign Up" />
+      <PrimaryButton isDisabled={!isFormValid} text="Sign Up" />
     </Form>
   );
 };

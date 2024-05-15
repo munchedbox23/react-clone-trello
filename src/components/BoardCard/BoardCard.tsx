@@ -7,6 +7,7 @@ import {
   faPenToSquare,
 } from "@fortawesome/free-solid-svg-icons";
 import { IBoard, IBoardTemplates } from "../../types/boardTypes";
+import { AnimatePresence, motion } from "framer-motion";
 
 type TBoardCardProps = {
   data: IBoard | IBoardTemplates;
@@ -37,24 +38,33 @@ export const BoardCard: FC<TBoardCardProps> = ({
           onClick={handleOpenMenu}
         />
       )}
-      {isVisible && (
-        <div className={`${styles.cardMenu} p-4`}>
-          <button
-            onClick={() => onDelete(data.id, data.type)}
-            className={styles.menuBtn}
+      <AnimatePresence>
+        {isVisible && (
+          <motion.div
+            className={`${styles.cardMenu} p-4`}
+            initial={{ opacity: 0, clipPath: "circle(0.4% at 100% 0)" }}
+            animate={{ opacity: 1, clipPath: "circle(141.2% at 100% 0)" }}
+            transition={{ duration: 0.3 }}
+            exit={{ opacity: 0, clipPath: "circle(0.4% at 100% 0)" }}
           >
-            <span>Delete</span>
-            <FontAwesomeIcon icon={faTrash} style={{ color: "#ff0000" }} />
-          </button>
-          <button className={styles.menuBtn}>
-            <span>Edit</span>
-            <FontAwesomeIcon
-              icon={faPenToSquare}
-              style={{ color: "#477eff" }}
-            />
-          </button>
-        </div>
-      )}
+            <button
+              onClick={() => onDelete(data.id, data.type)}
+              className={styles.menuBtn}
+            >
+              <span>Delete</span>
+              <FontAwesomeIcon icon={faTrash} style={{ color: "#ff0000" }} />
+            </button>
+            <button className={styles.menuBtn}>
+              <span>Edit</span>
+              <FontAwesomeIcon
+                icon={faPenToSquare}
+                style={{ color: "#477eff" }}
+              />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <h4 className="font-medium text-lg mb-3">{data.name}</h4>
       {data.purpose && (
         <span

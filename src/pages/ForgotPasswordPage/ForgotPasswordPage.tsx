@@ -1,5 +1,5 @@
 import styles from "../LoginPage/LoginPage.module.css";
-import { Form } from "../../components/Form/Form";
+import { MForm } from "../../components/Form/Form";
 import { ForgotLinks } from "../../components/Form/FormLinks/FormLinks";
 import { FC, FormEvent, useState } from "react";
 import { PrimaryButton } from "../../ui/PrimaryButton/PrimaryButton";
@@ -8,6 +8,7 @@ import { forgotPassword } from "../../services/feature/user/auth";
 import { useNavigate } from "react-router";
 import { ROUTE } from "../../utils/constants";
 import { Preloader } from "../../components/Preloader/Preloader";
+import { formVariants } from "../../utils/animationVariants";
 
 export const ForgotPasswordPage: FC = () => {
   const { formState, setFormState, onChange, isFormValid } = useForm<{
@@ -33,10 +34,15 @@ export const ForgotPasswordPage: FC = () => {
   return isSending ? (
     <Preloader />
   ) : (
-    <Form
+    <MForm
       linkComponent={ForgotLinks}
       title="Recover Password"
       onSubmit={handleSubmit}
+      initial={"back"}
+      animate={"front"}
+      exit={"back"}
+      variants={formVariants}
+      transition={{ duration: 0.5 }}
     >
       <input
         required
@@ -49,6 +55,6 @@ export const ForgotPasswordPage: FC = () => {
         onChange={onChange}
       />
       <PrimaryButton isDisabled={!isFormValid} text="Recover" />
-    </Form>
+    </MForm>
   );
 };

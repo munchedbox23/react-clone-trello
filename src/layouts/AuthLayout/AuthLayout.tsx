@@ -10,7 +10,7 @@ export const AuthLayout = () => {
   );
   return (
     <section className={`${styles.loginPage} pt-20`}>
-      <img src={Logo} alt="Logo trello" />
+      <img src={Logo} alt="Logo trello"/>
       {isRequestLoading ? <Preloader /> : <Outlet />}
     </section>
   );

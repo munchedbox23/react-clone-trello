@@ -1,5 +1,5 @@
 import styles from "../LoginPage/LoginPage.module.css";
-import { Form } from "../../components/Form/Form";
+import { MForm } from "../../components/Form/Form";
 import { ForgotLinks } from "../../components/Form/FormLinks/FormLinks";
 import { FC, FormEvent } from "react";
 import { PrimaryButton } from "../../ui/PrimaryButton/PrimaryButton";
@@ -7,6 +7,7 @@ import { resetPassword } from "../../services/feature/user/auth";
 import { Navigate, useNavigate } from "react-router";
 import { useForm } from "../../hooks/useForm";
 import { ROUTE } from "../../utils/constants";
+import { formVariants } from "../../utils/animationVariants";
 
 export const ResetPasswordPage: FC = () => {
   const { formState, isFormValid, onChange, setFormState } = useForm<{
@@ -37,10 +38,15 @@ export const ResetPasswordPage: FC = () => {
   };
 
   return forgotSuccess ? (
-    <Form
+    <MForm
       linkComponent={ForgotLinks}
       title="Recover Password"
       onSubmit={handleReset}
+      initial={"back"}
+      animate={"front"}
+      exit={"back"}
+      variants={formVariants}
+      transition={{ duration: 0.5 }}
     >
       <input
         autoComplete="new-password"
@@ -61,7 +67,7 @@ export const ResetPasswordPage: FC = () => {
         onChange={onChange}
       />
       <PrimaryButton isDisabled={!isFormValid} text="Recover" />
-    </Form>
+    </MForm>
   ) : (
     <Navigate to={ROUTE.authLayout.forgotPassword} replace={true} />
   );

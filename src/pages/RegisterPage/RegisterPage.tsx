@@ -1,11 +1,12 @@
 import styles from "../LoginPage/LoginPage.module.css";
-import { Form } from "../../components/Form/Form";
+import { MForm } from "../../components/Form/Form";
 import { RegisterLinks } from "../../components/Form/FormLinks/FormLinks";
 import { FC } from "react";
 import { PrimaryButton } from "../../ui/PrimaryButton/PrimaryButton";
 import { useForm } from "../../hooks/useForm";
 import { userRegister } from "../../services/feature/user/auth";
 import { IUserRegister } from "../../types/userTypes";
+import { formVariants } from "../../utils/animationVariants";
 
 export const RegisterPage: FC = () => {
   const { formState, onChange, onSubmit, isFormValid } = useForm<IUserRegister>(
@@ -16,10 +17,15 @@ export const RegisterPage: FC = () => {
     }
   );
   return (
-    <Form
+    <MForm
       linkComponent={RegisterLinks}
       title="Register on Trello"
       onSubmit={(e) => onSubmit(e, userRegister)}
+      initial={"back"}
+      animate={"front"}
+      exit={"back"}
+      variants={formVariants}
+      transition={{ duration: 0.5 }}
     >
       <input
         required
@@ -52,6 +58,6 @@ export const RegisterPage: FC = () => {
         onChange={onChange}
       />
       <PrimaryButton isDisabled={!isFormValid} text="Sign Up" />
-    </Form>
+    </MForm>
   );
 };

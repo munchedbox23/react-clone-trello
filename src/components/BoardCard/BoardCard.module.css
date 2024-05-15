@@ -23,7 +23,6 @@
   bottom: 0;
   left: 0;
   border-bottom: 16px;
-  animation: slideInFromTop 0.3s ease-in-out forwards;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -73,13 +72,3 @@
   color: var(--primary);
 }
 
-@keyframes slideInFromTop {
-  0% {
-    clip-path: circle(0.4% at 100% 0);
-    opacity: 0;
-  }
-  100% {
-    clip-path: circle(141.2% at 100% 0);
-    opacity: 1;
-  }
-}

@@ -3,7 +3,7 @@ import headerStyles from "./AppHeader.module.css";
 import Logo from "../../images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faPlus } from "@fortawesome/free-solid-svg-icons";
-import { useAppDispatch, useAppSelector } from "../../services/store/hooks";
+import { useAppDispatch } from "../../services/store/hooks";
 import { setModalOpen } from "../../services/feature/modal/modalSlice";
 
 export const AppHeader: FC = () => {

@@ -14,6 +14,7 @@ import {
   postBoards,
   postColumns,
 } from "../../services/feature/board/boardSlice";
+import { motion } from "framer-motion";
 
 export interface IBoardPageState {
   name: string;
@@ -56,7 +57,12 @@ export const BoardPage = () => {
   };
 
   return (
-    <main className="pt-2">
+    <motion.section
+      className="pt-2"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <BoardList options array={boards}>
         <button
           onClick={() => handleModalOpen("create-board")}
@@ -135,6 +141,6 @@ export const BoardPage = () => {
           </Form>
         </Modal>
       )}
-    </main>
+    </motion.section>
   );
 };

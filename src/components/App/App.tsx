@@ -21,6 +21,7 @@ import {
   getColumns,
   getTemplates,
 } from "../../services/feature/board/boardSlice";
+import { AnimatePresence } from "framer-motion";
 
 const App = () => {
   const location = useLocation();
@@ -34,37 +35,39 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <Routes location={location}>
-      <Route
-        path={ROUTE.home}
-        element={<OnlyAuth component={<MainLayout />} />}
-      >
-        <Route index element={<OnlyAuth component={<BoardPage />} />} />
+    <AnimatePresence mode="wait">
+      <Routes key={location?.pathname} location={location}>
         <Route
-          path={ROUTE.mainLayout.profile}
-          element={<OnlyAuth component={<ProfilePage />} />}
-        />
-      </Route>
-      <Route element={<AuthLayout />}>
-        <Route
-          path={ROUTE.authLayout.login}
-          element={<OnlyUnAuth component={<LoginPage />} />}
-        />
-        <Route
-          path={ROUTE.authLayout.register}
-          element={<OnlyUnAuth component={<RegisterPage />} />}
-        />
-        <Route
-          path={ROUTE.authLayout.forgotPassword}
-          element={<OnlyUnAuth component={<ForgotPasswordPage />} />}
-        />
-        <Route
-          path={ROUTE.authLayout.resetPassword}
-          element={<OnlyUnAuth component={<ResetPasswordPage />} />}
-        />
-      </Route>
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+          path={ROUTE.home}
+          element={<OnlyAuth component={<MainLayout />} />}
+        >
+          <Route index element={<OnlyAuth component={<BoardPage />} />} />
+          <Route
+            path={ROUTE.mainLayout.profile}
+            element={<OnlyAuth component={<ProfilePage />} />}
+          />
+        </Route>
+        <Route element={<AuthLayout />}>
+          <Route
+            path={ROUTE.authLayout.login}
+            element={<OnlyUnAuth component={<LoginPage />} />}
+          />
+          <Route
+            path={ROUTE.authLayout.register}
+            element={<OnlyUnAuth component={<RegisterPage />} />}
+          />
+          <Route
+            path={ROUTE.authLayout.forgotPassword}
+            element={<OnlyUnAuth component={<ForgotPasswordPage />} />}
+          />
+          <Route
+            path={ROUTE.authLayout.resetPassword}
+            element={<OnlyUnAuth component={<ResetPasswordPage />} />}
+          />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </AnimatePresence>
   );
 };
 

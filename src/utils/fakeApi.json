@@ -2,6 +2,13 @@
   "boards": [],
   "boardColumns": [
     {
+      "id": "b4fac733-cca9-4011-a306-aaea08227522",
+      "type": "column",
+      "name": "To Do",
+      "background": "#fff",
+      "purpose": "needs to be done"
+    },
+    {
       "id": "29b8e9b8-259c-4b35-826e-651a68fc5ee7",
       "name": "It is being done",
       "purpose": "they are being executed now",
@@ -12,13 +19,6 @@
       "name": "Completed",
       "purpose": "completed tasks",
       "type": "column"
-    },
-    {
-      "id": "b4fac733-cca9-4011-a306-aaea08227522",
-      "type": "column",
-      "name": "To Do",
-      "background": "#fff",
-      "purpose": "needs to be done"
     }
   ],
   "templates": [

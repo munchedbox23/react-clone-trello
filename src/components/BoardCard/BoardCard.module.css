@@ -13,7 +13,7 @@
   justify-content: center;
   position: relative;
   flex-direction: column;
-  animation: slideInDown 0.5s ease forwards;
+  animation: fadeIn 1s ease forwards;
 }
 
 .cardMenu {
@@ -73,11 +73,11 @@
   color: var(--primary);
 }
 
-@keyframes slideInDown {
+@keyframes fadeIn {
   0% {
-    transform: translateY(-200px);
+    opacity: 0;
   }
   100% {
-    transform: translateY(0);
+    opacity: 1;
   }
 }

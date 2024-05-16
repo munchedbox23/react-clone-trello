@@ -9,7 +9,7 @@ interface IFormValues {
   password?: string;
 }
 
-export const useForm = <T>(input: T) => {
+export const useForm = <T extends IFormValues>(input: T) => {
   const [formState, setFormState] = useState(input);
   const [isFormValid, setIsFormValid] = useState(true);
   const dispatch = useAppDispatch();

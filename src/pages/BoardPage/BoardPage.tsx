@@ -15,6 +15,8 @@ import {
   postColumns,
 } from "../../services/feature/board/boardSlice";
 import { motion } from "framer-motion";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
 export interface IBoardPageState {
   name: string;
@@ -63,35 +65,37 @@ export const BoardPage = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <BoardList options array={boards}>
-        <button
-          onClick={() => handleModalOpen("create-board")}
-          className={styles.createBoard}
+      <DndProvider backend={HTML5Backend}>
+        <BoardList options array={boards}>
+          <button
+            onClick={() => handleModalOpen("create-board")}
+            className={styles.createBoard}
+          >
+            <span className="font-medium text-lg mr-2">Create new board</span>
+            <FontAwesomeIcon icon={faPlus} />
+          </button>
+        </BoardList>
+        <BoardList
+          array={boardColumns}
+          title="My Table"
+          subtitle="Here you can set up the columns that will be on the board"
+          options
         >
-          <span className="font-medium text-lg mr-2">Create new board</span>
-          <FontAwesomeIcon icon={faPlus} />
-        </button>
-      </BoardList>
-      <BoardList
-        array={boardColumns}
-        title="My Table"
-        subtitle="Here you can set up the columns that will be on the board"
-        options
-      >
-        <button
-          onClick={() => handleModalOpen("add-column")}
-          className={styles.addColumn}
-        >
-          <FontAwesomeIcon icon={faPlus} />
-          <span>Add another constructorList</span>
-        </button>
-      </BoardList>
-      <BoardList
-        title="Popular templates"
-        subtitle=" Get doing faster with a template from the Trello community"
-        array={templates}
-        options={false}
-      />
+          <button
+            onClick={() => handleModalOpen("add-column")}
+            className={styles.addColumn}
+          >
+            <FontAwesomeIcon icon={faPlus} />
+            <span>Add another constructorList</span>
+          </button>
+        </BoardList>
+        <BoardList
+          title="Popular templates"
+          subtitle=" Get doing faster with a template from the Trello community"
+          array={templates}
+          options={false}
+        />
+      </DndProvider>
 
       {isModalOpen && (
         <Modal

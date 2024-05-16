@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { request } from "../../../utils/requests";
 import { IBoardTemplates, IBoard } from "../../../types/boardTypes";
 import { v4 as uuidv4 } from "uuid";
@@ -109,7 +109,19 @@ export const getBoards = createAsyncThunk("board/getBoards", async () => {
 export const boardSlice = createSlice({
   name: "board",
   initialState,
-  reducers: {},
+  reducers: {
+    moveCard: (
+      state,
+      action: PayloadAction<{ dragIndex: number; hoverIndex: number }>
+    ) => {
+      const { dragIndex, hoverIndex } = action.payload;
+      const temp = state.boardColumns[dragIndex];
+      state.boardColumns = state.boardColumns.filter(
+        (item, idx) => idx !== dragIndex
+      );
+      state.boardColumns.splice(hoverIndex, 0, temp);
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getColumns.pending, (state) => {
@@ -201,5 +213,5 @@ export const boardSlice = createSlice({
   },
 });
 
-export const {} = boardSlice.actions;
+export const { moveCard } = boardSlice.actions;
 export default boardSlice.reducer;

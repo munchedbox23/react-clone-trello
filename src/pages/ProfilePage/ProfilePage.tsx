@@ -33,13 +33,13 @@ export const ProfilePage: FC = () => {
     } else {
       setIsVisible(false);
     }
-  }, [formState]);
+  }, [formState, user]);
 
   useEffect(() => {
     if (user) {
       setFormState({ name: user.name, email: user.email });
     }
-  }, [user]);
+  }, [user, setFormState]);
 
   const handleClose = (): void => {
     setFormState({

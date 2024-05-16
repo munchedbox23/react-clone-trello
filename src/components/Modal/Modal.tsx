@@ -1,7 +1,7 @@
 import { createPortal } from "react-dom";
 import modalStyles from "./Modal.module.css";
 import { ModalOverlay } from "../ModalOverlay/ModalOverlay";
-import { FC, PropsWithChildren, useCallback, useEffect } from "react";
+import { FC, PropsWithChildren } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 

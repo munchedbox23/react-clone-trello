@@ -1,5 +1,13 @@
 {
-  "boards": [],
+  "boards": [
+    {
+      "id": "c295ca11-ca91-4709-989e-8d3ad90d9a76",
+      "type": "board",
+      "name": "work",
+      "background": "#000000",
+      "purpose": ""
+    }
+  ],
   "boardColumns": [
     {
       "id": "b4fac733-cca9-4011-a306-aaea08227522",

@@ -12,8 +12,10 @@ export const WithProtectedRoute: FC<IWithProtectedRouteProps> = ({
   component,
   onlyUnAuth = false,
 }) => {
-  const user = useAppSelector((store) => store.user.user);
-  const isAuthChecked = useAppSelector((store) => store.user.isAuthChecked);
+  const { user, isAuthChecked } = useAppSelector((store) => ({
+    user: store.user.user,
+    isAuthChecked: store.user.isAuthChecked,
+  }));
   const location = useLocation();
 
   if (!isAuthChecked) return null;

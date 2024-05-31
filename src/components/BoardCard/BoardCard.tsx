@@ -1,5 +1,5 @@
 import styles from "./BoardCard.module.css";
-import { useRef, useState, FC } from "react";
+import { useRef, useState, FC, MouseEventHandler } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEllipsis,
@@ -13,6 +13,7 @@ import { Identifier } from "dnd-core";
 import { DragTypes } from "../../utils/dragTypes";
 import { moveCard } from "../../services/feature/board/boardSlice";
 import { useAppDispatch } from "../../services/store/hooks";
+import { useNavigate } from "react-router-dom";
 
 type TBoardCardProps = {
   data: IBoard | IBoardTemplates;
@@ -31,6 +32,8 @@ export const BoardCard: FC<TBoardCardProps> = ({
   const myRef = useRef<HTMLDivElement | null>(null);
   const { id } = data;
   const dispatch = useAppDispatch();
+
+  const navigate = useNavigate();
 
   const [{ handlerId }, drop] = useDrop<
     { index: number },
@@ -83,7 +86,8 @@ export const BoardCard: FC<TBoardCardProps> = ({
 
   drag(drop(myRef));
 
-  const handleOpenMenu = (): void => {
+  const handleOpenMenu = (e: React.MouseEvent<SVGSVGElement>): void => {
+    e.stopPropagation();
     setIsVisible(!isVisible);
   };
 
@@ -93,6 +97,7 @@ export const BoardCard: FC<TBoardCardProps> = ({
       className={`${styles.boardBtn} p-4`}
       data-handler-id={handlerId}
       ref={myRef}
+      onClick={() => navigate(`boards/${id}`)}
     >
       {hasOptions && (
         <FontAwesomeIcon
@@ -111,7 +116,10 @@ export const BoardCard: FC<TBoardCardProps> = ({
             exit={{ opacity: 0, clipPath: "circle(0.4% at 100% 0)" }}
           >
             <button
-              onClick={() => onDelete(data.id, data.type)}
+              onClick={(e) => {
+                e.stopPropagation();
+                onDelete(data.id, data.type);
+              }}
               className={styles.menuBtn}
             >
               <span>Delete</span>

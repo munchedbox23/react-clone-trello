@@ -31,13 +31,16 @@ export const BoardPage = () => {
     background: "#000000",
     purpose: "",
   });
+  const { boardColumns, templates, boards } = useAppSelector((store) => ({
+    boardColumns: store.board.boardColumns,
+    templates: store.board.templates,
+    boards: store.board.boards,
+  }));
 
-  const boardColumns = useAppSelector((store) => store.board.boardColumns);
-  const templates = useAppSelector((store) => store.board.templates);
-  const boards = useAppSelector((store) => store.board.boards);
-
-  const isModalOpen = useAppSelector((store) => store.modal.isModalOpen);
-  const modalContent = useAppSelector((store) => store.modal.modalContent);
+  const { isModalOpen, modalContent } = useAppSelector((store) => ({
+    isModalOpen: store.modal.isModalOpen,
+    modalContent: store.modal.modalContent,
+  }));
 
   const handleModalOpen = (content?: string): void => {
     dispatch(setModalOpen(content));

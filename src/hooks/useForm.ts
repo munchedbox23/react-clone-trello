@@ -23,7 +23,7 @@ export const useForm = <T extends IFormValues>(input: T) => {
   };
 
   useEffect(() => {
-    const isValid = Object.values(!formState).every((value) => !!value);
+    const isValid = Object.values(formState).every((value) => !!value);
     setIsFormValid(isValid);
   }, [formState]);
 

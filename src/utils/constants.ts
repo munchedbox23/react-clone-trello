@@ -20,6 +20,7 @@ export const ROUTE = Object.freeze({
     forgotPassword: "/forgot-password",
     resetPassword: "/reset-password",
   },
+  table: "boards/:tableId",
 });
 
 export const API = Object.freeze({

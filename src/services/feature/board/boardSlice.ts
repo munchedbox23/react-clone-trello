@@ -11,6 +11,7 @@ type TBoardSliceState = {
   isRequestFailed: boolean;
   isRequestLoading: boolean;
   templates: IBoardTemplates[];
+  filteredBoards: IBoard[];
 };
 
 const initialState: TBoardSliceState = {
@@ -20,6 +21,7 @@ const initialState: TBoardSliceState = {
   color: null,
   isRequestLoading: false,
   isRequestFailed: false,
+  filteredBoards: [],
 };
 
 export const deleteBoard = createAsyncThunk<IBoard, string>(
@@ -121,6 +123,12 @@ export const boardSlice = createSlice({
       );
       state.boardColumns.splice(hoverIndex, 0, temp);
     },
+    filterBoards: (state, action: PayloadAction<string>) => {
+      const searchTerm = action.payload.toLowerCase().trim();
+      state.boards = state.filteredBoards.filter((board) =>
+        board.name.toLowerCase().includes(searchTerm)
+      );
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -155,6 +163,7 @@ export const boardSlice = createSlice({
         state.boards = [...state.boards, payload];
         state.isRequestFailed = false;
         state.isRequestLoading = false;
+        state.filteredBoards = [...state.filteredBoards, payload];
       })
       .addCase(postBoards.rejected, (state) => {
         state.isRequestFailed = true;
@@ -167,6 +176,7 @@ export const boardSlice = createSlice({
         state.boards = payload;
         state.isRequestFailed = false;
         state.isRequestLoading = false;
+        state.filteredBoards = payload;
       })
       .addCase(getBoards.rejected, (state) => {
         state.isRequestFailed = true;
@@ -213,5 +223,5 @@ export const boardSlice = createSlice({
   },
 });
 
-export const { moveCard } = boardSlice.actions;
+export const { moveCard, filterBoards } = boardSlice.actions;
 export default boardSlice.reducer;

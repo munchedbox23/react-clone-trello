@@ -8,6 +8,7 @@ import {
   ForgotPasswordPage,
   ResetPasswordPage,
   ProfilePage,
+  TablePage,
 } from "../../pages";
 import { useLocation } from "react-router-dom";
 import { AuthLayout } from "../../layouts/AuthLayout/AuthLayout";
@@ -65,6 +66,10 @@ const App = () => {
             element={<OnlyUnAuth component={<ResetPasswordPage />} />}
           />
         </Route>
+        <Route
+          path={`/${ROUTE.table}`}
+          element={<OnlyAuth component={<TablePage />} />}
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>

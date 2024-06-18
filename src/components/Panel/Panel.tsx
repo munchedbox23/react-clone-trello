@@ -14,7 +14,7 @@ export const Panel: FC = () => {
 
   const user = useAppSelector((store) => store.user.user);
 
-  const userName = user!.name
+  const userName = user?.name
     .split(" ")
     .reduce((acc, word) => (acc += word.at(0)!.toUpperCase()), "");
 

@@ -17,6 +17,7 @@ import {
 import { motion } from "framer-motion";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import { shallowEqual } from "react-redux";
 
 export interface IBoardPageState {
   name: string;
@@ -32,12 +33,22 @@ export const BoardPage = () => {
     purpose: "",
   });
 
-  const boardColumns = useAppSelector((store) => store.board.boardColumns);
-  const templates = useAppSelector((store) => store.board.templates);
-  const boards = useAppSelector((store) => store.board.boards);
+  const { boardColumns, templates, boards } = useAppSelector(
+    (store) => ({
+      boardColumns: store.board.boardColumns,
+      templates: store.board.templates,
+      boards: store.board.boards,
+    }),
+    shallowEqual
+  );
 
-  const isModalOpen = useAppSelector((store) => store.modal.isModalOpen);
-  const modalContent = useAppSelector((store) => store.modal.modalContent);
+  const { isModalOpen, modalContent } = useAppSelector(
+    (store) => ({
+      isModalOpen: store.modal.isModalOpen,
+      modalContent: store.modal.modalContent,
+    }),
+    shallowEqual
+  );
 
   const handleModalOpen = (content?: string): void => {
     dispatch(setModalOpen(content));

@@ -17,12 +17,11 @@ import { useEffect } from "react";
 import { checkUserAuth } from "../../services/feature/user/auth";
 import { useAppDispatch } from "../../services/store/hooks";
 import { OnlyUnAuth, OnlyAuth } from "../WithProtectedRoute/WithProtectedRoute";
+import { AnimatePresence } from "framer-motion";
 import {
   getBoards,
-  getColumns,
   getTemplates,
-} from "../../services/feature/board/boardSlice";
-import { AnimatePresence } from "framer-motion";
+} from "../../services/feature/boards/boardsSlice";
 
 const App = () => {
   const location = useLocation();
@@ -30,9 +29,8 @@ const App = () => {
 
   useEffect(() => {
     dispatch(checkUserAuth());
-    dispatch(getColumns());
-    dispatch(getTemplates());
     dispatch(getBoards());
+    dispatch(getTemplates());
   }, [dispatch]);
 
   return (

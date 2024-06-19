@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userSlice from "../feature/user/userSlice";
-import boardSlice from "../feature/board/boardSlice";
 import modalSlice from "../feature/modal/modalSlice";
+import boardsSlice from "../feature/boards/boardsSlice";
 
 export const store = configureStore({
   reducer: {
     user: userSlice,
-    board: boardSlice,
+    boards: boardsSlice,
     modal: modalSlice,
   },
 });

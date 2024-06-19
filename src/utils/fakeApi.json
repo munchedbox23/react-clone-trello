@@ -1,130 +1,108 @@
 {
   "boards": [],
-  "boardColumns": [
-    {
-      "id": "b4fac733-cca9-4011-a306-aaea08227522",
-      "type": "column",
-      "name": "To Do",
-      "background": "#fff",
-      "purpose": "needs to be done"
-    },
-    {
-      "id": "29b8e9b8-259c-4b35-826e-651a68fc5ee7",
-      "name": "It is being done",
-      "purpose": "they are being executed now",
-      "type": "column"
-    },
-    {
-      "id": "8bce8043-4ce0-4543-9cc6-f2c2a656d744",
-      "type": "column",
-      "name": "Completed",
-      "background": "#000000",
-      "purpose": "completed tasks"
-    }
-  ],
   "templates": [
     {
-      "id": "21b8e9b8-259c-4b65-826e-651a68fc5ee7",
+      "_id": "21b8e9b8-259c-4b65-826e-651a68fc5ee7",
       "name": "Company Overview",
       "type": "template",
       "background": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x320/4315f9a5b3c78f696d170e9b626a44d6/e2d2752f.jpg",
       "columns": [
         {
-          "id": "7d99ad56-ac67-4e1e-8a98-3043a8d97646",
+          "_id": "7d99ad56-ac67-4e1e-8a98-3043a8d97646",
           "title": "Teams",
           "tasks": []
         },
         {
-          "id": "2babd839-20c2-48a3-af37-3042a58bb565",
+          "_id": "2babd839-20c2-48a3-af37-3042a58bb565",
           "title": "Up Next",
           "tasks": []
         },
         {
-          "id": "eeb1b204-1346-4c5f-9d09-bd30f25569fd",
+          "_id": "eeb1b204-1346-4c5f-9d09-bd30f25569fd",
           "title": "Current Projects",
           "tasks": []
         },
         {
-          "id": "0b41fc6d-eab3-4ef7-bf91-73a7c248ddce",
+          "_id": "0b41fc6d-eab3-4ef7-bf91-73a7c248ddce",
           "title": "Completed Projects",
           "tasks": []
         }
       ]
     },
     {
-      "id": "2295cde2-d54f-4af8-a7db-2bb271a8f89a",
+      "_id": "2295cde2-d54f-4af8-a7db-2bb271a8f89a",
       "name": "Design Huddle",
       "type": "template",
       "background": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x1920/e963f778758253bf4ee3214285303fee/photo-1500462918059-b1a0cb512f1d.jpg",
       "columns": [
         {
-          "id": "385b7ef3-2515-4e87-afcb-0b57666cf514",
+          "_id": "385b7ef3-2515-4e87-afcb-0b57666cf514",
           "title": "Concept",
           "tasks": []
         },
         {
-          "id": "479d4c18-ac48-4b8b-a057-57b4772de646",
+          "_id": "479d4c18-ac48-4b8b-a057-57b4772de646",
           "title": "Notes",
           "tasks": []
         },
         {
-          "id": "9f41dae3-aeeb-49dd-947e-cc2898dea612",
+          "_id": "9f41dae3-aeeb-49dd-947e-cc2898dea612",
           "title": "Positives",
           "tasks": []
         },
         {
-          "id": "0db4a768-1734-4298-9d2d-e1be369bb9ce",
+          "_id": "0db4a768-1734-4298-9d2d-e1be369bb9ce",
           "title": "Negatives",
           "tasks": []
         },
         {
-          "id": "68de2d93-e30c-4edb-8801-c8f3df198c80",
+          "_id": "68de2d93-e30c-4edb-8801-c8f3df198c80",
           "title": "Questions",
           "tasks": []
         }
       ]
     },
     {
-      "id": "6a5dc141-4e72-4a70-98a5-73d8e3d41faa",
+      "_id": "6a5dc141-4e72-4a70-98a5-73d8e3d41faa",
       "name": "Kanban Template",
       "type": "template",
       "background": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2386x1600/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg",
       "columns": [
         {
-          "id": "e91c7ea2-a88c-449b-a58e-b7b063f06aef",
+          "_id": "e91c7ea2-a88c-449b-a58e-b7b063f06aef",
           "title": "Teams",
           "tasks": []
         },
         {
-          "id": "d78d65a8-a551-449c-8b7f-778388bdae71",
+          "_id": "d78d65a8-a551-449c-8b7f-778388bdae71",
           "title": "Up Next",
           "tasks": []
         },
         {
-          "id": "292e42ad-b1b6-4336-843a-1013dc8776b6",
+          "_id": "292e42ad-b1b6-4336-843a-1013dc8776b6",
           "title": "Current Projects",
           "tasks": []
         },
         {
-          "id": "9399a678-5dd4-4046-a405-df9495f8474d",
+          "_id": "9399a678-5dd4-4046-a405-df9495f8474d",
           "title": "Completed Projects",
           "tasks": []
         }
       ]
     },
     {
-      "id": "c52f12ad-18c4-474b-a929-d402f9c49822",
+      "_id": "c52f12ad-18c4-474b-a929-d402f9c49822",
       "name": "Remote Team Mettings",
       "type": "template",
       "background": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/3059x2048/c9d5ee8cb6a7691ce11e89b0bd28c587/photo-1516553174826-d05833723cd4",
       "columns": [
         {
-          "id": "e91c7ea2-a88c-449b-a58e-b7b063f06aef",
+          "_id": "e91c7ea2-a88c-449b-a58e-b7b063f06aef",
           "title": "This Week",
           "tasks": []
         },
         {
-          "id": "d78d65a8-a551-449c-8b7f-778388bdae71",
+          "_id": "d78d65a8-a551-449c-8b7f-778388bdae71",
           "title": "Previous Meetings",
           "tasks": []
         }

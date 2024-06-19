@@ -6,7 +6,7 @@ import { faMagnifyingGlass, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useAppDispatch } from "../../services/store/hooks";
 import { setModalOpen } from "../../services/feature/modal/modalSlice";
 import { useSearchParams } from "react-router-dom";
-import { filterBoards } from "../../services/feature/board/boardSlice";
+
 
 export const AppHeader: FC = () => {
   const dispatch = useAppDispatch();
@@ -16,10 +16,6 @@ export const AppHeader: FC = () => {
     dispatch(setModalOpen(content));
   };
 
-  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
-    setSearchParams({ search: e.target.value });
-    dispatch(filterBoards(e.target.value));
-  };
 
   return (
     <header className={`${headerStyles.header} p-6`}>
@@ -35,7 +31,6 @@ export const AppHeader: FC = () => {
             type="text"
             placeholder="Search board"
             maxLength={500}
-            onChange={handleSearch}
             value={searchParams.get("search") || ""}
           />
         </div>

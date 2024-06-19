@@ -1,103 +1,30 @@
+import { FC, useState } from "react";
 import styles from "./BoardCard.module.css";
-import { useRef, useState, FC, MouseEventHandler } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEllipsis,
   faTrash,
   faPenToSquare,
 } from "@fortawesome/free-solid-svg-icons";
-import { IBoard, IBoardTemplates } from "../../types/boardTypes";
 import { AnimatePresence, motion } from "framer-motion";
-import { useDrop, useDrag } from "react-dnd";
-import { Identifier } from "dnd-core";
-import { DragTypes } from "../../utils/dragTypes";
-import { moveCard } from "../../services/feature/board/boardSlice";
-import { useAppDispatch } from "../../services/store/hooks";
-import { useNavigate } from "react-router-dom";
+import { IBoard } from "../../types/boardsTypes";
 
 type TBoardCardProps = {
-  data: IBoard | IBoardTemplates;
-  hasOptions: boolean;
-  onDelete: (id: string, type: string) => void;
-  index: number;
+  hasOptions?: boolean;
+  data: IBoard;
 };
 
-export const BoardCard: FC<TBoardCardProps> = ({
-  data,
-  hasOptions,
-  onDelete,
-  index,
-}) => {
+export const BoardCard: FC<TBoardCardProps> = ({ hasOptions, data }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const myRef = useRef<HTMLDivElement | null>(null);
-  const { id } = data;
-  const dispatch = useAppDispatch();
 
-  const navigate = useNavigate();
-
-  const [{ handlerId }, drop] = useDrop<
-    { index: number },
-    void,
-    { handlerId: Identifier | null }
-  >({
-    accept: DragTypes.CARD,
-    collect: (monitor) => ({
-      handlerId: monitor?.getHandlerId(),
-    }),
-    hover(item, monitor) {
-      if (!myRef.current || data.type !== "column") {
-        return;
-      }
-
-      const dragIndex = item.index;
-      const hoverIndex = index;
-      if (dragIndex === hoverIndex) {
-        return;
-      }
-
-      const hoverBoundingRect = myRef.current.getBoundingClientRect();
-
-      const hoverMiddleY =
-        (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2;
-
-      const clientOffset = monitor.getClientOffset();
-      const hoverClientY = clientOffset!.y - hoverBoundingRect.top;
-
-      if (
-        (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) ||
-        (dragIndex > hoverIndex && hoverClientY > hoverMiddleY)
-      ) {
-        return;
-      }
-      dispatch(moveCard({ dragIndex, hoverIndex }));
-      item.index = hoverIndex;
-    },
-  });
-
-  const [{ opacity }, drag] = useDrag({
-    type: DragTypes.CARD,
-    item: () => {
-      return { id, index };
-    },
-    collect: (monitor) => ({
-      opacity: monitor.isDragging() ? 0.4 : 1,
-    }),
-  });
-
-  drag(drop(myRef));
-
-  const handleOpenMenu = (e: React.MouseEvent<SVGSVGElement>): void => {
-    e.stopPropagation();
+  const handleOpenMenu = (): void => {
     setIsVisible(!isVisible);
   };
 
   return (
     <div
-      style={{ backgroundImage: `url(${data.background})`, opacity }}
+      style={{ backgroundImage: `url(${data.background}` }}
       className={`${styles.boardBtn} p-4`}
-      data-handler-id={handlerId}
-      ref={myRef}
-      onClick={() => navigate(`boards/${id}`)}
     >
       {hasOptions && (
         <FontAwesomeIcon
@@ -116,10 +43,7 @@ export const BoardCard: FC<TBoardCardProps> = ({
             exit={{ opacity: 0, clipPath: "circle(0.4% at 100% 0)" }}
           >
             <button
-              onClick={(e) => {
-                e.stopPropagation();
-                onDelete(data.id, data.type);
-              }}
+              // onClick={() => onDelete(data.id)}
               className={styles.menuBtn}
             >
               <span>Delete</span>
@@ -135,15 +59,7 @@ export const BoardCard: FC<TBoardCardProps> = ({
           </motion.div>
         )}
       </AnimatePresence>
-
       <h4 className="font-medium text-lg mb-3">{data.name}</h4>
-      {data.purpose && (
-        <span
-          className={`${styles.cardInfo} font-normal text-base pt-2 pb-3 pl-2`}
-        >
-          {data.purpose}
-        </span>
-      )}
     </div>
   );
 };

@@ -1,0 +1,15 @@
+.modalInput {
+  composes: input from "../../pages/LoginPage/LoginPage.module.css";
+}
+
+.bgOptions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-height: 180px;
+  overflow: auto;
+  max-width: 350px;
+  width: 100%;
+  gap: 8px;
+}

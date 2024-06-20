@@ -22,6 +22,7 @@ import {
   getBoards,
   getTemplates,
 } from "../../services/feature/boards/boardsSlice";
+import { getBackgroundOptions } from "../../services/feature/modal/modalSlice";
 
 const App = () => {
   const location = useLocation();
@@ -31,6 +32,7 @@ const App = () => {
     dispatch(checkUserAuth());
     dispatch(getBoards());
     dispatch(getTemplates());
+    dispatch(getBackgroundOptions());
   }, [dispatch]);
 
   return (

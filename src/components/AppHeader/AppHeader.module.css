@@ -30,6 +30,11 @@
   font-size: 18px;
 }
 
+.navLink:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
 .formWrapper {
   composes: header-flex;
   gap: 8px;

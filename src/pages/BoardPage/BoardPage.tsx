@@ -5,15 +5,22 @@ import { BoardList } from "../../components/BoardList/BoardList";
 import { useAppDispatch, useAppSelector } from "../../services/store/hooks";
 import { setModalOpen } from "../../services/feature/modal/modalSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faSleigh } from "@fortawesome/free-solid-svg-icons";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { shallowEqual } from "react-redux";
+import { Modal } from "../../components/Modal/Modal";
+import { CreateMenu } from "../../components/CreateMenu/CreateMenu";
 
 export const BoardPage: FC = () => {
   const dispatch = useAppDispatch();
+  const isModalOpen = useAppSelector((store) => store.modal.isModalOpen);
 
-  const { boards, templates } = useAppSelector((store) => ({
-    boards: store.boards.boards,
-    templates: store.boards.templates,
-  }));
+  const { boards, templates } = useAppSelector(
+    (store) => ({
+      boards: store.boards.boards,
+      templates: store.boards.templates,
+    }),
+    shallowEqual
+  );
 
   const handleModalOpen = (content?: string): void => {
     dispatch(setModalOpen(content));
@@ -45,6 +52,11 @@ export const BoardPage: FC = () => {
         array={templates}
         options={false}
       ></BoardList>
+      {isModalOpen && (
+        <Modal onClose={() => handleModalOpen()}>
+          <CreateMenu />
+        </Modal>
+      )}
     </motion.section>
   );
 };

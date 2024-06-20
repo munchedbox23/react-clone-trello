@@ -7,7 +7,7 @@ import { useForm } from "../../hooks/useForm";
 import { forgotPassword } from "../../services/feature/user/auth";
 import { useNavigate } from "react-router";
 import { ROUTE } from "../../utils/constants";
-import { Preloader } from "../../components/Preloader/Preloader";
+import { Preloader } from "../../ui/Preloader/Preloader";
 import { formVariants } from "../../utils/animationVariants";
 
 export const ForgotPasswordPage: FC = () => {

@@ -1,0 +1,28 @@
+.backgroundgOption {
+  cursor: pointer;
+  position: relative;
+  width: 72px;
+  height: 72px;
+}
+
+.image {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+}
+
+.selectedOption {
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+}
+
+.selectedOption::after {
+  content: "✔";
+  display: block;
+  font-size: 25px;
+  height: 20px;
+  color: var(--primary);
+  position: absolute;
+  bottom: 10px;
+  right: -5px;
+}

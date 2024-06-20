@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { AppHeader } from "../../components/AppHeader/AppHeader";
 import { Outlet } from "react-router";
-import { Preloader } from "../../components/Preloader/Preloader";
+import { Preloader } from "../../ui/Preloader/Preloader";
 import { Panel } from "../../components/Panel/Panel";
 import styles from "./MainLayout.module.css";
 import { useAppSelector } from "../../services/store/hooks";

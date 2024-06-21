@@ -9,23 +9,19 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { shallowEqual } from "react-redux";
 import { Modal } from "../../components/Modal/Modal";
 import { CreateMenu } from "../../components/CreateMenu/CreateMenu";
+import { selectBoardsByUser } from "../../services/feature/boards/boardSelectors";
 
 export const BoardPage: FC = () => {
   const dispatch = useAppDispatch();
-  const isModalOpen = useAppSelector((store) => store.modal.isModalOpen);
-  const user = useAppSelector((store) => store.user.user);
-
-  const { boards, templates } = useAppSelector(
+  const { isModalOpen, templates } = useAppSelector(
     (store) => ({
-      boards: store.boards.boards,
+      isModalOpen: store.modal.isModalOpen,
       templates: store.boards.templates,
     }),
     shallowEqual
   );
 
-  const filteredBoardsByUser = boards.filter(
-    (board) => board.user === user?.email
-  );
+  const filteredBoardsByUser = useAppSelector(selectBoardsByUser);
 
   const handleModalOpen = (content?: string): void => {
     dispatch(setModalOpen(content));

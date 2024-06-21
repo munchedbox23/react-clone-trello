@@ -19,7 +19,16 @@ export interface IFormBoard {
 }
 
 export const CreateMenu = () => {
-  const user = useAppSelector((store) => store.user.user);
+  const { modalContent, backgroundOptions, optionsLoading, user } =
+    useAppSelector(
+      (store) => ({
+        modalContent: store.modal.modalContent,
+        backgroundOptions: store.modal.backgroundOptions,
+        optionsLoading: store.modal.optionsLoading,
+        user: store.user.user,
+      }),
+      shallowEqual
+    );
   const { formState, onChange, setFormState } = useForm<IFormBoard>({
     name: "",
     background: "",
@@ -28,14 +37,6 @@ export const CreateMenu = () => {
 
   const [selectedBackground, setSelectedBackground] = useState<string>(
     formState.background
-  );
-  const { modalContent, backgroundOptions, optionsLoading } = useAppSelector(
-    (store) => ({
-      modalContent: store.modal.modalContent,
-      backgroundOptions: store.modal.backgroundOptions,
-      optionsLoading: store.modal.optionsLoading,
-    }),
-    shallowEqual
   );
   const dispatch = useAppDispatch();
 

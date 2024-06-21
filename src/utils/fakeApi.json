@@ -1,10 +1,34 @@
 {
   "boards": [
     {
-      "id": "ea62be55-e0a2-4bf0-8334-665bb19adabd",
+      "id": "b5eae1e3-7cd5-4f13-ba71-9e38177d4335",
       "type": "board",
-      "name": "Class",
-      "background": "https://images.unsplash.com/photo-1718603630685-d2605d5190e8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw1fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=85",
+      "name": "CarProject",
+      "background": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=400",
+      "user": "test230@test.ru",
+      "columns": []
+    },
+    {
+      "id": "5e092b71-0146-4bb8-886d-21304dd7c968",
+      "type": "board",
+      "name": "WorkingTasks",
+      "background": "https://images.unsplash.com/photo-1718603630685-d2605d5190e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw1fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=400",
+      "user": "test230@test.ru",
+      "columns": []
+    },
+    {
+      "id": "03e89fb2-f15d-4331-a057-aa8abf32acc8",
+      "type": "board",
+      "name": "Plans",
+      "background": "https://images.unsplash.com/photo-1718817502686-1fa1c2e8b108?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw3fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=400",
+      "user": "test230@test.ru",
+      "columns": []
+    },
+    {
+      "id": "648c0d1d-e5a3-41d7-982e-365cd74659c1",
+      "type": "board",
+      "name": "Hobbies",
+      "background": "https://images.unsplash.com/photo-1718889874468-3a56b84bb2e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwyfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=400",
       "user": "test230@test.ru",
       "columns": []
     }

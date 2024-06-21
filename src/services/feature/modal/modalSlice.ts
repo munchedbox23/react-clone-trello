@@ -56,7 +56,7 @@ export const modalSlice = createSlice({
       })
       .addCase(getBackgroundOptions.fulfilled, (state, { payload }) => {
         state.backgroundOptions = payload.map(
-          (item: IPhoto) => item.urls.full
+          (item: IPhoto) => item.urls.small
         );
         state.optionsLoading = false;
       });

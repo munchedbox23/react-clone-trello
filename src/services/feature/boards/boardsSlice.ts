@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IBoard } from "../../../types/boardsTypes";
 import { request } from "../../../utils/requests";
 import { IFormBoard } from "../../../components/CreateMenu/CreateMenu";
@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 
 export type TBoardsSliceState = {
   boards: IBoard[];
+  filteredBoards: IBoard[];
   templates: IBoard[];
   isRequestFailed: boolean;
   isRequestLoading: boolean;
@@ -13,6 +14,7 @@ export type TBoardsSliceState = {
 
 export const initialState: TBoardsSliceState = {
   boards: [],
+  filteredBoards: [],
   templates: [],
   isRequestLoading: false,
   isRequestFailed: false,
@@ -86,7 +88,14 @@ export const deleteBoard = createAsyncThunk<IBoard, string>(
 export const boardsSlice = createSlice({
   name: "boards",
   initialState,
-  reducers: {},
+  reducers: {
+    filteredBoardsByName: (state, action: PayloadAction<string>) => {
+      const searchTerm = action.payload.toLowerCase();
+      state.boards = [...state.filteredBoards].filter((board) =>
+        board.name.toLowerCase().includes(searchTerm)
+      );
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getBoards.pending, (state) => {
@@ -95,6 +104,7 @@ export const boardsSlice = createSlice({
       })
       .addCase(getBoards.fulfilled, (state, { payload }) => {
         state.boards = payload;
+        state.filteredBoards = payload;
         state.isRequestLoading = false;
         state.isRequestFailed = false;
       })
@@ -155,5 +165,5 @@ export const boardsSlice = createSlice({
   },
 });
 
-export const {} = boardsSlice.actions;
+export const { filteredBoardsByName } = boardsSlice.actions;
 export default boardsSlice.reducer;

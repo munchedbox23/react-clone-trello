@@ -9,6 +9,7 @@ import { useLocation, useSearchParams } from "react-router-dom";
 import { selectBoardsByUser } from "../../services/feature/boards/boardSelectors";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import { filteredBoardsByName } from "../../services/feature/boards/boardsSlice";
 
 export const AppHeader: FC = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -22,7 +23,9 @@ export const AppHeader: FC = () => {
   };
 
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setSearchParams({ ...searchParams, [e.target.name]: e.target.value });
+    const searchTerm = e.target.value;
+    setSearchParams({ ...searchParams, [e.target.name]: searchTerm });
+    dispatch(filteredBoardsByName(searchTerm));
   };
 
   return (
@@ -62,7 +65,10 @@ export const AppHeader: FC = () => {
                     key={board.id}
                     className={headerStyles.dropdownItem}
                   >
-                    <img src={board.background} alt="search image" />
+                    <img
+                      src={board.background}
+                      alt={`Background for ${board.name}`}
+                    />
                     <h5 className="text-base font-medium">{board.name}</h5>
                   </Link>
                 ))

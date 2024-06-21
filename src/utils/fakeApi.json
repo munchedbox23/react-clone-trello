@@ -1,5 +1,14 @@
 {
-  "boards": [],
+  "boards": [
+    {
+      "id": "ea62be55-e0a2-4bf0-8334-665bb19adabd",
+      "type": "board",
+      "name": "Class",
+      "background": "https://images.unsplash.com/photo-1718603630685-d2605d5190e8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw1fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=85",
+      "user": "test230@test.ru",
+      "columns": []
+    }
+  ],
   "templates": [
     {
       "id": "fd39",

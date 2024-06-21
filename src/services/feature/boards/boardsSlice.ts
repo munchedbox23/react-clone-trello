@@ -18,6 +18,23 @@ export const initialState: TBoardsSliceState = {
   isRequestFailed: false,
 };
 
+export const updateBoard = createAsyncThunk<IBoard, IBoard>(
+  "boards/updateBoard",
+  async (board) => {
+    const response = await request<IBoard>(
+      `http://localhost:3000/boards/${board.id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(board),
+      }
+    );
+    return response;
+  }
+);
+
 export const getBoards = createAsyncThunk<IBoard[], undefined>(
   "boards/getBoards",
   async () => {
@@ -119,6 +136,19 @@ export const boardsSlice = createSlice({
         state.isRequestLoading = false;
       })
       .addCase(deleteBoard.rejected, (state) => {
+        state.isRequestFailed = true;
+        state.isRequestLoading = false;
+      })
+      .addCase(updateBoard.pending, (state) => {
+        state.isRequestLoading = true;
+      })
+      .addCase(updateBoard.fulfilled, (state, { payload }) => {
+        const index = state.boards.findIndex((item) => item.id === payload.id);
+        if (index !== -1) state.boards[index] = payload;
+        state.isRequestFailed = false;
+        state.isRequestLoading = false;
+      })
+      .addCase(updateBoard.rejected, (state) => {
         state.isRequestFailed = true;
         state.isRequestLoading = false;
       });

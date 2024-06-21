@@ -70,6 +70,18 @@
   color: #fff;
 }
 
+.editForm {
+  display: flex;
+  gap: 8px;
+}
+
+.editInput {
+  padding: 5px 0px 5px 15px;
+  outline: none;
+  border-radius: 16px;
+  width: 60%;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;

@@ -1,7 +1,7 @@
 <h1 align="center">Trello Clone</h1>
 
 <div align="center">
-  <img src="https://s3.printskrin.ru/printskrin/413c5bf6-streamtube/2024/06/18/trello-main.png" alt="trello-main.png" border="0" />
+  <img src="https://s3.printskrin.ru/printskrin/413c5bf6-streamtube/2024/06/21/trello-main.png" alt="trello-main.png" border="0" />
 </div>
 
 <h2>Оглавление</h2>

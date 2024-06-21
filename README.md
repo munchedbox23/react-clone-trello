@@ -11,6 +11,7 @@
   <li><a href="#установка">Установка</a></li>
   <li><a href="#функционал">Функционал</a></li>
   <li><a href="#планы">Дальнейшие планы</a></li>
+  <li><a href="#скриншоты">Скриншоты</a></li>
 </ol>
 
 <h2 id="описание-проекта">1. Описание проекта</h2>
@@ -52,3 +53,10 @@
 
 <h2 id="планы">5. Дальнейшие планы</h2>
 <p align="center">На данный момент проект находится в процессе разработки</p>
+
+<h2 id="функционал">6. Скриншоты</h2>
+
+<div align="center">
+  <img src="https://s3.printskrin.ru/printskrin/413c5bf6-streamtube/2024/06/21/trello-first-scr.png" alt="trello-first-scr.png" border="0" />
+  <img src="https://s3.printskrin.ru/printskrin/413c5bf6-streamtube/2024/06/21/trello-second-scr.png" alt="trello-second-scr.png" border="0" />
+</div>

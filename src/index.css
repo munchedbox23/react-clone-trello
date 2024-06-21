@@ -5,25 +5,25 @@
 
 @font-face {
   font-family: "Noto Sans";
-  src: url("./fonts/NotoSans.woff") format("woff");
+  src: url("../src/assets/fonts/NotoSans.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Noto Sans";
-  src: url("./fonts/NotoSans-Bold.woff") format("woff");
+  src: url("../src/assets/fonts/NotoSans-Bold.woff") format("woff");
   font-weight: bold;
 }
 
 @font-face {
   font-family: "Droid Sans";
-  src: url("./fonts/DroidSans.ttf") format("ttf");
+  src: url("../src/assets/fonts/DroidSans.ttf") format("ttf");
 }
 
 @font-face {
   font-family: "Segoe UI";
-  src: url("./fonts/Segoe UI.ttf") format("ttf");
+  src: url("../src/assets/fonts/Segoe UI.ttf") format("ttf");
 }
 
 * {

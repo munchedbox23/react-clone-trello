@@ -1,4 +1,4 @@
-import Logo from "../../images/logo.png";
+import Logo from "../../assets/images/logo.png";
 import { Outlet } from "react-router";
 import styles from "./AuthLayout.module.css";
 import { Preloader } from "../../ui/Preloader/Preloader";

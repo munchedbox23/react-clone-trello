@@ -1,19 +1,29 @@
-import { useAppSelector } from "../../services/store/hooks";
+import { useAppDispatch, useAppSelector } from "../../services/store/hooks";
 import { Form } from "../Form/Form";
 import styles from "./CreateMenu.module.css";
 import { useForm } from "../../hooks/useForm";
 import { PrimaryButton } from "../../ui";
 import "../../pages/LoginPage/LoginPage.module.css";
 import { BackgroundOption } from "../../ui/BackgroundOption/BackgroundOption";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { DotsLoader } from "../../ui/Preloader/DotsLoader/DotsLoader";
 import { shallowEqual } from "react-redux";
+import { postBoards } from "../../services/feature/boards/boardsSlice";
+import { setModalOpen } from "../../services/feature/modal/modalSlice";
+
+export interface IFormBoard {
+  name: string;
+  background: string;
+  user: string;
+}
 
 export const CreateMenu = () => {
-  const { formState, onChange, setFormState } = useForm({
+  const user = useAppSelector((store) => store.user.user);
+  const { formState, onChange, setFormState } = useForm<IFormBoard>({
     name: "",
-    background: "clck.ru/3BNSJH",
+    background: "",
+    user: user ? user.email : "test@test.ru",
   });
 
   const [selectedBackground, setSelectedBackground] = useState<string>(
@@ -27,6 +37,7 @@ export const CreateMenu = () => {
     }),
     shallowEqual
   );
+  const dispatch = useAppDispatch();
 
   const handleBackgroundSelect = (background: string) => {
     setSelectedBackground(background);
@@ -36,15 +47,19 @@ export const CreateMenu = () => {
     });
   };
 
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    dispatch(postBoards(formState));
+    setFormState({
+      name: "",
+      background: "",
+      user: user ? user.email : "test@test.ru",
+    });
+    dispatch(setModalOpen());
+  };
+
   return (
-    <Form
-      modalForm={true}
-      onSubmit={(e) => {
-        e.preventDefault();
-        console.log(backgroundOptions);
-      }}
-      title={modalContent?.title}
-    >
+    <Form modalForm={true} onSubmit={handleSubmit} title={modalContent?.title}>
       <input
         autoComplete="off"
         type="text"
@@ -83,7 +98,10 @@ export const CreateMenu = () => {
           // onChange={onChange}
         />
       )}
-      <PrimaryButton isDisabled={false} text="Save" />
+      <PrimaryButton
+        isDisabled={!formState.name || !formState.background}
+        text="Save"
+      />
     </Form>
   );
 };

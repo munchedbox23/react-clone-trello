@@ -5,7 +5,7 @@ export interface ITemplatesColumn {
 }
 
 export interface IBoard {
-  _id: string;
+  id: string;
   type: "template" | "board";
   name: string;
   background: string;

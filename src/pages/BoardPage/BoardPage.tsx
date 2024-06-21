@@ -13,6 +13,7 @@ import { CreateMenu } from "../../components/CreateMenu/CreateMenu";
 export const BoardPage: FC = () => {
   const dispatch = useAppDispatch();
   const isModalOpen = useAppSelector((store) => store.modal.isModalOpen);
+  const user = useAppSelector((store) => store.user.user);
 
   const { boards, templates } = useAppSelector(
     (store) => ({
@@ -20,6 +21,10 @@ export const BoardPage: FC = () => {
       templates: store.boards.templates,
     }),
     shallowEqual
+  );
+
+  const filteredBoardsByUser = boards.filter(
+    (board) => board.user === user?.email
   );
 
   const handleModalOpen = (content?: string): void => {
@@ -36,7 +41,7 @@ export const BoardPage: FC = () => {
         title="My boards"
         subtitle="Here you can manage your boards"
         options
-        array={boards}
+        array={filteredBoardsByUser}
       >
         <button
           onClick={() => handleModalOpen("create-board")}

@@ -8,6 +8,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence, motion } from "framer-motion";
 import { IBoard } from "../../types/boardsTypes";
+import { useAppDispatch } from "../../services/store/hooks";
+import { deleteBoard } from "../../services/feature/boards/boardsSlice";
 
 type TBoardCardProps = {
   hasOptions?: boolean;
@@ -16,9 +18,14 @@ type TBoardCardProps = {
 
 export const BoardCard: FC<TBoardCardProps> = ({ hasOptions, data }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const dispatch = useAppDispatch();
 
   const handleOpenMenu = (): void => {
     setIsVisible(!isVisible);
+  };
+
+  const handleDelete = (id: string) => {
+    dispatch(deleteBoard(id));
   };
 
   return (
@@ -43,7 +50,7 @@ export const BoardCard: FC<TBoardCardProps> = ({ hasOptions, data }) => {
             exit={{ opacity: 0, clipPath: "circle(0.4% at 100% 0)" }}
           >
             <button
-              // onClick={() => onDelete(data.id)}
+              onClick={() => handleDelete(data.id)}
               className={styles.menuBtn}
             >
               <span>Delete</span>

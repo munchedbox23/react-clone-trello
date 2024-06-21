@@ -26,10 +26,10 @@ export const BoardList: FC<PropsWithChildren<TBoardListProps<IBoard>>> = ({
       <ul className={styles.list}>
         {array &&
           array.map((item) => (
-            <BoardCard data={item} hasOptions={options} key={item._id} />
+            <BoardCard data={item} hasOptions={options} key={item.id} />
           ))}
+        {children}
       </ul>
-      {children}
     </article>
   );
 };

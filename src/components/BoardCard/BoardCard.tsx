@@ -16,6 +16,7 @@ import {
   updateBoard,
 } from "../../services/feature/boards/boardsSlice";
 import { useForm } from "../../hooks/useForm";
+import { useNavigate } from "react-router";
 
 type TBoardCardProps = {
   hasOptions?: boolean;
@@ -29,6 +30,7 @@ export const BoardCard: FC<TBoardCardProps> = ({ hasOptions, data }) => {
     name: "",
   });
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (data) {
@@ -63,6 +65,7 @@ export const BoardCard: FC<TBoardCardProps> = ({ hasOptions, data }) => {
     <div
       style={{ backgroundImage: `url(${data.background}` }}
       className={`${styles.boardBtn} p-4`}
+      onClick={() => navigate(`/boards/${data.id}`)}
     >
       {hasOptions && (
         <FontAwesomeIcon

@@ -28,7 +28,7 @@ export const BoardPage: FC = () => {
   };
   return (
     <motion.section
-      className="pt-2"
+      className="pt-2 overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

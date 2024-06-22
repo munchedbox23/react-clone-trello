@@ -28,6 +28,12 @@ export const AppHeader: FC = () => {
     dispatch(filteredBoardsByName(searchTerm));
   };
 
+  const handleClearSearch = (): void => {
+    setSearchParams({ ...searchParams, search: "" });
+    setShowDropdown(false);
+    dispatch(filteredBoardsByName(""));
+  };
+
   return (
     <header className={`${headerStyles.header} p-6`}>
       <img src={Logo} alt="Trello Logo" />
@@ -46,7 +52,7 @@ export const AppHeader: FC = () => {
             maxLength={500}
             value={searchParams.get("search") || ""}
             onFocus={() => setShowDropdown(true)}
-            onBlur={() => setShowDropdown(false)}
+            onBlur={handleClearSearch}
           />
         </div>
         <AnimatePresence mode="wait">

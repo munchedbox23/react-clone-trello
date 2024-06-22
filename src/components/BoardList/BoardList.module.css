@@ -1,4 +1,4 @@
-.boardsList {
+.boardList {
   display: flex;
   flex-direction: column;
 }

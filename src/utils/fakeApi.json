@@ -4,7 +4,14 @@
       "id": "b5eae1e3-7cd5-4f13-ba71-9e38177d4335",
       "type": "board",
       "name": "CarProject",
-      "background": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=400",
+      "background": {
+        "raw": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3",
+        "full": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=85",
+        "regular": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=1080",
+        "small": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=400",
+        "thumb": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=200",
+        "small_s3": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1718489211836-65a20ad6bd8d"
+      },
       "user": "test230@test.ru",
       "columns": []
     },
@@ -12,7 +19,14 @@
       "id": "5e092b71-0146-4bb8-886d-21304dd7c968",
       "type": "board",
       "name": "WorkingTasks",
-      "background": "https://images.unsplash.com/photo-1718603630685-d2605d5190e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw1fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=400",
+      "background": {
+        "raw": "https://images.unsplash.com/photo-1718603630685-d2605d5190e8?ixid=M3w2MjQyOTV8MHwxfGFsbHw1fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3",
+        "full": "https://images.unsplash.com/photo-1718603630685-d2605d5190e8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw1fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=85",
+        "regular": "https://images.unsplash.com/photo-1718603630685-d2605d5190e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw1fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=1080",
+        "small": "https://images.unsplash.com/photo-1718603630685-d2605d5190e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw1fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=400",
+        "thumb": "https://images.unsplash.com/photo-1718603630685-d2605d5190e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw1fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=200",
+        "small_s3": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1718603630685-d2605d5190e8"
+      },
       "user": "test230@test.ru",
       "columns": []
     },
@@ -20,7 +34,14 @@
       "id": "03e89fb2-f15d-4331-a057-aa8abf32acc8",
       "type": "board",
       "name": "Plans",
-      "background": "https://images.unsplash.com/photo-1718817502686-1fa1c2e8b108?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw3fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=400",
+      "background": {
+        "raw": "https://images.unsplash.com/photo-1718817502686-1fa1c2e8b108?ixid=M3w2MjQyOTV8MHwxfGFsbHw3fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3",
+        "full": "https://images.unsplash.com/photo-1718817502686-1fa1c2e8b108?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw3fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=85",
+        "regular": "https://images.unsplash.com/photo-1718817502686-1fa1c2e8b108?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw3fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=1080",
+        "small": "https://images.unsplash.com/photo-1718817502686-1fa1c2e8b108?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw3fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=400",
+        "thumb": "https://images.unsplash.com/photo-1718817502686-1fa1c2e8b108?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw3fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=200",
+        "small_s3": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1718817502686-1fa1c2e8b108"
+      },
       "user": "test230@test.ru",
       "columns": []
     },
@@ -28,8 +49,30 @@
       "id": "648c0d1d-e5a3-41d7-982e-365cd74659c1",
       "type": "board",
       "name": "Hobbies",
-      "background": "https://images.unsplash.com/photo-1718889874468-3a56b84bb2e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwyfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=400",
+      "background": {
+        "raw": "https://images.unsplash.com/photo-1718889874468-3a56b84bb2e7?ixid=M3w2MjQyOTV8MHwxfGFsbHwyfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3",
+        "full": "https://images.unsplash.com/photo-1718889874468-3a56b84bb2e7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwyfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=85",
+        "regular": "https://images.unsplash.com/photo-1718889874468-3a56b84bb2e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwyfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=1080",
+        "small": "https://images.unsplash.com/photo-1718889874468-3a56b84bb2e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwyfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=400",
+        "thumb": "https://images.unsplash.com/photo-1718889874468-3a56b84bb2e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwyfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=200",
+        "small_s3": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1718889874468-3a56b84bb2e7"
+      },
       "user": "test230@test.ru",
+      "columns": []
+    },
+    {
+      "id": "c1b46c20-fbb6-4698-a94c-13182270a9a1",
+      "type": "board",
+      "name": "gwsg",
+      "background": {
+        "raw": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3",
+        "full": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=85",
+        "regular": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=1080",
+        "small": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=400",
+        "thumb": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=200",
+        "small_s3": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1718489211836-65a20ad6bd8d"
+      },
+      "user": "egor032324@mail.ru",
       "columns": []
     }
   ],
@@ -38,7 +81,14 @@
       "id": "fd39",
       "name": "Company Overview",
       "type": "template",
-      "background": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x320/4315f9a5b3c78f696d170e9b626a44d6/e2d2752f.jpg",
+      "background": {
+        "raw": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x320/4315f9a5b3c78f696d170e9b626a44d6/e2d2752f.jpg",
+        "full": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x320/4315f9a5b3c78f696d170e9b626a44d6/e2d2752f.jpg",
+        "regular": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x320/4315f9a5b3c78f696d170e9b626a44d6/e2d2752f.jpg",
+        "small": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x320/4315f9a5b3c78f696d170e9b626a44d6/e2d2752f.jpg",
+        "thumb": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x320/4315f9a5b3c78f696d170e9b626a44d6/e2d2752f.jpg",
+        "small_s3": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x320/4315f9a5b3c78f696d170e9b626a44d6/e2d2752f.jpg"
+      },
       "columns": [
         {
           "id": "7d99ad56-ac67-4e1e-8a98-3043a8d97646",
@@ -66,7 +116,14 @@
       "id": "05f9",
       "name": "Design Huddle",
       "type": "template",
-      "background": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x1920/e963f778758253bf4ee3214285303fee/photo-1500462918059-b1a0cb512f1d.jpg",
+      "background": {
+        "raw": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x1920/e963f778758253bf4ee3214285303fee/photo-1500462918059-b1a0cb512f1d.jpg",
+        "full": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x1920/e963f778758253bf4ee3214285303fee/photo-1500462918059-b1a0cb512f1d.jpg",
+        "regular": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x1920/e963f778758253bf4ee3214285303fee/photo-1500462918059-b1a0cb512f1d.jpg",
+        "small": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x1920/e963f778758253bf4ee3214285303fee/photo-1500462918059-b1a0cb512f1d.jpg",
+        "thumb": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x1920/e963f778758253bf4ee3214285303fee/photo-1500462918059-b1a0cb512f1d.jpg",
+        "small_s3": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x1920/e963f778758253bf4ee3214285303fee/photo-1500462918059-b1a0cb512f1d.jpg"
+      },
       "columns": [
         {
           "id": "385b7ef3-2515-4e87-afcb-0b57666cf514",
@@ -99,7 +156,14 @@
       "id": "2a74",
       "name": "Kanban Template",
       "type": "template",
-      "background": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2386x1600/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg",
+      "background": {
+        "raw": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2386x1600/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg",
+        "full": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2386x1600/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg",
+        "regular": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2386x1600/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg",
+        "small": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2386x1600/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg",
+        "thumb": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2386x1600/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg",
+        "small_s3": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2386x1600/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg"
+      },
       "columns": [
         {
           "id": "e91c7ea2-a88c-449b-a58e-b7b063f06aef",
@@ -127,7 +191,14 @@
       "id": "6f6b",
       "name": "Remote Team Mettings",
       "type": "template",
-      "background": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/3059x2048/c9d5ee8cb6a7691ce11e89b0bd28c587/photo-1516553174826-d05833723cd4",
+      "background": {
+        "raw": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/3059x2048/c9d5ee8cb6a7691ce11e89b0bd28c587/photo-1516553174826-d05833723cd4",
+        "full": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/3059x2048/c9d5ee8cb6a7691ce11e89b0bd28c587/photo-1516553174826-d05833723cd4",
+        "regular": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/3059x2048/c9d5ee8cb6a7691ce11e89b0bd28c587/photo-1516553174826-d05833723cd4",
+        "small": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/3059x2048/c9d5ee8cb6a7691ce11e89b0bd28c587/photo-1516553174826-d05833723cd4",
+        "thumb": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/3059x2048/c9d5ee8cb6a7691ce11e89b0bd28c587/photo-1516553174826-d05833723cd4",
+        "small_s3": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/3059x2048/c9d5ee8cb6a7691ce11e89b0bd28c587/photo-1516553174826-d05833723cd4"
+      },
       "columns": [
         {
           "id": "e91c7ea2-a88c-449b-a58e-b7b063f06aef",

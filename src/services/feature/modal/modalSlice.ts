@@ -8,14 +8,20 @@ type TModalState = {
   isModalOpen: boolean;
   optionsLoading: boolean;
   modalContent: TModalContent | null;
-  backgroundOptions: Array<string>;
+  backgroundOptions: Array<{
+    raw: string;
+    full: string;
+    regular: string;
+    small: string;
+    thumb: string;
+  }> | null;
 };
 
 const initialState: TModalState = {
   isModalOpen: false,
   modalContent: null,
   optionsLoading: false,
-  backgroundOptions: [],
+  backgroundOptions: null,
 };
 
 export const getBackgroundOptions = createAsyncThunk(
@@ -55,9 +61,7 @@ export const modalSlice = createSlice({
         state.optionsLoading = true;
       })
       .addCase(getBackgroundOptions.fulfilled, (state, { payload }) => {
-        state.backgroundOptions = payload.map(
-          (item: IPhoto) => item.urls.small
-        );
+        state.backgroundOptions = payload.map((item: IPhoto) => item.urls);
         state.optionsLoading = false;
       });
   },

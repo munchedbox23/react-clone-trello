@@ -4,11 +4,19 @@ export interface ITemplatesColumn {
   tasks: Array<string>;
 }
 
+export interface IBackground {
+  raw: string;
+  full: string;
+  regular: string;
+  small: string;
+  thumb: string;
+}
+
 export interface IBoard {
   id: string;
   type: "template" | "board";
   name: string;
-  background: string;
+  background: IBackground;
   columns: ITemplatesColumn[];
   user: string;
 }

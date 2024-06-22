@@ -11,10 +11,11 @@ import { DotsLoader } from "../../ui/Preloader/DotsLoader/DotsLoader";
 import { shallowEqual } from "react-redux";
 import { postBoards } from "../../services/feature/boards/boardsSlice";
 import { setModalOpen } from "../../services/feature/modal/modalSlice";
+import { IBackground } from "../../types/boardsTypes";
 
 export interface IFormBoard {
   name: string;
-  background: string;
+  background: IBackground;
   user: string;
 }
 
@@ -31,17 +32,23 @@ export const CreateMenu = () => {
     );
   const { formState, onChange, setFormState } = useForm<IFormBoard>({
     name: "",
-    background: "",
+    background: {
+      raw: "",
+      full: "",
+      regular: "",
+      small: "",
+      thumb: "",
+    },
     user: user ? user.email : "test@test.ru",
   });
 
   const [selectedBackground, setSelectedBackground] = useState<string>(
-    formState.background
+    formState.background.small
   );
   const dispatch = useAppDispatch();
 
-  const handleBackgroundSelect = (background: string) => {
-    setSelectedBackground(background);
+  const handleBackgroundSelect = (background: IBackground) => {
+    setSelectedBackground(background.small);
     setFormState({
       ...formState,
       background,
@@ -53,7 +60,13 @@ export const CreateMenu = () => {
     dispatch(postBoards(formState));
     setFormState({
       name: "",
-      background: "",
+      background: {
+        raw: "",
+        full: "",
+        regular: "",
+        small: "",
+        thumb: "",
+      },
       user: user ? user.email : "test@test.ru",
     });
     dispatch(setModalOpen());
@@ -72,15 +85,15 @@ export const CreateMenu = () => {
       />
       {modalContent?.title === "Create Board" ? (
         <div className={`${styles.bgOptions} p-2`}>
-          {!optionsLoading ? (
+          {!optionsLoading && backgroundOptions ? (
             backgroundOptions
               .slice(0, 8)
               .map((background, index) => (
                 <BackgroundOption
                   key={uuidv4()}
-                  imageSrc={background}
+                  imageSrc={background.small}
                   name={`Option ${index + 1}`}
-                  isSelected={selectedBackground === background}
+                  isSelected={selectedBackground === background.small}
                   onClick={() => handleBackgroundSelect(background)}
                 />
               ))

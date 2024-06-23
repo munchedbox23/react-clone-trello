@@ -13,7 +13,13 @@
         "small_s3": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1718489211836-65a20ad6bd8d"
       },
       "user": "test230@test.ru",
-      "columns": []
+      "columns": [
+        {
+          "id": "b5d15233-c6f0-4219-9512-799bba2d5ef0",
+          "title": "Ts\n",
+          "tasks": []
+        }
+      ]
     },
     {
       "id": "5e092b71-0146-4bb8-886d-21304dd7c968",
@@ -30,18 +36,8 @@
       "user": "test230@test.ru",
       "columns": [
         {
-          "id": "49a21ada-10db-4d18-84be-323abe7aa1e4",
-          "title": "new column",
-          "tasks": []
-        },
-        {
-          "id": "ceaf5f0f-4fdd-43b8-ae59-2a43c9e1f826",
-          "title": "new column",
-          "tasks": []
-        },
-        {
-          "id": "7924e89a-05a5-450a-a4f7-6d3f6cab597b",
-          "title": "new column",
+          "id": "99075369-73fb-4cc0-a6be-c465adb1f08b",
+          "title": "JS\n",
           "tasks": []
         }
       ]

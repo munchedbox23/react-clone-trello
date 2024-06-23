@@ -9,12 +9,16 @@
 .columnsContainer {
   width: 100%;
   height: calc(100vh - 45px);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
 }
 
 .addColumnBtn {
   display: flex;
   justify-content: flex-start;
   padding: 12px;
+  height: 45px;
   border-radius: 12px;
   background-color: #a4a4a49f;
   align-items: center;
@@ -27,4 +31,71 @@
   box-shadow: none;
   border: none;
   background-color: #a6c5e229;
+}
+
+.columnForm {
+  border-radius: 12px;
+  padding: 8px;
+  width: 272px;
+  background-color: #f1f2f4;
+  height: 100px;
+  max-height: 260px;
+}
+
+.columnArea {
+  width: 100%;
+  min-height: 20px;
+  height: 32px;
+  max-height: 256px;
+  padding: 6px 12px;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px #091e4224;
+  font-weight: 600;
+  resize: none;
+  overflow-wrap: break-word;
+  color: #172b4d;
+  border: none;
+  outline: none;
+  transition: background-color, box-shadow 0.85s ease;
+}
+
+.columnArea:hover {
+  background-color: #f7f8f9;
+  box-shadow: inset 0 0 0 1px #091e4224;
+}
+
+.columnArea:focus {
+  background-color: #fff;
+  box-shadow: inset 0 0 0 2px #388bff;
+}
+
+.buttonsArea {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 8px;
+  border-radius: 4px;
+  gap: 10px;
+}
+
+.addListBtn {
+  border: none;
+  background-color: var(--primary);
+  box-shadow: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 6px 12px;
+  border-radius: 3px;
+}
+
+.areaIcon {
+  font-size: 20px;
+  border: none;
+  padding: 6px;
+}
+
+.areaIcon:hover {
+  background-color: #091e4224;
+  border-radius: 4px;
 }

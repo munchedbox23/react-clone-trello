@@ -36,9 +36,57 @@
       "user": "test230@test.ru",
       "columns": [
         {
-          "id": "3d3ae241-d443-44a4-8204-b290a6859594",
-          "title": "JS",
-          "tasks": []
+          "id": "4d78e994-a3e1-4627-b196-35f7339ec843",
+          "title": "To Do",
+          "tasks": [
+            {
+              "id": "bc095536-1697-41c6-a58f-fc7f179fbbc1",
+              "title": "Task 1",
+              "description": ""
+            },
+            {
+              "id": "31d053d6-4cc5-4983-b53f-dd1e96196319",
+              "title": "Task2",
+              "description": ""
+            },
+            {
+              "id": "686a140e-a3f1-4974-a38d-70b19236d313",
+              "title": "Task 3",
+              "description": ""
+            },
+            {
+              "id": "ad9d6f3e-ea49-4f04-8a5a-1f36bd8e572b",
+              "title": "Task 4",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "189c5e6c-de51-4344-be59-d993b491614f",
+          "title": "In Process",
+          "tasks": [
+            {
+              "id": "68fa0cbb-d405-4284-bb7e-b7ec4b97e1d9",
+              "title": "Task 5",
+              "description": ""
+            },
+            {
+              "id": "a4e37f02-4cdb-4f18-b552-a3077e894ff0",
+              "title": "Task 6",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "6470273f-d5ab-4d82-9166-a12ae0cba55e",
+          "title": "Done\n",
+          "tasks": [
+            {
+              "id": "b6ba2d4d-ce74-45bd-9586-8a2aa474aded",
+              "title": "Task 7",
+              "description": ""
+            }
+          ]
         }
       ]
     },

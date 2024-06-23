@@ -12,7 +12,7 @@
   position: relative;
   flex-direction: column;
   justify-content: space-between;
-  width: 272px;
+  width: 282px;
   max-height: 100%;
   padding-bottom: 8px;
   border-radius: 12px;
@@ -145,4 +145,10 @@
 
 .options > svg {
   color: red;
+}
+
+.cardList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }

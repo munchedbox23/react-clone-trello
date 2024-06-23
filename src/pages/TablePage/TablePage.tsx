@@ -74,6 +74,13 @@ export const TablePage: FC = () => {
     dispatch(updateColumns({ boardId, columns: updatedColumns }));
   };
 
+  const deleteColumn = (boardId: string, columnId: string) => {
+    const updatedColumns = state.boardColumns.filter(
+      (column) => column.id !== columnId
+    );
+    dispatch(updateColumns({ boardId, columns: updatedColumns }));
+  };
+
   return (
     <>
       <div
@@ -82,7 +89,7 @@ export const TablePage: FC = () => {
       >
         <TableHeader />
         <div className={cn(styles.columnsContainer, "px-6 py-5")}>
-          <ul>
+          <ul className={styles.columnList}>
             {currentBoard?.columns.map((item) => (
               <ColumnList
                 key={item.id}
@@ -90,6 +97,7 @@ export const TablePage: FC = () => {
                 columnId={item.id}
                 boardId={currentBoard.id}
                 updateColumnName={updateColumnName}
+                deleteColumn={deleteColumn}
               />
             ))}
           </ul>

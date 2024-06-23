@@ -124,3 +124,25 @@
   gap: 4px;
   background-color: #091e4224;
 }
+
+.options {
+  position: absolute;
+  z-index: 40;
+  right: 10px;
+  top: 40px;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  background-color: rgb(170, 170, 170);
+  border-radius: 8px;
+  padding: 6px 2px 5px 12px;
+  transition: background-color 0.85s ease;
+}
+
+.options:hover {
+  background-color: rgb(148, 148, 148);
+}
+
+.options > svg {
+  color: red;
+}

@@ -1,8 +1,9 @@
 import { FC, useRef, useState } from "react";
 import columnStyles from "./ColumnList.module.css";
 import cn from "classnames";
-import { faEllipsis, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faEllipsis, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { motion } from "framer-motion";
 
 type TColumnListProps = {
   name: string;
@@ -13,6 +14,7 @@ type TColumnListProps = {
     columnId: string,
     newName: string
   ) => void;
+  deleteColumn: (boardId: string, columnId: string) => void;
 };
 
 export const ColumnList: FC<TColumnListProps> = ({
@@ -20,12 +22,14 @@ export const ColumnList: FC<TColumnListProps> = ({
   columnId,
   boardId,
   updateColumnName,
+  deleteColumn,
 }) => {
   const [columnState, setColumnState] = useState({
     isEditing: false,
+    isOptionsOpen: false,
     columnName: name,
   });
-  const { isEditing, columnName } = columnState;
+  const { isEditing, columnName, isOptionsOpen } = columnState;
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const handleEditActive = () => {
@@ -83,9 +87,25 @@ export const ColumnList: FC<TColumnListProps> = ({
           <FontAwesomeIcon
             className={columnStyles.columnIcon}
             icon={faEllipsis}
+            onClick={() =>
+              setColumnState((prevState) => ({
+                ...prevState,
+                isOptionsOpen: !prevState.isOptionsOpen,
+              }))
+            }
           />
         </header>
-
+        {isOptionsOpen && (
+          <motion.div
+            className={columnStyles.options}
+            initial={{ y: "-20px" }}
+            animate={{ y: 0 }}
+            exit={{ y: "-20px" }}
+            onClick={() => deleteColumn(boardId, columnId)}
+          >
+            <FontAwesomeIcon icon={faTrash} />
+          </motion.div>
+        )}
         <button className={cn(columnStyles.columnFooter)}>
           <FontAwesomeIcon icon={faPlus} />
           <span className="text-base font-semibold">Add a card</span>

@@ -28,7 +28,23 @@
         "small_s3": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1718603630685-d2605d5190e8"
       },
       "user": "test230@test.ru",
-      "columns": []
+      "columns": [
+        {
+          "id": "49a21ada-10db-4d18-84be-323abe7aa1e4",
+          "title": "new column",
+          "tasks": []
+        },
+        {
+          "id": "ceaf5f0f-4fdd-43b8-ae59-2a43c9e1f826",
+          "title": "new column",
+          "tasks": []
+        },
+        {
+          "id": "7924e89a-05a5-450a-a4f7-6d3f6cab597b",
+          "title": "new column",
+          "tasks": []
+        }
+      ]
     },
     {
       "id": "03e89fb2-f15d-4331-a057-aa8abf32acc8",

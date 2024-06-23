@@ -5,3 +5,26 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.columnsContainer {
+  width: 100%;
+  height: calc(100vh - 45px);
+}
+
+.addColumnBtn {
+  display: flex;
+  justify-content: flex-start;
+  padding: 12px;
+  border-radius: 12px;
+  background-color: #a4a4a49f;
+  align-items: center;
+  color: #fff;
+  gap: 8px;
+  transition: background-color 0.5s ease;
+}
+
+.addColumnBtn:hover {
+  box-shadow: none;
+  border: none;
+  background-color: #a6c5e229;
+}

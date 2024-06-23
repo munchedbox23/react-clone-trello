@@ -1,4 +1,4 @@
-export interface ITemplatesColumn {
+export interface IColumn {
   id: string;
   title: string;
   tasks: Array<string>;
@@ -17,7 +17,7 @@ export interface IBoard {
   type: "template" | "board";
   name: string;
   background: IBackground;
-  columns: ITemplatesColumn[];
+  columns: IColumn[];
   user: string;
 }
 

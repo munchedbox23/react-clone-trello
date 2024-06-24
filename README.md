@@ -62,4 +62,5 @@
   <img src="https://s3.printskrin.ru/printskrin/413c5bf6-streamtube/2024/06/23/trello-board.png" alt="trello-board.png" border="0" />
   <img src="https://s3.printskrin.ru/printskrin/413c5bf6-streamtube/2024/06/23/create-trello.png" alt="create-trello.png" border="0" />
   <img src="https://s3.printskrin.ru/printskrin/413c5bf6-streamtube/2024/06/23/login-trello.png" alt="login-trello.png" border="0" />
+  <img src="https://s3.printskrin.ru/printskrin/413c5bf6-streamtube/2024/06/24/filling-trello-board.png" alt="filling-trello-board.png" border="0" />
 </div>

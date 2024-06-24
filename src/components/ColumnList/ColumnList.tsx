@@ -8,6 +8,8 @@ import { MCardForm } from "../../ui/CardForm/CardForm";
 import { useForm } from "../../hooks/useForm";
 import { IBoard, ITask } from "../../types/boardsTypes";
 import { ColumnCard } from "../ColumnCard/ColumnCard";
+import { useDrag, useDrop } from "react-dnd";
+import { Identifier, XYCoord } from "dnd-core";
 
 type TColumnListProps = {
   name: string;
@@ -21,12 +23,20 @@ type TColumnListProps = {
   deleteColumn: (boardId: string, columnId: string) => void;
   addCard: (boardId: string, columnId: string, card: string) => void;
   tasks: ITask[];
+  index: number;
+  moveColumn: (boardId: string, dragIndex: number, hoverIndex: number) => void;
 };
 
 interface IState {
   isEditing: boolean;
   isOptionsOpen: boolean;
   showAddMenu: boolean;
+}
+
+interface IDragItem {
+  index: number;
+  id: string;
+  type: string;
 }
 
 export const ColumnList: FC<TColumnListProps> = ({
@@ -37,6 +47,8 @@ export const ColumnList: FC<TColumnListProps> = ({
   deleteColumn,
   addCard,
   tasks,
+  index,
+  moveColumn,
 }) => {
   const [columnState, setColumnState] = useState<IState>({
     isEditing: false,
@@ -44,7 +56,8 @@ export const ColumnList: FC<TColumnListProps> = ({
     showAddMenu: false,
   });
   const { isEditing, isOptionsOpen, showAddMenu } = columnState;
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const textareaRef = useRef<HTMLInputElement>(null);
+  const dndRef = useRef<HTMLLIElement>(null);
   const { formState, onChange, setFormState } = useForm<{
     columnName: string;
     cardName: string;
@@ -83,8 +96,68 @@ export const ColumnList: FC<TColumnListProps> = ({
     });
   };
 
+  const [{ handlerId }, drop] = useDrop<
+    IDragItem,
+    void,
+    { handlerId: Identifier | null }
+  >({
+    accept: "column",
+    collect: (monitor) => ({
+      handlerId: monitor.getHandlerId(),
+    }),
+    hover(item: IDragItem, monitor) {
+      if (!dndRef.current) return;
+
+      const dragIndex = item.index;
+      const hoverIndex = index;
+
+      if (dragIndex === hoverIndex) {
+        return;
+      }
+
+      const hoverBoundingRect = dndRef.current?.getBoundingClientRect();
+
+      const hoverMiddleY =
+        (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2;
+
+      const clientOffset = monitor.getClientOffset();
+
+      const hoverClientY = (clientOffset as XYCoord).y - hoverBoundingRect.top;
+
+      if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
+        return;
+      }
+
+      if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
+        return;
+      }
+
+      moveColumn(board.id, dragIndex, hoverIndex);
+
+      item.index = hoverIndex;
+    },
+  });
+
+  const [{ opacity }, drag] = useDrag({
+    type: "column",
+    item: () => {
+      return { columnId, index };
+    },
+    collect: (monitor: any) => ({
+      opacity: monitor.isDragging() ? 0.5 : 1,
+    }),
+  });
+
+  drag(drop(dndRef));
+
   return (
-    <li data-testid="columnList" className={columnStyles.column}>
+    <li
+      data-handler-id={handlerId}
+      data-testid="columnList"
+      className={columnStyles.column}
+      style={{ opacity}}
+      ref={dndRef}
+    >
       <div className={cn(columnStyles.columnTarget, "px-2")}>
         <header className={columnStyles.header}>
           <div className={columnStyles.textContainer}>
@@ -100,7 +173,7 @@ export const ColumnList: FC<TColumnListProps> = ({
             >
               {formState.columnName}
             </h2>
-            <textarea
+            <input
               className={cn(columnStyles.textArea, {
                 [columnStyles.textEditing]: isEditing,
               })}
@@ -112,7 +185,7 @@ export const ColumnList: FC<TColumnListProps> = ({
               onChange={onChange}
               ref={textareaRef}
               onBlur={handleEditSubmit}
-            ></textarea>
+            />
           </div>
 
           <FontAwesomeIcon

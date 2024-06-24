@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import { TableHeader } from "../../components/TableHeader/TableHeader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { ChangeEvent, FC, useState, useEffect } from "react";
+import { FC, useState, useEffect } from "react";
 import { IColumn } from "../../types/boardsTypes";
 import { updateColumns } from "../../services/feature/boards/boardsSlice";
 import cn from "classnames";
@@ -13,6 +13,8 @@ import { AnimatePresence } from "framer-motion";
 import { ColumnList } from "../../components/ColumnList/ColumnList";
 import { MCardForm } from "../../ui/CardForm/CardForm";
 import { useForm } from "../../hooks/useForm";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
 interface IState {
   isVisible: boolean;
@@ -103,6 +105,22 @@ export const TablePage: FC = () => {
     dispatch(updateColumns({ boardId, columns: updatedColumns }));
   };
 
+  const moveColumn = (
+    boardId: string,
+    dragIndex: number,
+    hoverIndex: number
+  ) => {
+    const temp = state.boardColumns[dragIndex];
+    const updatedColumns = [...state.boardColumns];
+    updatedColumns.splice(dragIndex, 1);
+    updatedColumns.splice(hoverIndex, 0, temp);
+    dispatch(updateColumns({ boardId, columns: updatedColumns }));
+    setState({
+      ...state,
+      boardColumns: updatedColumns,
+    });
+  };
+
   return (
     <>
       <div
@@ -111,20 +129,25 @@ export const TablePage: FC = () => {
       >
         <TableHeader />
         <div className={cn(styles.columnsContainer, "px-6 py-5")}>
-          <ol className={styles.columnList}>
-            {currentBoard?.columns.map((item) => (
-              <ColumnList
-                key={item.id}
-                name={item.title}
-                columnId={item.id}
-                board={currentBoard}
-                updateColumnName={updateColumnName}
-                deleteColumn={deleteColumn}
-                addCard={addNewCard}
-                tasks={item.tasks}
-              />
-            ))}
-          </ol>
+          <DndProvider backend={HTML5Backend}>
+            <ol className={styles.columnList}>
+              {currentBoard?.columns.map((item, index) => (
+                <ColumnList
+                  index={index}
+                  key={item.id}
+                  name={item.title}
+                  columnId={item.id}
+                  board={currentBoard}
+                  updateColumnName={updateColumnName}
+                  deleteColumn={deleteColumn}
+                  addCard={addNewCard}
+                  tasks={item.tasks}
+                  moveColumn={moveColumn}
+                />
+              ))}
+            </ol>
+          </DndProvider>
+
           <AnimatePresence mode="wait">
             {state.isVisible ? (
               <MCardForm

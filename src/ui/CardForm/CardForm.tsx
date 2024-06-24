@@ -1,13 +1,13 @@
 import formStyles from "./CardForm.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { forwardRef, ChangeEvent } from "react";
+import { forwardRef, ChangeEvent, FormEvent } from "react";
 import { motion } from "framer-motion";
 
 type TCardFormProps = {
   value: string;
   onClose: () => void;
-  handleChangeValue: (e: ChangeEvent<HTMLTextAreaElement>) => void;
+  handleChangeValue: (e: ChangeEvent<HTMLInputElement>) => void;
   onClick: () => void;
   buttonText: string;
   areaName: string;
@@ -19,8 +19,12 @@ export const CardForm = forwardRef<HTMLFormElement, TCardFormProps>(
     ref
   ) => {
     return (
-      <form ref={ref} className={formStyles.columnForm}>
-        <textarea
+      <form
+        onSubmit={(e: FormEvent<HTMLFormElement>) => e.preventDefault()}
+        ref={ref}
+        className={formStyles.columnForm}
+      >
+        <input
           placeholder="Enter the title of the list"
           autoComplete="off"
           name={areaName}
@@ -30,7 +34,7 @@ export const CardForm = forwardRef<HTMLFormElement, TCardFormProps>(
           dir="auto"
           onChange={handleChangeValue}
           value={value}
-        ></textarea>
+        />
         <div className={formStyles.buttonsArea}>
           <button
             type="button"

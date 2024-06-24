@@ -66,27 +66,6 @@
           ]
         },
         {
-          "id": "0f3a0332-7851-4b52-b0fe-17774930a2c4",
-          "title": "Current Projects",
-          "tasks": [
-            {
-              "id": "e4e2c06a-1e8c-476a-a03a-5bd96f9bdef0",
-              "title": "Develop Engineering Blog",
-              "description": ""
-            },
-            {
-              "id": "a2a6f8b3-ed6c-40b3-8578-3673863318d0",
-              "title": "Brand Guidelines",
-              "description": ""
-            },
-            {
-              "id": "6fa658cf-9af7-4005-8db2-dce130951b2e",
-              "title": "Analytics Data",
-              "description": ""
-            }
-          ]
-        },
-        {
           "id": "a6a443d5-3ee6-431d-92fa-0d40cbe5341d",
           "title": "Completed Projects",
           "tasks": [
@@ -103,6 +82,27 @@
             {
               "id": "140d2b8a-6078-427a-b697-53d5a73b0c3e",
               "title": "Update Help Documentation",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "0f3a0332-7851-4b52-b0fe-17774930a2c4",
+          "title": "Current Projects",
+          "tasks": [
+            {
+              "id": "e4e2c06a-1e8c-476a-a03a-5bd96f9bdef0",
+              "title": "Develop Engineering Blog",
+              "description": ""
+            },
+            {
+              "id": "a2a6f8b3-ed6c-40b3-8578-3673863318d0",
+              "title": "Brand Guidelines",
+              "description": ""
+            },
+            {
+              "id": "6fa658cf-9af7-4005-8db2-dce130951b2e",
+              "title": "Analytics Data",
               "description": ""
             }
           ]

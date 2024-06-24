@@ -1,3 +1,14 @@
+.task-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.cardBanner {
+  composes: task-flex;
+  width: 650px;
+}
+
 .cardDetailHeader {
   min-height: 32px;
   padding: 8px 52px 8px 56px;
@@ -9,12 +20,18 @@
   width: 90%;
 }
 
-.cardBanner {
-  display: flex;
-  width: 650px;
-  justify-content: flex-start;
-}
-
 .windowTitle {
   width: 100%;
+}
+
+.cardDescription {
+  composes: task-flex;
+  padding-left: 55px;
+  align-items: flex-start;
+}
+
+.descriptionTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }

@@ -39,10 +39,10 @@ export const TaskDetails: FC<TTaskDetailsProps> = ({ onUpdateTaskName }) => {
           />
         </div>
       </header>
-      <div className={styles.cardDescription}>
+      <div className={cn(styles.cardDescription, "mt-8")}>
         <div className={styles.descriptionTitle}>
           <FontAwesomeIcon icon={faBarsStaggered} />
-          <h3>description</h3>
+          <h3 className="text-base font-bold">Description</h3>
         </div>
         <div className={styles.descriptionContent}></div>
       </div>

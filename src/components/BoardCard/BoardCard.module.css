@@ -21,6 +21,7 @@
   min-height: 80%;
   position: absolute;
   width: 100%;
+  z-index: 40;
   background-color: transparent;
   bottom: 0;
   left: 0;

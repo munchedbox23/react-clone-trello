@@ -4,7 +4,14 @@
       "id": "b5eae1e3-7cd5-4f13-ba71-9e38177d4335",
       "type": "board",
       "name": "CarProject",
-      "background": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=400",
+      "background": {
+        "raw": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3",
+        "full": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=85",
+        "regular": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=1080",
+        "small": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=400",
+        "thumb": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=200",
+        "small_s3": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1718489211836-65a20ad6bd8d"
+      },
       "user": "test230@test.ru",
       "columns": []
     },
@@ -12,15 +19,140 @@
       "id": "5e092b71-0146-4bb8-886d-21304dd7c968",
       "type": "board",
       "name": "WorkingTasks",
-      "background": "https://images.unsplash.com/photo-1718603630685-d2605d5190e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw1fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=400",
+      "background": {
+        "raw": "https://images.unsplash.com/photo-1718603630685-d2605d5190e8?ixid=M3w2MjQyOTV8MHwxfGFsbHw1fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3",
+        "full": "https://images.unsplash.com/photo-1718603630685-d2605d5190e8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw1fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=85",
+        "regular": "https://images.unsplash.com/photo-1718603630685-d2605d5190e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw1fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=1080",
+        "small": "https://images.unsplash.com/photo-1718603630685-d2605d5190e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw1fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=400",
+        "thumb": "https://images.unsplash.com/photo-1718603630685-d2605d5190e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw1fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=200",
+        "small_s3": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1718603630685-d2605d5190e8"
+      },
       "user": "test230@test.ru",
-      "columns": []
+      "columns": [
+        {
+          "id": "da12df66-6d3c-4ee9-a07a-530088d8df93",
+          "title": "Teams",
+          "tasks": [
+            {
+              "id": "e72ad443-201a-46ad-b68d-6e1a75600755",
+              "title": "Product",
+              "description": ""
+            },
+            {
+              "id": "8413b5d0-2949-436f-a813-16037a5543ab",
+              "title": "Marketing",
+              "description": ""
+            },
+            {
+              "id": "718c586f-d8f0-4eed-beea-91df3ed5f586",
+              "title": "Sales",
+              "description": ""
+            },
+            {
+              "id": "61acce6d-d604-4b32-b64a-5b6b74d44609",
+              "title": "Support",
+              "description": ""
+            },
+            {
+              "id": "1faa7a64-3e65-470e-8053-81b105f3ecc2",
+              "title": "People",
+              "description": ""
+            },
+            {
+              "id": "15c20978-4b3f-4e2b-989d-bc5023d62e7f",
+              "title": "IT",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "a6a443d5-3ee6-431d-92fa-0d40cbe5341d",
+          "title": "Completed Projects",
+          "tasks": [
+            {
+              "id": "915c2cb0-858a-48cd-b1fb-dc5555b2c70a",
+              "title": "Website Redesign",
+              "description": ""
+            },
+            {
+              "id": "fe437e4d-fd77-4d07-9933-0ae9ac6903e5",
+              "title": "Social Media Campaign",
+              "description": ""
+            },
+            {
+              "id": "140d2b8a-6078-427a-b697-53d5a73b0c3e",
+              "title": "Update Help Documentation",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "0f3a0332-7851-4b52-b0fe-17774930a2c4",
+          "title": "Current Projects",
+          "tasks": [
+            {
+              "id": "e4e2c06a-1e8c-476a-a03a-5bd96f9bdef0",
+              "title": "Develop Engineering Blog",
+              "description": ""
+            },
+            {
+              "id": "a2a6f8b3-ed6c-40b3-8578-3673863318d0",
+              "title": "Brand Guidelines",
+              "description": ""
+            },
+            {
+              "id": "6fa658cf-9af7-4005-8db2-dce130951b2e",
+              "title": "Analytics Data",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "49dd92ee-81f3-47f9-a22b-2ba0a72a9eb9",
+          "title": "TO DO",
+          "tasks": [
+            {
+              "id": "5d31619c-04ad-4fcc-9050-0460a168dde0",
+              "title": "Vacuum the floors",
+              "description": ""
+            },
+            {
+              "id": "a39107d2-484f-4bd8-bda3-7fdf6ebc36ed",
+              "title": "Help mom around the house",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "d5d7c35d-b30f-43bf-b4b7-6ebc8ae984e7",
+          "title": "IN PROCESS",
+          "tasks": [
+            {
+              "id": "d14dbaea-5cf8-4d11-b5d0-8ddecca2b704",
+              "title": "Remove the dust",
+              "description": ""
+            },
+            {
+              "id": "dbcf9c3e-ade2-441c-8c6f-ba6cc83e1a53",
+              "title": "To be interviewed",
+              "description": ""
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "03e89fb2-f15d-4331-a057-aa8abf32acc8",
       "type": "board",
       "name": "Plans",
-      "background": "https://images.unsplash.com/photo-1718817502686-1fa1c2e8b108?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw3fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=400",
+      "background": {
+        "raw": "https://images.unsplash.com/photo-1718817502686-1fa1c2e8b108?ixid=M3w2MjQyOTV8MHwxfGFsbHw3fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3",
+        "full": "https://images.unsplash.com/photo-1718817502686-1fa1c2e8b108?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw3fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=85",
+        "regular": "https://images.unsplash.com/photo-1718817502686-1fa1c2e8b108?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw3fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=1080",
+        "small": "https://images.unsplash.com/photo-1718817502686-1fa1c2e8b108?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw3fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=400",
+        "thumb": "https://images.unsplash.com/photo-1718817502686-1fa1c2e8b108?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHw3fHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=200",
+        "small_s3": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1718817502686-1fa1c2e8b108"
+      },
       "user": "test230@test.ru",
       "columns": []
     },
@@ -28,8 +160,30 @@
       "id": "648c0d1d-e5a3-41d7-982e-365cd74659c1",
       "type": "board",
       "name": "Hobbies",
-      "background": "https://images.unsplash.com/photo-1718889874468-3a56b84bb2e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwyfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=400",
+      "background": {
+        "raw": "https://images.unsplash.com/photo-1718889874468-3a56b84bb2e7?ixid=M3w2MjQyOTV8MHwxfGFsbHwyfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3",
+        "full": "https://images.unsplash.com/photo-1718889874468-3a56b84bb2e7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwyfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=85",
+        "regular": "https://images.unsplash.com/photo-1718889874468-3a56b84bb2e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwyfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=1080",
+        "small": "https://images.unsplash.com/photo-1718889874468-3a56b84bb2e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwyfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=400",
+        "thumb": "https://images.unsplash.com/photo-1718889874468-3a56b84bb2e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwyfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=200",
+        "small_s3": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1718889874468-3a56b84bb2e7"
+      },
       "user": "test230@test.ru",
+      "columns": []
+    },
+    {
+      "id": "c1b46c20-fbb6-4698-a94c-13182270a9a1",
+      "type": "board",
+      "name": "gwsg",
+      "background": {
+        "raw": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3",
+        "full": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=85",
+        "regular": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=1080",
+        "small": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=400",
+        "thumb": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=200",
+        "small_s3": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1718489211836-65a20ad6bd8d"
+      },
+      "user": "egor032324@mail.ru",
       "columns": []
     }
   ],
@@ -38,7 +192,14 @@
       "id": "fd39",
       "name": "Company Overview",
       "type": "template",
-      "background": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x320/4315f9a5b3c78f696d170e9b626a44d6/e2d2752f.jpg",
+      "background": {
+        "raw": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x320/4315f9a5b3c78f696d170e9b626a44d6/e2d2752f.jpg",
+        "full": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x320/4315f9a5b3c78f696d170e9b626a44d6/e2d2752f.jpg",
+        "regular": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x320/4315f9a5b3c78f696d170e9b626a44d6/e2d2752f.jpg",
+        "small": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x320/4315f9a5b3c78f696d170e9b626a44d6/e2d2752f.jpg",
+        "thumb": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x320/4315f9a5b3c78f696d170e9b626a44d6/e2d2752f.jpg",
+        "small_s3": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x320/4315f9a5b3c78f696d170e9b626a44d6/e2d2752f.jpg"
+      },
       "columns": [
         {
           "id": "7d99ad56-ac67-4e1e-8a98-3043a8d97646",
@@ -66,7 +227,14 @@
       "id": "05f9",
       "name": "Design Huddle",
       "type": "template",
-      "background": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x1920/e963f778758253bf4ee3214285303fee/photo-1500462918059-b1a0cb512f1d.jpg",
+      "background": {
+        "raw": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x1920/e963f778758253bf4ee3214285303fee/photo-1500462918059-b1a0cb512f1d.jpg",
+        "full": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x1920/e963f778758253bf4ee3214285303fee/photo-1500462918059-b1a0cb512f1d.jpg",
+        "regular": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x1920/e963f778758253bf4ee3214285303fee/photo-1500462918059-b1a0cb512f1d.jpg",
+        "small": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x1920/e963f778758253bf4ee3214285303fee/photo-1500462918059-b1a0cb512f1d.jpg",
+        "thumb": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x1920/e963f778758253bf4ee3214285303fee/photo-1500462918059-b1a0cb512f1d.jpg",
+        "small_s3": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x1920/e963f778758253bf4ee3214285303fee/photo-1500462918059-b1a0cb512f1d.jpg"
+      },
       "columns": [
         {
           "id": "385b7ef3-2515-4e87-afcb-0b57666cf514",
@@ -99,7 +267,14 @@
       "id": "2a74",
       "name": "Kanban Template",
       "type": "template",
-      "background": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2386x1600/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg",
+      "background": {
+        "raw": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2386x1600/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg",
+        "full": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2386x1600/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg",
+        "regular": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2386x1600/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg",
+        "small": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2386x1600/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg",
+        "thumb": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2386x1600/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg",
+        "small_s3": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2386x1600/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg"
+      },
       "columns": [
         {
           "id": "e91c7ea2-a88c-449b-a58e-b7b063f06aef",
@@ -127,7 +302,14 @@
       "id": "6f6b",
       "name": "Remote Team Mettings",
       "type": "template",
-      "background": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/3059x2048/c9d5ee8cb6a7691ce11e89b0bd28c587/photo-1516553174826-d05833723cd4",
+      "background": {
+        "raw": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/3059x2048/c9d5ee8cb6a7691ce11e89b0bd28c587/photo-1516553174826-d05833723cd4",
+        "full": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/3059x2048/c9d5ee8cb6a7691ce11e89b0bd28c587/photo-1516553174826-d05833723cd4",
+        "regular": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/3059x2048/c9d5ee8cb6a7691ce11e89b0bd28c587/photo-1516553174826-d05833723cd4",
+        "small": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/3059x2048/c9d5ee8cb6a7691ce11e89b0bd28c587/photo-1516553174826-d05833723cd4",
+        "thumb": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/3059x2048/c9d5ee8cb6a7691ce11e89b0bd28c587/photo-1516553174826-d05833723cd4",
+        "small_s3": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/3059x2048/c9d5ee8cb6a7691ce11e89b0bd28c587/photo-1516553174826-d05833723cd4"
+      },
       "columns": [
         {
           "id": "e91c7ea2-a88c-449b-a58e-b7b063f06aef",

@@ -7,6 +7,8 @@ interface IFormValues {
   email?: string;
   name?: string;
   password?: string;
+  columnName?: string;
+  cardName?: string;
 }
 
 export const useForm = <T extends IFormValues>(input: T) => {
@@ -15,7 +17,9 @@ export const useForm = <T extends IFormValues>(input: T) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const onChange = <T extends HTMLInputElement | HTMLTextAreaElement>(
+    e: ChangeEvent<T>
+  ) => {
     setFormState({
       ...formState,
       [e.target.name]: e.target.value,

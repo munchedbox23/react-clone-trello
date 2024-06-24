@@ -1,0 +1,48 @@
+.columnCard {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  scroll-margin: 80px;
+}
+
+.trelloCard {
+  position: relative;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #172b4d;
+  cursor: pointer;
+  scroll-margin: 8px;
+  z-index: 10;
+  padding: 8px 12px 4px;
+  box-shadow: 0px 1px 1px #091e4240, 0px 0px 1px #091e424f;
+}
+
+.editIcon {
+  width: 15px;
+  padding: 3px;
+  height: 15px;
+  border-radius: 4px;
+  color: #5e6c84;
+  transition: all 0.2s ease-in-out;
+}
+
+.editIcon:hover {
+  background-color: #091e4224;
+}
+
+.hidden {
+  display: none;
+}
+
+.trelloCard:hover .editIcon {
+  display: block;
+}
+
+.trelloCard:hover {
+  outline: 2px solid #388bff;
+  opacity: 1;
+}

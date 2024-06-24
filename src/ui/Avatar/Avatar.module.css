@@ -1,0 +1,34 @@
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileLink {
+  border-radius: 100%;
+  width: 65px;
+  height: 65px;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.profileLink:hover {
+  opacity: 0.85;
+}
+
+.profileText {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.mini {
+  width: 32px;
+  height: 32px;
+}
+
+.textBase {
+  font-size: 1.25rem;
+}

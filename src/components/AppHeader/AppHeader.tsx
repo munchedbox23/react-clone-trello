@@ -67,12 +67,12 @@ export const AppHeader: FC = () => {
               {userBoards.length > 0 ? (
                 userBoards.map((board) => (
                   <Link
-                    to={"/"}
+                    to={`/boards/${board.id}`}
                     key={board.id}
                     className={headerStyles.dropdownItem}
                   >
                     <img
-                      src={board.background}
+                      src={board.background.small}
                       alt={`Background for ${board.name}`}
                     />
                     <h5 className="text-base font-medium">{board.name}</h5>

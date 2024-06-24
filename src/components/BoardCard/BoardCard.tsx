@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState, MouseEvent } from "react";
 import styles from "./BoardCard.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -38,32 +38,37 @@ export const BoardCard: FC<TBoardCardProps> = ({ hasOptions, data }) => {
     }
   }, [setFormState, data]);
 
-  const handleOpenMenu = (): void => {
+  const handleOpenMenu = (e: MouseEvent<SVGSVGElement>): void => {
+    e.stopPropagation();
     setIsVisible(!isVisible);
   };
 
-  const handleDelete = (id: string) => {
+  const handleDelete = (e: MouseEvent<HTMLButtonElement>, id: string) => {
+    e.stopPropagation();
     dispatch(deleteBoard(id));
   };
 
-  const handleUpdate = () => {
+  const handleUpdate = (e: MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
     setIsEditing(true);
     setIsVisible(false);
   };
 
-  const handleSave = () => {
+  const handleSave = (e: MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
     dispatch(updateBoard({ ...data, name: formState.name }));
     setIsEditing(false);
   };
 
-  const handleCancel = () => {
+  const handleCancel = (e: MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
     setFormState({ ...formState, name: data.name });
     setIsEditing(false);
   };
 
   return (
     <div
-      style={{ backgroundImage: `url(${data.background}` }}
+      style={{ backgroundImage: `url(${data.background.small}` }}
       className={`${styles.boardBtn} p-4`}
       onClick={() => navigate(`/boards/${data.id}`)}
     >
@@ -84,7 +89,7 @@ export const BoardCard: FC<TBoardCardProps> = ({ hasOptions, data }) => {
             exit={{ opacity: 0, clipPath: "circle(0.4% at 100% 0)" }}
           >
             <button
-              onClick={() => handleDelete(data.id)}
+              onClick={(e) => handleDelete(e, data.id)}
               className={styles.menuBtn}
             >
               <span>Delete</span>
@@ -108,6 +113,7 @@ export const BoardCard: FC<TBoardCardProps> = ({ hasOptions, data }) => {
             onChange={onChange}
             name="name"
             className={styles.editInput}
+            onClick={(e) => e.stopPropagation()}
           />
           <button
             onClick={handleSave}

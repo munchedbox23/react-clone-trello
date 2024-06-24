@@ -1,15 +1,29 @@
-export interface ITemplatesColumn {
+export interface ITask {
   id: string;
   title: string;
-  tasks: Array<string>;
+  description: string;
+}
+
+export interface IColumn {
+  id: string;
+  title: string;
+  tasks: Array<ITask>;
+}
+
+export interface IBackground {
+  raw: string;
+  full: string;
+  regular: string;
+  small: string;
+  thumb: string;
 }
 
 export interface IBoard {
   id: string;
   type: "template" | "board";
   name: string;
-  background: string;
-  columns: ITemplatesColumn[];
+  background: IBackground;
+  columns: IColumn[];
   user: string;
 }
 

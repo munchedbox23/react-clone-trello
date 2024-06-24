@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IBoard } from "../../../types/boardsTypes";
+import { IBoard, IColumn, ITask } from "../../../types/boardsTypes";
 import { request } from "../../../utils/requests";
 import { IFormBoard } from "../../../components/CreateMenu/CreateMenu";
 import { v4 as uuidv4 } from "uuid";
@@ -9,6 +9,7 @@ export type TBoardsSliceState = {
   filteredBoards: IBoard[];
   templates: IBoard[];
   isRequestFailed: boolean;
+  selectedTask: { task: ITask; boardId: string; columnId: string } | null;
   isRequestLoading: boolean;
 };
 
@@ -16,6 +17,7 @@ export const initialState: TBoardsSliceState = {
   boards: [],
   filteredBoards: [],
   templates: [],
+  selectedTask: null,
   isRequestLoading: false,
   isRequestFailed: false,
 };
@@ -72,6 +74,25 @@ export const postBoards = createAsyncThunk<IBoard, IFormBoard>(
   }
 );
 
+export const updateColumns = createAsyncThunk<
+  IBoard,
+  { boardId: string; columns: IColumn[] }
+>("boards/updateColumns", async ({ boardId, columns }) => {
+  const response = await request<IBoard>(
+    `http://localhost:3000/boards/${boardId}`,
+    {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        columns,
+      }),
+    }
+  );
+  return response;
+});
+
 export const deleteBoard = createAsyncThunk<IBoard, string>(
   "board/deleteBoard",
   async (id) => {
@@ -94,6 +115,12 @@ export const boardsSlice = createSlice({
       state.boards = [...state.filteredBoards].filter((board) =>
         board.name.toLowerCase().includes(searchTerm)
       );
+    },
+    setSelectedTask: (
+      state,
+      action: PayloadAction<{ task: ITask; boardId: string; columnId: string }>
+    ) => {
+      state.selectedTask = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -153,17 +180,33 @@ export const boardsSlice = createSlice({
         state.isRequestLoading = true;
       })
       .addCase(updateBoard.fulfilled, (state, { payload }) => {
-        const index = state.boards.findIndex((item) => item.id === payload.id);
-        if (index !== -1) state.boards[index] = payload;
+        state.boards = state.boards.map((item) =>
+          item.id === payload.id ? payload : item
+        );
         state.isRequestFailed = false;
         state.isRequestLoading = false;
       })
       .addCase(updateBoard.rejected, (state) => {
         state.isRequestFailed = true;
         state.isRequestLoading = false;
+      })
+      .addCase(updateColumns.pending, (state) => {
+        state.isRequestLoading = true;
+        state.isRequestFailed = false;
+      })
+      .addCase(updateColumns.fulfilled, (state, { payload }) => {
+        state.boards = state.boards.map((item) =>
+          item.id === payload.id ? payload : item
+        );
+        state.isRequestFailed = false;
+        state.isRequestLoading = false;
+      })
+      .addCase(updateColumns.rejected, (state) => {
+        state.isRequestFailed = true;
+        state.isRequestLoading = false;
       });
   },
 });
 
-export const { filteredBoardsByName } = boardsSlice.actions;
+export const { filteredBoardsByName, setSelectedTask } = boardsSlice.actions;
 export default boardsSlice.reducer;

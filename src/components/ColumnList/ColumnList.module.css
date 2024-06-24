@@ -1,0 +1,93 @@
+.column {
+  display: block;
+  flex-shrink: 0;
+  align-self: flex-start;
+  padding: 0 6px;
+  height: 100%;
+  white-space: nowrap;
+}
+
+.columnTarget {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 282px;
+  max-height: 100%;
+  padding-bottom: 8px;
+  border-radius: 12px;
+  background-color: #f1f2f4;
+  box-shadow: 0px 1px 1px #091e4240, 0px 0px 1px #091e424f;
+  color: #44546f;
+  vertical-align: top;
+  white-space: normal;
+  scroll-margin: 8px;
+}
+
+.header {
+  display: flex;
+  position: relative;
+  flex-grow: 0;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 8px 2px 0;
+  row-gap: 0;
+}
+
+.columnIcon {
+  padding: 8px;
+  border-radius: 8px;
+  color: #626f86;
+  flex-grow: 0;
+  flex-shrink: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.columnIcon:hover {
+  color: #44546f;
+  background-color: #091e4224;
+}
+
+.columnFooter {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 6px 12px 6px 8px;
+  border-radius: 8px;
+  background-color: transparent;
+  width: 100%;
+  color: #44546f;
+  gap: 4px;
+  background-color: #091e4224;
+}
+
+.options {
+  position: absolute;
+  z-index: 40;
+  right: 8px;
+  top: 40px;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  background-color: rgb(170, 170, 170);
+  border-radius: 8px;
+  padding: 6px 2px 5px 12px;
+  transition: background-color 0.85s ease;
+}
+
+.options:hover {
+  background-color: rgb(148, 148, 148);
+}
+
+.options > svg {
+  color: red;
+}
+
+.cardList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

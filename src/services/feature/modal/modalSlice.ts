@@ -46,12 +46,6 @@ export const modalSlice = createSlice({
           title: "Create Board",
           placeholder: "Board Name",
         };
-      } else if (action?.payload === "add-column") {
-        state.modalContent = {
-          content: "add-column",
-          title: "Add Column",
-          placeholder: "Column name",
-        };
       }
     },
   },

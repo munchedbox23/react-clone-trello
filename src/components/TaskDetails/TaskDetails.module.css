@@ -1,0 +1,20 @@
+.cardDetailHeader {
+  min-height: 32px;
+  padding: 8px 52px 8px 56px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 90%;
+}
+
+.cardBanner {
+  display: flex;
+  width: 650px;
+  justify-content: flex-start;
+}
+
+.windowTitle {
+  width: 100%;
+}

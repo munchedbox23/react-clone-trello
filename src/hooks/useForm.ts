@@ -8,6 +8,7 @@ interface IFormValues {
   name?: string;
   password?: string;
   columnName?: string;
+  cardName?: string;
 }
 
 export const useForm = <T extends IFormValues>(input: T) => {

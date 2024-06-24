@@ -9,7 +9,8 @@ import { useForm } from "../../hooks/useForm";
 import { IBoard, ITask } from "../../types/boardsTypes";
 import { ColumnCard } from "../ColumnCard/ColumnCard";
 import { useDrag, useDrop } from "react-dnd";
-import { Identifier, XYCoord } from "dnd-core";
+import { Identifier } from "dnd-core";
+import { EditableTitle } from "../../ui/EditableTitle/EditableTitle";
 
 type TColumnListProps = {
   name: string;
@@ -28,7 +29,6 @@ type TColumnListProps = {
 };
 
 interface IState {
-  isEditing: boolean;
   isOptionsOpen: boolean;
   showAddMenu: boolean;
 }
@@ -51,38 +51,16 @@ export const ColumnList: FC<TColumnListProps> = ({
   moveColumn,
 }) => {
   const [columnState, setColumnState] = useState<IState>({
-    isEditing: false,
     isOptionsOpen: false,
     showAddMenu: false,
   });
-  const { isEditing, isOptionsOpen, showAddMenu } = columnState;
-  const textareaRef = useRef<HTMLInputElement>(null);
+  const { isOptionsOpen, showAddMenu } = columnState;
   const dndRef = useRef<HTMLLIElement>(null);
   const { formState, onChange, setFormState } = useForm<{
-    columnName: string;
     cardName: string;
   }>({
-    columnName: name,
     cardName: "",
   });
-
-  const handleEditActive = () => {
-    setColumnState({
-      ...columnState,
-      isEditing: true,
-    });
-    textareaRef.current?.focus();
-  };
-
-  const handleEditSubmit = () => {
-    if (formState.columnName !== name) {
-      updateColumnName(board.id, columnId, formState.columnName);
-    }
-    setColumnState({
-      ...columnState,
-      isEditing: false,
-    });
-  };
 
   const handleAddCard = () => {
     addCard(board.id, columnId, formState.cardName);
@@ -115,20 +93,18 @@ export const ColumnList: FC<TColumnListProps> = ({
         return;
       }
 
-      const hoverBoundingRect = dndRef.current?.getBoundingClientRect();
+      const hoverBoundingRect = dndRef.current.getBoundingClientRect();
 
       const hoverMiddleY =
         (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2;
 
       const clientOffset = monitor.getClientOffset();
+      const hoverClientY = clientOffset!.y - hoverBoundingRect.top;
 
-      const hoverClientY = (clientOffset as XYCoord).y - hoverBoundingRect.top;
-
-      if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
-        return;
-      }
-
-      if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
+      if (
+        (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) ||
+        (dragIndex > hoverIndex && hoverClientY > hoverMiddleY)
+      ) {
         return;
       }
 
@@ -155,39 +131,18 @@ export const ColumnList: FC<TColumnListProps> = ({
       data-handler-id={handlerId}
       data-testid="columnList"
       className={columnStyles.column}
-      style={{ opacity}}
+      style={{ opacity }}
       ref={dndRef}
     >
       <div className={cn(columnStyles.columnTarget, "px-2")}>
         <header className={columnStyles.header}>
-          <div className={columnStyles.textContainer}>
-            <h2
-              className={cn(
-                columnStyles.title,
-                { [columnStyles.hidden]: isEditing },
-                "text-base font-semibold"
-              )}
-              dir="auto"
-              role="textbox"
-              onClick={handleEditActive}
-            >
-              {formState.columnName}
-            </h2>
-            <input
-              className={cn(columnStyles.textArea, {
-                [columnStyles.textEditing]: isEditing,
-              })}
-              dir="auto"
-              name="columnName"
-              maxLength={512}
-              spellCheck={false}
-              value={formState.columnName}
-              onChange={onChange}
-              ref={textareaRef}
-              onBlur={handleEditSubmit}
-            />
-          </div>
-
+          <EditableTitle
+            initialValue={name}
+            inputName="columnName"
+            updateName={(newName) =>
+              updateColumnName(board.id, columnId, newName)
+            }
+          />
           <FontAwesomeIcon
             className={columnStyles.columnIcon}
             icon={faEllipsis}
@@ -212,7 +167,12 @@ export const ColumnList: FC<TColumnListProps> = ({
         )}
         <ol className={columnStyles.cardList}>
           {tasks.map((task) => (
-            <ColumnCard key={task.id} cardName={task.title} />
+            <ColumnCard
+              key={task.id}
+              task={task}
+              boardId={board.id}
+              columnId={columnId}
+            />
           ))}
         </ol>
         {showAddMenu ? (

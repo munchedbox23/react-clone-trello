@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IBoard, IColumn } from "../../../types/boardsTypes";
+import { IBoard, IColumn, ITask } from "../../../types/boardsTypes";
 import { request } from "../../../utils/requests";
 import { IFormBoard } from "../../../components/CreateMenu/CreateMenu";
 import { v4 as uuidv4 } from "uuid";
@@ -9,6 +9,7 @@ export type TBoardsSliceState = {
   filteredBoards: IBoard[];
   templates: IBoard[];
   isRequestFailed: boolean;
+  selectedTask: { task: ITask; boardId: string; columnId: string } | null;
   isRequestLoading: boolean;
 };
 
@@ -16,6 +17,7 @@ export const initialState: TBoardsSliceState = {
   boards: [],
   filteredBoards: [],
   templates: [],
+  selectedTask: null,
   isRequestLoading: false,
   isRequestFailed: false,
 };
@@ -114,6 +116,12 @@ export const boardsSlice = createSlice({
         board.name.toLowerCase().includes(searchTerm)
       );
     },
+    setSelectedTask: (
+      state,
+      action: PayloadAction<{ task: ITask; boardId: string; columnId: string }>
+    ) => {
+      state.selectedTask = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -200,5 +208,5 @@ export const boardsSlice = createSlice({
   },
 });
 
-export const { filteredBoardsByName } = boardsSlice.actions;
+export const { filteredBoardsByName, setSelectedTask } = boardsSlice.actions;
 export default boardsSlice.reducer;

@@ -15,6 +15,9 @@ import { MCardForm } from "../../ui/CardForm/CardForm";
 import { useForm } from "../../hooks/useForm";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import { Modal } from "../../components/Modal/Modal";
+import { setModalOpen } from "../../services/feature/modal/modalSlice";
+import { TaskDetails } from "../../components/TaskDetails/TaskDetails";
 
 interface IState {
   isVisible: boolean;
@@ -32,6 +35,7 @@ export const TablePage: FC = () => {
   const currentBoard = useAppSelector((store) => store.boards.boards).find(
     (board) => board.id === tableId
   );
+  const isModalOpen = useAppSelector((store) => store.modal.isModalOpen);
   const dispatch = useAppDispatch();
   const { formState, onChange, setFormState } = useForm<{ columnName: string }>(
     {
@@ -99,6 +103,25 @@ export const TablePage: FC = () => {
               ...column.tasks,
               { id: uuidv4(), title: cardName, description: "" },
             ],
+          }
+        : column
+    );
+    dispatch(updateColumns({ boardId, columns: updatedColumns }));
+  };
+
+  const updateTaskName = (
+    boardId: string,
+    columnId: string,
+    taskId: string,
+    newName: string
+  ) => {
+    const updatedColumns = state.boardColumns.map((column) =>
+      column.id === columnId
+        ? {
+            ...column,
+            tasks: column.tasks.map((task) =>
+              task.id === taskId ? { ...task, title: newName } : task
+            ),
           }
         : column
     );
@@ -188,6 +211,11 @@ export const TablePage: FC = () => {
           </AnimatePresence>
         </div>
       </div>
+      {isModalOpen && (
+        <Modal onClose={() => dispatch(setModalOpen())}>
+          <TaskDetails onUpdateTaskName={updateTaskName} />
+        </Modal>
+      )}
     </>
   );
 };

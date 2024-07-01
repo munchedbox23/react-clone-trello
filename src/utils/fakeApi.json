@@ -30,42 +30,6 @@
       "user": "test230@test.ru",
       "columns": [
         {
-          "id": "da12df66-6d3c-4ee9-a07a-530088d8df93",
-          "title": "Teams",
-          "tasks": [
-            {
-              "id": "e72ad443-201a-46ad-b68d-6e1a75600755",
-              "title": "Product",
-              "description": ""
-            },
-            {
-              "id": "8413b5d0-2949-436f-a813-16037a5543ab",
-              "title": "Marketing",
-              "description": ""
-            },
-            {
-              "id": "718c586f-d8f0-4eed-beea-91df3ed5f586",
-              "title": "Sales",
-              "description": ""
-            },
-            {
-              "id": "61acce6d-d604-4b32-b64a-5b6b74d44609",
-              "title": "Support",
-              "description": ""
-            },
-            {
-              "id": "1faa7a64-3e65-470e-8053-81b105f3ecc2",
-              "title": "People",
-              "description": ""
-            },
-            {
-              "id": "15c20978-4b3f-4e2b-989d-bc5023d62e7f",
-              "title": "IT",
-              "description": ""
-            }
-          ]
-        },
-        {
           "id": "a6a443d5-3ee6-431d-92fa-0d40cbe5341d",
           "title": "Completed Projects",
           "tasks": [
@@ -103,6 +67,42 @@
             {
               "id": "6fa658cf-9af7-4005-8db2-dce130951b2e",
               "title": "Analytics Data",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "da12df66-6d3c-4ee9-a07a-530088d8df93",
+          "title": "Teams",
+          "tasks": [
+            {
+              "id": "e72ad443-201a-46ad-b68d-6e1a75600755",
+              "title": "Product",
+              "description": ""
+            },
+            {
+              "id": "8413b5d0-2949-436f-a813-16037a5543ab",
+              "title": "Marketing",
+              "description": ""
+            },
+            {
+              "id": "718c586f-d8f0-4eed-beea-91df3ed5f586",
+              "title": "Sales",
+              "description": ""
+            },
+            {
+              "id": "61acce6d-d604-4b32-b64a-5b6b74d44609",
+              "title": "Support",
+              "description": ""
+            },
+            {
+              "id": "1faa7a64-3e65-470e-8053-81b105f3ecc2",
+              "title": "People",
+              "description": ""
+            },
+            {
+              "id": "15c20978-4b3f-4e2b-989d-bc5023d62e7f",
+              "title": "IT",
               "description": ""
             }
           ]

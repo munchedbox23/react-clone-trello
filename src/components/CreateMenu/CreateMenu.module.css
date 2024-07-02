@@ -1,7 +1,3 @@
-.modalInput {
-  composes: input from "../../pages/LoginPage/LoginPage.module.css";
-}
-
 .bgOptions {
   display: flex;
   flex-wrap: wrap;

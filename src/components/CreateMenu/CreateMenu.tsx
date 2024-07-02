@@ -3,7 +3,6 @@ import { Form } from "../Form/Form";
 import styles from "./CreateMenu.module.css";
 import { useForm } from "../../hooks/useForm";
 import { PrimaryButton } from "../../ui";
-import "../../pages/LoginPage/LoginPage.module.css";
 import { BackgroundOption } from "../../ui/BackgroundOption/BackgroundOption";
 import { FormEvent, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
@@ -12,6 +11,7 @@ import { shallowEqual } from "react-redux";
 import { postBoards } from "../../services/feature/boards/boardsSlice";
 import { setModalOpen } from "../../services/feature/modal/modalSlice";
 import { IBackground } from "../../types/boardsTypes";
+import Input from "../../ui/Input/Input";
 
 export interface IFormBoard {
   name: string;
@@ -74,12 +74,11 @@ export const CreateMenu = () => {
 
   return (
     <Form modalForm={true} onSubmit={handleSubmit} title={modalContent?.title}>
-      <input
+      <Input
         autoComplete="off"
         type="text"
         name="name"
         placeholder={modalContent?.placeholder}
-        className={styles.modalInput}
         value={formState?.name}
         onChange={onChange}
       />
@@ -107,7 +106,6 @@ export const CreateMenu = () => {
           type="text"
           name="purpose"
           placeholder="Column description"
-          className={styles.modalInput}
           // value={formState?.purpose}
           // onChange={onChange}
         />

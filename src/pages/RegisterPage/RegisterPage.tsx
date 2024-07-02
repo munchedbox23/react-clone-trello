@@ -1,4 +1,3 @@
-import styles from "../LoginPage/LoginPage.module.css";
 import { MForm } from "../../components/Form/Form";
 import { RegisterLinks } from "../../components/Form/FormLinks/FormLinks";
 import { FC } from "react";
@@ -7,6 +6,7 @@ import { useForm } from "../../hooks/useForm";
 import { userRegister } from "../../services/feature/user/auth";
 import { IUserRegister } from "../../types/userTypes";
 import { formVariants } from "../../utils/animationVariants";
+import Input from "../../ui/Input/Input";
 
 export const RegisterPage: FC = () => {
   const { formState, onChange, onSubmit, isFormValid } = useForm<IUserRegister>(
@@ -27,33 +27,30 @@ export const RegisterPage: FC = () => {
       variants={formVariants}
       transition={{ duration: 0.5 }}
     >
-      <input
+      <Input
         required
         autoComplete="name"
         type="text"
         name="name"
         placeholder="Name and Surname"
-        className={styles.input}
         value={formState?.name}
         onChange={onChange}
       />
-      <input
+      <Input
         required
         autoComplete="email"
         type="email"
         name="email"
         placeholder="Email"
-        className={styles.input}
         value={formState?.email}
         onChange={onChange}
       />
-      <input
+      <Input
         required
         autoComplete="new-password"
         type="password"
         name="password"
         placeholder="Password"
-        className={styles.input}
         value={formState?.password}
         onChange={onChange}
       />

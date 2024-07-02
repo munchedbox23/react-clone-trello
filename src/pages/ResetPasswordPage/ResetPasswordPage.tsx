@@ -1,4 +1,3 @@
-import styles from "../LoginPage/LoginPage.module.css";
 import { MForm } from "../../components/Form/Form";
 import { ForgotLinks } from "../../components/Form/FormLinks/FormLinks";
 import { FC, FormEvent } from "react";
@@ -8,6 +7,7 @@ import { Navigate, useNavigate } from "react-router";
 import { useForm } from "../../hooks/useForm";
 import { ROUTE } from "../../utils/constants";
 import { formVariants } from "../../utils/animationVariants";
+import Input from "../../ui/Input/Input";
 
 export const ResetPasswordPage: FC = () => {
   const { formState, isFormValid, onChange, setFormState } = useForm<{
@@ -48,21 +48,19 @@ export const ResetPasswordPage: FC = () => {
       variants={formVariants}
       transition={{ duration: 0.5 }}
     >
-      <input
+      <Input
         autoComplete="new-password"
         type="password"
         name="password"
         placeholder="Password"
-        className={styles.input}
         value={formState.password}
         onChange={onChange}
       />
-      <input
+      <Input
         autoComplete="one-time-code"
         type="text"
         name="token"
         placeholder="Token"
-        className={styles.input}
         value={formState.token}
         onChange={onChange}
       />

@@ -1,5 +1,4 @@
 import styles from "./ProfilePage.module.css";
-import inputStyles from "../LoginPage/LoginPage.module.css";
 import { useAppDispatch, useAppSelector } from "../../services/store/hooks";
 import { useForm } from "../../hooks/useForm";
 import { IUser } from "../../types/userTypes";
@@ -8,6 +7,7 @@ import { editUser } from "../../services/feature/user/auth";
 import { ProfileButtons } from "../../ui/ProfileButtons/ProfileButtons";
 import { motion } from "framer-motion";
 import { inputVariants } from "../../utils/animationVariants";
+import { MInput } from "../../ui/Input/Input";
 
 export interface IProfileForm extends IUser {
   password?: string;
@@ -70,21 +70,19 @@ export const ProfilePage: FC = () => {
         >
           Profile Settings
         </motion.h1>
-        <motion.input
+        <MInput
           value={formState?.name || ""}
           type="text"
           name="name"
-          className={inputStyles.input}
           onChange={onChange}
           variants={inputVariants}
           animate="visible"
           initial="hidden"
           custom={1}
         />
-        <motion.input
+        <MInput
           type="email"
           name="email"
-          className={inputStyles.input}
           autoComplete="new-email"
           value={formState?.email || ""}
           onChange={onChange}
@@ -93,11 +91,10 @@ export const ProfilePage: FC = () => {
           initial="hidden"
           custom={2}
         />
-        <motion.input
+        <MInput
           type="password"
           name="password"
           placeholder="Password"
-          className={inputStyles.input}
           autoComplete="new-password"
           value={formState?.password || ""}
           onChange={onChange}

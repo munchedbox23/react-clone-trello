@@ -1,4 +1,3 @@
-import styles from "../LoginPage/LoginPage.module.css";
 import { MForm } from "../../components/Form/Form";
 import { ForgotLinks } from "../../components/Form/FormLinks/FormLinks";
 import { FC, FormEvent, useState } from "react";
@@ -9,6 +8,7 @@ import { useNavigate } from "react-router";
 import { ROUTE } from "../../utils/constants";
 import { Preloader } from "../../ui/Preloader/Preloader";
 import { formVariants } from "../../utils/animationVariants";
+import Input from "../../ui/Input/Input";
 
 export const ForgotPasswordPage: FC = () => {
   const { formState, setFormState, onChange, isFormValid } = useForm<{
@@ -44,13 +44,12 @@ export const ForgotPasswordPage: FC = () => {
       variants={formVariants}
       transition={{ duration: 0.5 }}
     >
-      <input
+      <Input
         required
         autoComplete="email"
         type="email"
         name="email"
         placeholder="Email"
-        className={styles.input}
         value={formState?.email || ""}
         onChange={onChange}
       />

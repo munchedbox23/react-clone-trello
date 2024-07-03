@@ -28,12 +28,15 @@ const Input = forwardRef<HTMLInputElement, TInputProps>(
           {...props}
         />
         {type === "password" && (
-          <div
+          <motion.div
             className={inputStyles.inputIcon}
             onClick={handleClickShowPassword}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
           >
             {showPassword ? <Visibility /> : <VisibilityOff />}
-          </div>
+          </motion.div>
         )}
       </div>
     );

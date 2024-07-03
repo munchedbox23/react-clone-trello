@@ -184,7 +184,24 @@
         "small_s3": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1718489211836-65a20ad6bd8d"
       },
       "user": "egor032324@mail.ru",
-      "columns": []
+      "columns": [
+        {
+          "id": "1f906363-6e64-4e63-b33c-6bf52bae796f",
+          "title": "egsdgs",
+          "tasks": [
+            {
+              "id": "5b9a4885-7dbc-4df7-8d23-4fd55ed179a8",
+              "title": "gsgsg",
+              "description": ""
+            },
+            {
+              "id": "1187c173-7c9e-4a63-b8f6-a655ffbbe3aa",
+              "title": "gsgsgs",
+              "description": ""
+            }
+          ]
+        }
+      ]
     }
   ],
   "templates": [

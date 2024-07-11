@@ -42,7 +42,7 @@ export const updateBoard = createAsyncThunk<IBoard, IBoard>(
 export const getBoards = createAsyncThunk<IBoard[], undefined>(
   "boards/getBoards",
   async () => {
-    const response = await request<IBoard[]>("http://localhost:3000/boards");
+    const response = await request<IBoard[]>("https://my-json-server.typicode.com/munchedbox/fake-data-base/boards");
     return response;
   }
 );
@@ -58,7 +58,7 @@ export const getTemplates = createAsyncThunk<IBoard[], undefined>(
 export const postBoards = createAsyncThunk<IBoard, IFormBoard>(
   "boards/postBoards",
   async (data) => {
-    const response = await request<IBoard>("http://localhost:3000/boards", {
+    const response = await request<IBoard>("https://my-json-server.typicode.com/munchedbox/fake-data-base/boards", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

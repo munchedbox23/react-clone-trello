@@ -1,7 +1,7 @@
 import { RouterProvider } from "react-router-dom";
 import { useEffect } from "react";
 import { checkUserAuth } from "@/services/feature/user/auth";
-import { useAppDispatch } from "@/services/store/hooks";
+import { useAppDispatch } from "./appStore";
 import { AnimatePresence } from "framer-motion";
 import { getBoards, getTemplates } from "@/services/feature/boards/boardsSlice";
 import { getBackgroundOptions } from "@/services/feature/modal/modalSlice";

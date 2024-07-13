@@ -1,15 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userSlice from "@/services/feature/user/userSlice";
-import modalSlice from "@/services/feature/modal/modalSlice";
-import boardsSlice from "@/services/feature/boards/boardsSlice";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import { rootReducer } from "./rootReducer";
 
 export const store = configureStore({
-  reducer: {
-    user: userSlice,
-    boards: boardsSlice,
-    modal: modalSlice,
-  },
+  reducer: rootReducer,
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(),
 });
 

@@ -24,3 +24,5 @@ yarn-error.log*
 
 tailwind.config
 fakeApi.json
+
+*storybook.log

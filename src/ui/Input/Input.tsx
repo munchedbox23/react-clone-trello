@@ -9,7 +9,7 @@ type TInputProps = InputProps & {
   type: "email" | "text" | "password";
 };
 
-const Input = forwardRef<HTMLInputElement, TInputProps>(
+export const Input = forwardRef<HTMLInputElement, TInputProps>(
   ({ className, type, ...props }, ref) => {
     const [showPassword, setShowPassword] = useState(false);
 
@@ -43,5 +43,4 @@ const Input = forwardRef<HTMLInputElement, TInputProps>(
   }
 );
 
-export default Input;
 export const MInput = motion(Input);

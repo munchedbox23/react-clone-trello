@@ -46,7 +46,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
-    "storybook": "storybook dev -p 6006",
+    "json": "npx jdon-server dev -p 3001",
+    "sb": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "eslintConfig": {

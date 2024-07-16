@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Input } from "./Input";
+import "../../index.css";
 
 const meta: Meta<typeof Input> = {
   title: "Components/Input",
@@ -8,6 +9,23 @@ const meta: Meta<typeof Input> = {
     layout: "centered",
   },
   tags: ["autodocs"],
+  argTypes: {
+    type: {
+      type: "string" || "number",
+      description: "Тип input",
+      defaultValue: "text",
+      options: ["text", "password", "email"],
+    },
+    variant: {
+      type: "string",
+      description: "Вариант внешнего вида input",
+      defaultValue: "rectangular",
+      options: ["rounded", "rectangular"],
+      control: {
+        type: "radio",
+      },
+    },
+  },
 };
 
 export default meta;
@@ -24,5 +42,21 @@ export const Password: Story = {
   args: {
     type: "password",
     placeholder: "Password",
+  },
+};
+
+export const Number: Story = {
+  args: {
+    type: "number",
+    placeholder: "Number",
+    variant: "rounded",
+  },
+};
+
+export const Date: Story = {
+  args: {
+    type: "date",
+    placeholder: "Date",
+    variant: "rounded",
   },
 };

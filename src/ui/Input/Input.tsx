@@ -6,11 +6,12 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { motion } from "framer-motion";
 
 type TInputProps = InputProps & {
-  type: "email" | "text" | "password";
+  type: "email" | "text" | "password" | "number" | "date";
+  variant: "rounded" | "rectangular";
 };
 
 export const Input = forwardRef<HTMLInputElement, TInputProps>(
-  ({ className, type, ...props }, ref) => {
+  ({ className, type, variant = "rectangular", ...props }, ref) => {
     const [showPassword, setShowPassword] = useState(false);
 
     const handleClickShowPassword = () => {
@@ -24,7 +25,7 @@ export const Input = forwardRef<HTMLInputElement, TInputProps>(
           type={
             type === "password" ? (showPassword ? "text" : "password") : type
           }
-          className={`${inputStyles.input} ${className}`}
+          className={`${inputStyles.input} ${className} ${variant === "rounded" ? "rounded-2xl" : "rounded-none"}`}
           {...props}
         />
         {type === "password" && (
@@ -35,7 +36,15 @@ export const Input = forwardRef<HTMLInputElement, TInputProps>(
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
-            {showPassword ? <Visibility /> : <VisibilityOff />}
+            {showPassword ? (
+              <Visibility
+                style={{ width: "20px", height: "20px", color: "gray" }}
+              />
+            ) : (
+              <VisibilityOff
+                style={{ width: "20px", height: "20px", color: "gray" }}
+              />
+            )}
           </motion.div>
         )}
       </div>

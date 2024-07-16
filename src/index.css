@@ -34,8 +34,15 @@
   list-style: none;
   text-decoration: none;
   scroll-padding-top: 2rem;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Ubuntu, "Noto Sans", sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Ubuntu,
+    "Noto Sans",
+    sans-serif;
 }
 
 :root {

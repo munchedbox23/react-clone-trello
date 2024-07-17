@@ -1,7 +1,7 @@
 import { MForm } from "../../components/Form/Form";
 import { LoginLinks } from "../../components/Form/FormLinks/FormLinks";
 import { FC } from "react";
-import { PrimaryButton } from "../../ui/PrimaryButton/PrimaryButton";
+import { PrimaryButton } from "../../ui/Button/Button";
 import { useForm } from "../../hooks/useForm";
 import { userLogin } from "../../services/feature/user/auth";
 import { IUserLogin } from "../../types/userTypes";

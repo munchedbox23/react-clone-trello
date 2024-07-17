@@ -1,7 +1,7 @@
 import { MForm } from "../../components/Form/Form";
 import { ForgotLinks } from "../../components/Form/FormLinks/FormLinks";
 import { FC, FormEvent } from "react";
-import { PrimaryButton } from "../../ui/PrimaryButton/PrimaryButton";
+import { PrimaryButton } from "../../ui/Button/Button";
 import { resetPassword } from "../../services/feature/user/auth";
 import { Navigate, useNavigate } from "react-router";
 import { useForm } from "../../hooks/useForm";

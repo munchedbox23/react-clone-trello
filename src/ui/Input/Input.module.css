@@ -1,6 +1,5 @@
-*,
-*::before,
-*::after {
+.input::before,
+.input::after {
   content: none !important;
 }
 

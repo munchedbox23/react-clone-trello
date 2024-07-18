@@ -1,7 +1,6 @@
 import { MForm } from "../../components/Form/Form";
 import { ForgotLinks } from "../../components/Form/FormLinks/FormLinks";
 import { FC, FormEvent } from "react";
-import { Button } from "../../ui/Button/Button";
 import { resetPassword } from "../../services/feature/user/auth";
 import { Navigate, useNavigate } from "react-router";
 import { useForm } from "../../hooks/useForm";
@@ -42,6 +41,8 @@ export const ResetPasswordPage: FC = () => {
       linkComponent={ForgotLinks}
       title="Recover Password"
       onSubmit={handleReset}
+      isDisabled={!isFormValid}
+      buttonText="Recover"
       initial={"back"}
       animate={"front"}
       exit={"back"}
@@ -64,7 +65,6 @@ export const ResetPasswordPage: FC = () => {
         value={formState.token}
         onChange={onChange}
       />
-      <Button disabled={!isFormValid} text="Recover" />
     </MForm>
   ) : (
     <Navigate to={ROUTE.authLayout.forgotPassword} replace={true} />

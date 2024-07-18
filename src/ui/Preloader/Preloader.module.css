@@ -16,12 +16,14 @@
   position: absolute;
   left: 50%;
   top: 50%;
+  z-index: 99;
   transform: translate(-50%, -50%);
-  width: 82px;
-  height: 82px;
+  width: 78px;
+  height: 78px;
   border-radius: 50%;
   border: 3px solid transparent;
-  border-bottom-color: #ff3d00;
+  border-bottom-color: red;
+  /* border-bottom-color: #ff3d00; */
 }
 
 @keyframes rotation {

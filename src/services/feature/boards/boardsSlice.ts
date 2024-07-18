@@ -26,7 +26,7 @@ export const updateBoard = createAsyncThunk<IBoard, IBoard>(
   "boards/updateBoard",
   async (board) => {
     const response = await request<IBoard>(
-      `http://localhost:3000/boards/${board.id}`,
+      `http://localhost:3001/boards/${board.id}`,
       {
         method: "PATCH",
         headers: {
@@ -42,7 +42,7 @@ export const updateBoard = createAsyncThunk<IBoard, IBoard>(
 export const getBoards = createAsyncThunk<IBoard[], undefined>(
   "boards/getBoards",
   async () => {
-    const response = await request<IBoard[]>("https://my-json-server.typicode.com/munchedbox/fake-data-base/boards");
+    const response = await request<IBoard[]>("http://localhost:3001/boards");
     return response;
   }
 );
@@ -50,7 +50,7 @@ export const getBoards = createAsyncThunk<IBoard[], undefined>(
 export const getTemplates = createAsyncThunk<IBoard[], undefined>(
   "boards/getTemplates",
   async () => {
-    const response = await request<IBoard[]>("http://localhost:3000/templates");
+    const response = await request<IBoard[]>("http://localhost:3001/templates");
     return response;
   }
 );
@@ -58,7 +58,7 @@ export const getTemplates = createAsyncThunk<IBoard[], undefined>(
 export const postBoards = createAsyncThunk<IBoard, IFormBoard>(
   "boards/postBoards",
   async (data) => {
-    const response = await request<IBoard>("https://my-json-server.typicode.com/munchedbox/fake-data-base/boards", {
+    const response = await request<IBoard>("http://localhost:3001/boards", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -79,7 +79,7 @@ export const updateColumns = createAsyncThunk<
   { boardId: string; columns: IColumn[] }
 >("boards/updateColumns", async ({ boardId, columns }) => {
   const response = await request<IBoard>(
-    `http://localhost:3000/boards/${boardId}`,
+    `http://localhost:3001/boards/${boardId}`,
     {
       method: "PATCH",
       headers: {
@@ -97,7 +97,7 @@ export const deleteBoard = createAsyncThunk<IBoard, string>(
   "board/deleteBoard",
   async (id) => {
     const response = await request<IBoard>(
-      `http://localhost:3000/boards/${id}`,
+      `http://localhost:3001/boards/${id}`,
       {
         method: "DELETE",
       }

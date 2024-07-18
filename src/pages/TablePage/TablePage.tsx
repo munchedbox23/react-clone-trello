@@ -4,7 +4,7 @@ import { TableHeader } from "../../components/TableHeader/TableHeader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FC, useState, useEffect } from "react";
-import { IColumn } from "../../types/boardsTypes";
+import { IBoard, IColumn } from "../../types/boardsTypes";
 import { updateColumns } from "../../services/feature/boards/boardsSlice";
 import cn from "classnames";
 import { v4 as uuidv4 } from "uuid";
@@ -33,9 +33,9 @@ export const TablePage: FC = () => {
     boardColumns: [],
   });
   const currentBoard = useAppSelector((store) => store.boards.boards).find(
-    (board) => board.id === tableId
+    (board: IBoard) => board.id === tableId
   );
-  const isModalOpen = useAppSelector((store) => store.modal.isModalOpen);
+  const isModalOpen = useAppSelector((store) => store.modal?.isModalOpen);
   const dispatch = useAppDispatch();
   const { formState, onChange, setFormState } = useForm<{ columnName: string }>(
     {
@@ -154,7 +154,7 @@ export const TablePage: FC = () => {
         <div className={cn(styles.columnsContainer, "px-6 py-5")}>
           <DndProvider backend={HTML5Backend}>
             <ol className={styles.columnList}>
-              {currentBoard?.columns.map((item, index) => (
+              {currentBoard?.columns.map((item: IColumn, index: number) => (
                 <ColumnList
                   index={index}
                   key={item.id}

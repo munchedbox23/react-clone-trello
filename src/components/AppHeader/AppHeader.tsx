@@ -10,6 +10,7 @@ import { selectBoardsByUser } from "../../services/feature/boards/boardSelectors
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { filteredBoardsByName } from "../../services/feature/boards/boardsSlice";
+import { IBoard } from "../../types/boardsTypes";
 
 export const AppHeader: FC = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -65,7 +66,7 @@ export const AppHeader: FC = () => {
               transition={{ duration: 1.2, delay: showDropdown ? 0 : 0.5 }}
             >
               {userBoards.length > 0 ? (
-                userBoards.map((board) => (
+                userBoards.map((board: IBoard) => (
                   <Link
                     to={`/boards/${board.id}`}
                     key={board.id}

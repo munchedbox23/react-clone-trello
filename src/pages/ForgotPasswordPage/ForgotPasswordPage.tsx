@@ -1,7 +1,6 @@
 import { MForm } from "../../components/Form/Form";
 import { ForgotLinks } from "../../components/Form/FormLinks/FormLinks";
 import { FC, FormEvent, useState } from "react";
-import { Button } from "../../ui/Button/Button";
 import { useForm } from "../../hooks/useForm";
 import { forgotPassword } from "../../services/feature/user/auth";
 import { useNavigate } from "react-router";
@@ -43,6 +42,8 @@ export const ForgotPasswordPage: FC = () => {
       exit={"back"}
       variants={formVariants}
       transition={{ duration: 0.5 }}
+      buttonText="Recover"
+      isDisabled={!isFormValid}
     >
       <Input
         required
@@ -52,8 +53,8 @@ export const ForgotPasswordPage: FC = () => {
         placeholder="Email"
         value={formState?.email || ""}
         onChange={onChange}
+        variant="rounded"
       />
-      <Button disabled={!isFormValid} text="Recover" />
     </MForm>
   );
 };

@@ -73,7 +73,13 @@ export const CreateMenu = () => {
   };
 
   return (
-    <Form modalForm={true} onSubmit={handleSubmit} title={modalContent?.title}>
+    <Form
+      modalForm={true}
+      onSubmit={handleSubmit}
+      title={modalContent?.title}
+      isDisabled={!formState.name || !formState.background}
+      buttonText="Save"
+    >
       <Input
         autoComplete="off"
         type="text"
@@ -100,14 +106,6 @@ export const CreateMenu = () => {
           <DotsLoader />
         )}
       </div>
-      <Button
-        disabled={!formState.name || !formState.background}
-        label="Save"
-        variant="solid"
-        type="submit"
-        colorscheme="primary"
-        size="md"
-      />
     </Form>
   );
 };

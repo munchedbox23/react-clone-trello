@@ -13,7 +13,10 @@ export const Avatar: FC<PropsWithChildren<{ isMini?: boolean }>> = ({
 
   const userName = user?.name
     .split(" ")
-    .reduce((acc, word) => (acc += word.at(0)!.toUpperCase()), "");
+    .reduce(
+      (acc: string, word: string) => (acc += word.at(0)!.toUpperCase()),
+      ""
+    );
 
   return (
     <div className={styles.profileInfo}>

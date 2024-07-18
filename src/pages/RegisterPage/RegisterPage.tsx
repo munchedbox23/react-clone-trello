@@ -21,6 +21,8 @@ export const RegisterPage: FC = () => {
       linkComponent={RegisterLinks}
       title="Register on Trello"
       onSubmit={(e) => onSubmit(e, userRegister)}
+      isDisabled={!isFormValid}
+      buttonText="Sign Up"
       initial={"back"}
       animate={"front"}
       exit={"back"}
@@ -54,7 +56,6 @@ export const RegisterPage: FC = () => {
         value={formState?.password}
         onChange={onChange}
       />
-      <Button disabled={!isFormValid} text="Sign Up" />
     </MForm>
   );
 };

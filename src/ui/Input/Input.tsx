@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 type TInputProps = InputProps & {
   type: "email" | "text" | "password" | "number" | "date";
-  variant: "rounded" | "rectangular";
+  variant?: "rounded" | "rectangular";
 };
 
 export const Input = forwardRef<HTMLInputElement, TInputProps>(

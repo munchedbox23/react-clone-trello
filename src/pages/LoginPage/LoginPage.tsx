@@ -19,6 +19,8 @@ export const LoginPage: FC = () => {
       title="Log in to Trello"
       onSubmit={(e) => onSubmit(e, userLogin)}
       initial={"back"}
+      buttonText="Login"
+      isDisabled={!isFormValid}
       animate={"front"}
       exit={"back"}
       variants={formVariants}
@@ -31,6 +33,7 @@ export const LoginPage: FC = () => {
         placeholder="Email"
         value={formState.email || ""}
         onChange={onChange}
+        variant="rounded"
       />
       <Input
         autoComplete="current-password"
@@ -39,8 +42,8 @@ export const LoginPage: FC = () => {
         placeholder="Password"
         value={formState.password || ""}
         onChange={onChange}
+        variant="rounded"
       />
-      <Button disabled={!isFormValid} text="Login" />
     </MForm>
   );
 };

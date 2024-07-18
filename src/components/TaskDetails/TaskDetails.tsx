@@ -1,4 +1,4 @@
-import { useAppSelector } from "../../services/store/hooks";
+import { useAppSelector } from "../../app/appStore";
 import styles from "./TaskDetails.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

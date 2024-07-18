@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
-import modalSlice from "@/services/feature/modal/modalSlice";
-import userSlice from "@/services/feature/user/userSlice";
-import boardsSlice from "@/services/feature/boards/boardsSlice";
+import boardsSlice from "../services/feature/boards/boardsSlice";
+import userSlice from "../services/feature/user/userSlice";
+import { modalSlice } from "../services/feature/modal/modalSlice";
 
 export const rootReducer = combineReducers({
   user: userSlice,

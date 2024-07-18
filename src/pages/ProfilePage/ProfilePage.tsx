@@ -1,5 +1,4 @@
 import styles from "./ProfilePage.module.css";
-import { useAppDispatch, useAppSelector } from "../../services/store/hooks";
 import { useForm } from "../../hooks/useForm";
 import { IUser } from "../../types/userTypes";
 import { FormEvent, FC, useEffect, useState } from "react";
@@ -8,6 +7,7 @@ import { ProfileButtons } from "../../ui/ProfileButtons/ProfileButtons";
 import { motion } from "framer-motion";
 import { inputVariants } from "../../utils/animationVariants";
 import { MInput } from "../../ui/Input/Input";
+import { useAppDispatch, useAppSelector } from "../../app/appStore";
 
 export interface IProfileForm extends IUser {
   password?: string;

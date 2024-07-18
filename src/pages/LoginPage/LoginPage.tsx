@@ -1,12 +1,12 @@
 import { MForm } from "../../components/Form/Form";
 import { LoginLinks } from "../../components/Form/FormLinks/FormLinks";
 import { FC } from "react";
-import { PrimaryButton } from "../../ui/Button/Button";
+import { Button } from "../../ui/Button/Button";
 import { useForm } from "../../hooks/useForm";
 import { userLogin } from "../../services/feature/user/auth";
 import { IUserLogin } from "../../types/userTypes";
 import { formVariants } from "../../utils/animationVariants";
-import Input from "../../ui/Input/Input";
+import { Input } from "../../ui/Input/Input";
 
 export const LoginPage: FC = () => {
   const { formState, onChange, onSubmit, isFormValid } = useForm<IUserLogin>({
@@ -40,7 +40,7 @@ export const LoginPage: FC = () => {
         value={formState.password || ""}
         onChange={onChange}
       />
-      <PrimaryButton isDisabled={!isFormValid} text="Login" />
+      <Button disabled={!isFormValid} text="Login" />
     </MForm>
   );
 };

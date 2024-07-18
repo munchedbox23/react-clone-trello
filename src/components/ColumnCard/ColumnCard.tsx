@@ -2,7 +2,7 @@ import { FC } from "react";
 import styles from "./ColumnCard.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHighlighter } from "@fortawesome/free-solid-svg-icons";
-import { useAppDispatch } from "../../services/store/hooks";
+import { useAppDispatch } from "../../app/appStore";
 import { setModalOpen } from "../../services/feature/modal/modalSlice";
 import { setSelectedTask } from "../../services/feature/boards/boardsSlice";
 import { ITask } from "../../types/boardsTypes";

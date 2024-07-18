@@ -11,7 +11,7 @@ type TInputProps = InputProps & {
 };
 
 export const Input = forwardRef<HTMLInputElement, TInputProps>(
-  ({ className, type, variant = "rectangular", ...props }, ref) => {
+  ({ className, type, variant = "rounded", ...props }, ref) => {
     const [showPassword, setShowPassword] = useState(false);
 
     const handleClickShowPassword = () => {

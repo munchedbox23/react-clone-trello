@@ -1,4 +1,3 @@
-import { useAppDispatch, useAppSelector } from "../../services/store/hooks";
 import styles from "./TablePage.module.css";
 import { useParams } from "react-router";
 import { TableHeader } from "../../components/TableHeader/TableHeader";
@@ -18,6 +17,7 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import { Modal } from "../../components/Modal/Modal";
 import { setModalOpen } from "../../services/feature/modal/modalSlice";
 import { TaskDetails } from "../../components/TaskDetails/TaskDetails";
+import { useAppSelector, useAppDispatch } from "../../app/appStore";
 
 interface IState {
   isVisible: boolean;

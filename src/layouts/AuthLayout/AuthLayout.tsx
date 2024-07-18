@@ -2,7 +2,7 @@ import Logo from "../../assets/images/logo.png";
 import { Outlet } from "react-router";
 import styles from "./AuthLayout.module.css";
 import { Preloader } from "../../ui/Preloader/Preloader";
-import { useAppSelector } from "../../services/store/hooks";
+import { useAppSelector } from "../../app/appStore";
 
 export const AuthLayout = () => {
   const isRequestLoading = useAppSelector(

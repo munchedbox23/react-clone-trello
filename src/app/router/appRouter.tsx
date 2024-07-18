@@ -1,11 +1,10 @@
-import { ROUTE } from "@/utils/constants";
 import { createBrowserRouter } from "react-router-dom";
 import {
   OnlyAuth,
   OnlyUnAuth,
-} from "@/components/WithProtectedRoute/WithProtectedRoute";
-import { MainLayout } from "@/layouts/MainLayout/MainLayout";
-import { AuthLayout } from "@/layouts/AuthLayout/AuthLayout";
+} from "../../components/WithProtectedRoute/WithProtectedRoute";
+import { AuthLayout } from "../../layouts/AuthLayout/AuthLayout";
+import { MainLayout } from "../../layouts/MainLayout/MainLayout";
 import {
   BoardPage,
   ProfilePage,
@@ -15,7 +14,8 @@ import {
   ResetPasswordPage,
   TablePage,
   NotFound,
-} from "@/pages";
+} from "../../pages";
+import { ROUTE } from "../../utils/constants";
 
 export const router = createBrowserRouter([
   {

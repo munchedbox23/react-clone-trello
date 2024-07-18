@@ -4,7 +4,7 @@ import { Outlet } from "react-router";
 import { Preloader } from "../../ui/Preloader/Preloader";
 import { Panel } from "../../components/Panel/Panel";
 import styles from "./MainLayout.module.css";
-import { useAppSelector } from "../../services/store/hooks";
+import { useAppSelector } from "../../app/appStore";
 
 export const MainLayout: FC = () => {
   const isRequestLoading = useAppSelector(

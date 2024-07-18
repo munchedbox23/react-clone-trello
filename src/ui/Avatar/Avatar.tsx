@@ -1,9 +1,9 @@
 import styles from "./Avatar.module.css";
 import { Link } from "react-router-dom";
-import { useAppSelector } from "../../services/store/hooks";
 import { FC, PropsWithChildren } from "react";
 import cn from "classnames";
 import { ROUTE } from "../../utils/constants";
+import { useAppSelector } from "../../app/appStore";
 
 export const Avatar: FC<PropsWithChildren<{ isMini?: boolean }>> = ({
   children,

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { userLogout } from "../../services/feature/user/auth";
-import { useAppDispatch, useAppSelector } from "../../services/store/hooks";
+import { useAppDispatch, useAppSelector } from "../../app/appStore";
 import { FC } from "react";
 import { Avatar } from "../../ui/Avatar/Avatar";
 

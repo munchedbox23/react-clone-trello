@@ -1,8 +1,8 @@
-import { useAppDispatch, useAppSelector } from "../../services/store/hooks";
+import { useAppDispatch, useAppSelector } from "../../app/appStore";
 import { Form } from "../Form/Form";
 import styles from "./CreateMenu.module.css";
 import { useForm } from "../../hooks/useForm";
-import { PrimaryButton } from "../../ui";
+import { Button } from "../../ui/Button/Button";
 import { BackgroundOption } from "../../ui/BackgroundOption/BackgroundOption";
 import { FormEvent, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
@@ -11,7 +11,7 @@ import { shallowEqual } from "react-redux";
 import { postBoards } from "../../services/feature/boards/boardsSlice";
 import { setModalOpen } from "../../services/feature/modal/modalSlice";
 import { IBackground } from "../../types/boardsTypes";
-import Input from "../../ui/Input/Input";
+import { Input } from "../../ui/Input/Input";
 
 export interface IFormBoard {
   name: string;
@@ -24,7 +24,7 @@ export const CreateMenu = () => {
     useAppSelector(
       (store) => ({
         modalContent: store.modal.modalContent,
-        backgroundOptions: store.modal.backgroundOptions,
+        backgroundOptions: store.modal.backgroundOptions as IBackground[],
         optionsLoading: store.modal.optionsLoading,
         user: store.user.user,
       }),
@@ -81,38 +81,32 @@ export const CreateMenu = () => {
         placeholder={modalContent?.placeholder}
         value={formState?.name}
         onChange={onChange}
+        variant="rounded"
       />
-      {modalContent?.title === "Create Board" ? (
-        <div className={`${styles.bgOptions} p-2`}>
-          {!optionsLoading && backgroundOptions ? (
-            backgroundOptions
-              .slice(0, 8)
-              .map((background, index) => (
-                <BackgroundOption
-                  key={uuidv4()}
-                  imageSrc={background.small}
-                  name={`Option ${index + 1}`}
-                  isSelected={selectedBackground === background.small}
-                  onClick={() => handleBackgroundSelect(background)}
-                />
-              ))
-          ) : (
-            <DotsLoader />
-          )}
-        </div>
-      ) : (
-        <input
-          autoComplete="off"
-          type="text"
-          name="purpose"
-          placeholder="Column description"
-          // value={formState?.purpose}
-          // onChange={onChange}
-        />
-      )}
-      <PrimaryButton
-        isDisabled={!formState.name || !formState.background}
-        text="Save"
+      <div className={`${styles.bgOptions} p-2`}>
+        {!optionsLoading && backgroundOptions ? (
+          backgroundOptions
+            .slice(0, 8)
+            .map((background, index) => (
+              <BackgroundOption
+                key={uuidv4()}
+                imageSrc={background.small}
+                name={`Option ${index + 1}`}
+                isSelected={selectedBackground === background.small}
+                onClick={() => handleBackgroundSelect(background)}
+              />
+            ))
+        ) : (
+          <DotsLoader />
+        )}
+      </div>
+      <Button
+        disabled={!formState.name || !formState.background}
+        label="Save"
+        variant="solid"
+        type="submit"
+        colorscheme="primary"
+        size="md"
       />
     </Form>
   );

@@ -10,7 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence, motion } from "framer-motion";
 import { IBoard } from "../../types/boardsTypes";
-import { useAppDispatch } from "../../services/store/hooks";
+import { useAppDispatch } from "../../app/appStore";
 import {
   deleteBoard,
   updateBoard,

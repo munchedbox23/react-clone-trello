@@ -3,7 +3,7 @@ import headerStyles from "./AppHeader.module.css";
 import Logo from "../../assets/images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faPlus } from "@fortawesome/free-solid-svg-icons";
-import { useAppDispatch, useAppSelector } from "../../services/store/hooks";
+import { useAppDispatch, useAppSelector } from "../../app/appStore";
 import { setModalOpen } from "../../services/feature/modal/modalSlice";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { selectBoardsByUser } from "../../services/feature/boards/boardSelectors";

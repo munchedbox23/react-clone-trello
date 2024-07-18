@@ -1,14 +1,14 @@
 import { MForm } from "../../components/Form/Form";
 import { ForgotLinks } from "../../components/Form/FormLinks/FormLinks";
 import { FC, FormEvent, useState } from "react";
-import { PrimaryButton } from "../../ui/Button/Button";
+import { Button } from "../../ui/Button/Button";
 import { useForm } from "../../hooks/useForm";
 import { forgotPassword } from "../../services/feature/user/auth";
 import { useNavigate } from "react-router";
 import { ROUTE } from "../../utils/constants";
 import { Preloader } from "../../ui/Preloader/Preloader";
 import { formVariants } from "../../utils/animationVariants";
-import Input from "../../ui/Input/Input";
+import { Input } from "../../ui/Input/Input";
 
 export const ForgotPasswordPage: FC = () => {
   const { formState, setFormState, onChange, isFormValid } = useForm<{
@@ -53,7 +53,7 @@ export const ForgotPasswordPage: FC = () => {
         value={formState?.email || ""}
         onChange={onChange}
       />
-      <PrimaryButton isDisabled={!isFormValid} text="Recover" />
+      <Button disabled={!isFormValid} text="Recover" />
     </MForm>
   );
 };

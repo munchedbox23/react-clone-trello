@@ -1,13 +1,13 @@
 import { MForm } from "../../components/Form/Form";
 import { ForgotLinks } from "../../components/Form/FormLinks/FormLinks";
 import { FC, FormEvent } from "react";
-import { PrimaryButton } from "../../ui/Button/Button";
+import { Button } from "../../ui/Button/Button";
 import { resetPassword } from "../../services/feature/user/auth";
 import { Navigate, useNavigate } from "react-router";
 import { useForm } from "../../hooks/useForm";
 import { ROUTE } from "../../utils/constants";
 import { formVariants } from "../../utils/animationVariants";
-import Input from "../../ui/Input/Input";
+import { Input } from "../../ui/Input/Input";
 
 export const ResetPasswordPage: FC = () => {
   const { formState, isFormValid, onChange, setFormState } = useForm<{
@@ -64,7 +64,7 @@ export const ResetPasswordPage: FC = () => {
         value={formState.token}
         onChange={onChange}
       />
-      <PrimaryButton isDisabled={!isFormValid} text="Recover" />
+      <Button disabled={!isFormValid} text="Recover" />
     </MForm>
   ) : (
     <Navigate to={ROUTE.authLayout.forgotPassword} replace={true} />

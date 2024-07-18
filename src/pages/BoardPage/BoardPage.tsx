@@ -2,7 +2,6 @@ import { FC } from "react";
 import styles from "./BoardPage.module.css";
 import { motion } from "framer-motion";
 import { BoardList } from "../../components/BoardList/BoardList";
-import { useAppDispatch, useAppSelector } from "../../services/store/hooks";
 import { setModalOpen } from "../../services/feature/modal/modalSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
@@ -10,6 +9,7 @@ import { shallowEqual } from "react-redux";
 import { Modal } from "../../components/Modal/Modal";
 import { CreateMenu } from "../../components/CreateMenu/CreateMenu";
 import { selectBoardsByUser } from "../../services/feature/boards/boardSelectors";
+import { useAppDispatch, useAppSelector } from "../../app/appStore";
 
 export const BoardPage: FC = () => {
   const dispatch = useAppDispatch();

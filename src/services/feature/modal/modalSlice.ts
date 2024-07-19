@@ -28,7 +28,7 @@ export const getBackgroundOptions = createAsyncThunk(
   "modal/getBackgroundOptions",
   async () => {
     const response = await request<IPhoto[]>(
-      "http://localhost:3000/backgroundOptions"
+      "http://localhost:3001/backgroundOptions"
     );
     return response;
   }

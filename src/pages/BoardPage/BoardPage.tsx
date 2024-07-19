@@ -15,7 +15,7 @@ export const BoardPage: FC = () => {
   const dispatch = useAppDispatch();
   const { isModalOpen, templates } = useAppSelector(
     (store) => ({
-      isModalOpen: store.modal?.isModalOpen,
+      isModalOpen: store.modal.isModalOpen,
       templates: store.boards.templates,
     }),
     shallowEqual
@@ -26,6 +26,7 @@ export const BoardPage: FC = () => {
   const handleModalOpen = (content?: string): void => {
     dispatch(setModalOpen(content));
   };
+
   return (
     <motion.section
       className="pt-2 overflow-hidden"

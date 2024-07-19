@@ -5,7 +5,7 @@
 
 .inputForm {
   position: relative;
-  width: 100%;
+  width: max-content;
   height: 2.5rem;
 }
 

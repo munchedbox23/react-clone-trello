@@ -14,10 +14,11 @@ type TPrimaryButtonProps = ComponentProps<"button"> &
 
 const buttonStyles = cva(
   [
-    "w-full",
+    "w-max",
     "rounded-md",
     "text-xl",
     "disabled:cursor-not-allowed",
+    "disabled:opacity-60",
     "focus:outline-none",
     "hover:opacity-60",
     "py-1",

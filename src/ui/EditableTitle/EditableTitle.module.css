@@ -52,11 +52,3 @@
   background-color: #fff;
   box-shadow: inset 0 0 0 2px var(--primary);
 }
-
-.textEditing {
-  position: static;
-  opacity: 1;
-  background-color: #fff;
-  outline: none;
-  box-shadow: inset 0 0 0 2px var(--primary);
-}

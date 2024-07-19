@@ -54,6 +54,7 @@ export const AppHeader: FC = () => {
             value={searchParams.get("search") || ""}
             onFocus={() => setShowDropdown(true)}
             onBlur={handleClearSearch}
+            autoComplete="off"
           />
         </div>
         <AnimatePresence mode="wait">

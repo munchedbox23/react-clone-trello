@@ -30,27 +30,6 @@
       "user": "test230@test.ru",
       "columns": [
         {
-          "id": "a6a443d5-3ee6-431d-92fa-0d40cbe5341d",
-          "title": "Completed Projects",
-          "tasks": [
-            {
-              "id": "915c2cb0-858a-48cd-b1fb-dc5555b2c70a",
-              "title": "Website Redesign",
-              "description": ""
-            },
-            {
-              "id": "fe437e4d-fd77-4d07-9933-0ae9ac6903e5",
-              "title": "Social Media Campaign",
-              "description": ""
-            },
-            {
-              "id": "140d2b8a-6078-427a-b697-53d5a73b0c3e",
-              "title": "Update Help Documentation",
-              "description": ""
-            }
-          ]
-        },
-        {
           "id": "0f3a0332-7851-4b52-b0fe-17774930a2c4",
           "title": "Current Projects",
           "tasks": [
@@ -103,6 +82,27 @@
             {
               "id": "15c20978-4b3f-4e2b-989d-bc5023d62e7f",
               "title": "IT",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "a6a443d5-3ee6-431d-92fa-0d40cbe5341d",
+          "title": "Completed Projects",
+          "tasks": [
+            {
+              "id": "915c2cb0-858a-48cd-b1fb-dc5555b2c70a",
+              "title": "Website Redesign",
+              "description": ""
+            },
+            {
+              "id": "fe437e4d-fd77-4d07-9933-0ae9ac6903e5",
+              "title": "Social Media Campaign",
+              "description": ""
+            },
+            {
+              "id": "140d2b8a-6078-427a-b697-53d5a73b0c3e",
+              "title": "Update Help Documentation",
               "description": ""
             }
           ]
@@ -170,38 +170,6 @@
       },
       "user": "test230@test.ru",
       "columns": []
-    },
-    {
-      "id": "c1b46c20-fbb6-4698-a94c-13182270a9a1",
-      "type": "board",
-      "name": "gwsg",
-      "background": {
-        "raw": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3",
-        "full": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=85",
-        "regular": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=1080",
-        "small": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=400",
-        "thumb": "https://images.unsplash.com/photo-1718489211836-65a20ad6bd8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjQyOTV8MHwxfGFsbHwzfHx8fHx8Mnx8MTcxODkwNTc1OHw&ixlib=rb-4.0.3&q=80&w=200",
-        "small_s3": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1718489211836-65a20ad6bd8d"
-      },
-      "user": "egor032324@mail.ru",
-      "columns": [
-        {
-          "id": "1f906363-6e64-4e63-b33c-6bf52bae796f",
-          "title": "egsdgs",
-          "tasks": [
-            {
-              "id": "5b9a4885-7dbc-4df7-8d23-4fd55ed179a8",
-              "title": "gsgsg",
-              "description": ""
-            },
-            {
-              "id": "1187c173-7c9e-4a63-b8f6-a655ffbbe3aa",
-              "title": "gsgsgs",
-              "description": ""
-            }
-          ]
-        }
-      ]
     }
   ],
   "templates": [

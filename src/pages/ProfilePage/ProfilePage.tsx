@@ -6,7 +6,7 @@ import { editUser } from "../../services/feature/user/auth";
 import { ProfileButtons } from "../../ui/ProfileButtons/ProfileButtons";
 import { motion } from "framer-motion";
 import { inputVariants } from "../../utils/animationVariants";
-import { MInput } from "../../ui/Input/Input";
+import { MInput } from "munchedbox-ui";
 import { useAppDispatch, useAppSelector } from "../../app/appStore";
 
 export interface IProfileForm extends IUser {

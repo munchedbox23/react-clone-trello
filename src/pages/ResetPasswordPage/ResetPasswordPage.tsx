@@ -6,7 +6,7 @@ import { Navigate, useNavigate } from "react-router";
 import { useForm } from "../../hooks/useForm";
 import { ROUTE } from "../../utils/constants";
 import { formVariants } from "../../utils/animationVariants";
-import { Input } from "../../ui/Input/Input";
+import { Input } from "munchedbox-ui";
 
 export const ResetPasswordPage: FC = () => {
   const { formState, isFormValid, onChange, setFormState } = useForm<{

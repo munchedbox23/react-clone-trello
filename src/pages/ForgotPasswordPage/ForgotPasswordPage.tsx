@@ -7,7 +7,7 @@ import { useNavigate } from "react-router";
 import { ROUTE } from "../../utils/constants";
 import { Preloader } from "../../ui/Preloader/Preloader";
 import { formVariants } from "../../utils/animationVariants";
-import { Input } from "../../ui/Input/Input";
+import { Input } from "munchedbox-ui";
 
 export const ForgotPasswordPage: FC = () => {
   const { formState, setFormState, onChange, isFormValid } = useForm<{

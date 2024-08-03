@@ -1,7 +1,7 @@
 import styles from "./Form.module.css";
 import { PropsWithChildren, ElementType, FormEvent, forwardRef } from "react";
 import { motion } from "framer-motion";
-import { Button } from "../../ui";
+import { Button, Text } from "munchedbox-ui";
 
 type TFormProps = {
   onSubmit: (e: FormEvent<HTMLFormElement>) => void;
@@ -33,16 +33,19 @@ export const Form = forwardRef<HTMLDivElement, PropsWithChildren<TFormProps>>(
         ref={ref}
       >
         <form className={`${styles.form} `} onSubmit={onSubmit}>
-          <h2 className="font-medium text-3xl mb-5 text-gray-600">{title}</h2>
+          <Text as="h2" weight="medium" size="3xl">
+            {title}
+          </Text>
+          <h2 className="font-medium text-3xl mb-5 text-gray-600"></h2>
           {children}
           <Button
             type="submit"
-            variant="solid"
-            colorscheme="primary"
-            size="md"
-            label={buttonText}
+            variant="primary"
+            size="sm"
             disabled={isDisabled}
-          />
+          >
+            {buttonText}
+          </Button>
         </form>
         {Links && <Links />}
       </div>

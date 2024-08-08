@@ -1,6 +1,5 @@
 import Logo from "../../assets/images/logo.png";
 import { Outlet } from "react-router";
-import styles from "./AuthLayout.module.css";
 import { Preloader } from "../../ui/Preloader/Preloader";
 import { useAppSelector } from "../../app/appStore";
 
@@ -9,7 +8,7 @@ export const AuthLayout = () => {
     (store) => store.user.isRequestLoading
   );
   return (
-    <section className={`${styles.loginPage} pt-20`}>
+    <section className="pt-20 flex flex-col items-center justify-center">
       <img src={Logo} alt="Logo trello" />
       {isRequestLoading ? <Preloader /> : <Outlet />}
     </section>

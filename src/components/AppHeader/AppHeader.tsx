@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { filteredBoardsByName } from "../../services/feature/boards/boardsSlice";
 import { IBoard } from "../../types/boardsTypes";
+import { Button, Stack, Text } from "munchedbox-ui";
 
 export const AppHeader: FC = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -38,11 +39,17 @@ export const AppHeader: FC = () => {
   return (
     <header className={`${headerStyles.header} p-6`}>
       <img src={Logo} alt="Trello Logo" />
-      <form className={headerStyles.headerForm}>
-        <div className={headerStyles.formWrapper}>
+      <form className="flex relative flex-col items-center">
+        <Stack
+          align="center"
+          direction="row"
+          justify="between"
+          spacing="sm"
+          className="relative h-8 rounded-2xl max-w-lg w-full border-2 focus-within:border-primary-500 border-opacity-16"
+        >
           <FontAwesomeIcon
             icon={faMagnifyingGlass}
-            className={headerStyles.formIcon}
+            className="absolute w-4 h-4 top-1.7 left-2 text-blue-950	"
           />
           <input
             className={headerStyles.input}
@@ -56,7 +63,7 @@ export const AppHeader: FC = () => {
             onBlur={handleClearSearch}
             autoComplete="off"
           />
-        </div>
+        </Stack>
         <AnimatePresence mode="wait">
           {showDropdown && (
             <motion.div
@@ -71,34 +78,37 @@ export const AppHeader: FC = () => {
                   <Link
                     to={`/boards/${board.id}`}
                     key={board.id}
-                    className={headerStyles.dropdownItem}
+                    className="p-4 bg-slate-200 rounded-md color-primary-500 h-12 flex items-center gap-4 hover:bg-gray-300"
                   >
                     <img
                       src={board.background.small}
                       alt={`Background for ${board.name}`}
+                      className="rounded-md w-9 h-9"
                     />
-                    <h5 className="text-base font-medium">{board.name}</h5>
+                    <Text as="h2" size="base" weight="medium" align="left">
+                      {board.name}
+                    </Text>
                   </Link>
                 ))
               ) : (
-                <strong className="text-base">
+                <Text as="strong" align="center" size="base">
                   You don't have any active boards
-                </strong>
+                </Text>
               )}
             </motion.div>
           )}
         </AnimatePresence>
       </form>
-      <div className={headerStyles.btnsContainer}>
-        <button
-          onClick={() => handleModalOpen("create-board")}
-          className={`${headerStyles.navLink} pt-2 pr-4 pb-2 pl-4`}
-          disabled={!(location.pathname === "/")}
-        >
-          <FontAwesomeIcon icon={faPlus} />
-          <span>Create</span>
-        </button>
-      </div>
+      <Button
+        type="button"
+        variant="primary"
+        size="sm"
+        disabled={!(location.pathname === "/")}
+        onClick={() => handleModalOpen("create-board")}
+      >
+        <FontAwesomeIcon icon={faPlus} className="mr-1" />
+        <span>Create</span>
+      </Button>
     </header>
   );
 };

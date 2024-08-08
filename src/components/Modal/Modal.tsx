@@ -1,6 +1,5 @@
 import { createPortal } from "react-dom";
 import modalStyles from "./Modal.module.css";
-import { ModalOverlay } from "../ModalOverlay/ModalOverlay";
 import { FC, PropsWithChildren } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -44,9 +43,12 @@ export const Modal: FC<PropsWithChildren<TModalProps>> = ({
           onClick={onClose}
           icon={faXmark}
         />
-        <main className={modalStyles.content}>{children}</main>
+        <main className="h-full">{children}</main>
       </div>
-      <ModalOverlay onClose={onClose} />
+      <div
+        onClick={onClose}
+        className="fixed top-0 left-0 opacity-60 w-screen h-screen z-20 bg-black"
+      ></div>
     </div>,
     document.getElementById("modal") as HTMLElement
   );

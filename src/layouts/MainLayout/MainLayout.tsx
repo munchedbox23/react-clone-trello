@@ -3,8 +3,8 @@ import { AppHeader } from "../../components/AppHeader/AppHeader";
 import { Outlet } from "react-router";
 import { Preloader } from "../../ui/Preloader/Preloader";
 import { Panel } from "../../components/Panel/Panel";
-import styles from "./MainLayout.module.css";
 import { useAppSelector } from "../../app/appStore";
+import { Stack } from "munchedbox-ui";
 
 export const MainLayout: FC = () => {
   const isRequestLoading = useAppSelector(
@@ -15,11 +15,12 @@ export const MainLayout: FC = () => {
   ) : (
     <>
       <AppHeader />
-
-      <main className={styles.contentWrapper}>
+      <Stack direction="row" align="start" spacing="lg">
         <Panel />
-        <Outlet />
-      </main>
+        <main className="flex-1 w-10/12">
+          <Outlet />
+        </main>
+      </Stack>
     </>
   );
 };

@@ -1,22 +1,3 @@
-.boardBtn {
-  width: 300px;
-  min-height: 140px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 16px;
-  border: 1px solid #d9d9d9;
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 1rem;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  position: relative;
-  flex-direction: column;
-  animation: fadeIn 1s ease forwards;
-}
-
 .cardMenu {
   min-height: 80%;
   position: absolute;
@@ -51,24 +32,6 @@
 .boardBtn h4 {
   color: hsl(232, 87%, 45%);
   text-shadow: 1px 0.5px #fff;
-}
-
-.cardIcon {
-  position: absolute;
-  color: var(--primary);
-  top: 6px;
-  font-size: 20px;
-  right: 10px;
-  z-index: 2;
-  transition: color 0.3s ease;
-}
-
-.active {
-  color: var(--primary);
-}
-
-.cardIcon:hover {
-  color: #fff;
 }
 
 .editForm {

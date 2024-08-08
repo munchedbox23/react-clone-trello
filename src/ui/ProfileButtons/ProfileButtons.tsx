@@ -1,7 +1,6 @@
 import { FC } from "react";
-import buttonStyle from "./ProfileButtons.module.css";
-import { AnimatePresence, motion } from "framer-motion";
-import { Button } from "munchedbox-ui";
+import { AnimatePresence } from "framer-motion";
+import { Button, MStack } from "munchedbox-ui";
 
 type TProfileButtons = {
   onCancel: () => void;
@@ -15,25 +14,27 @@ export const ProfileButtons: FC<TProfileButtons> = ({
   return (
     <AnimatePresence>
       {isVisible ? (
-        <motion.div
-          className={buttonStyle.buttons}
+        <MStack
           initial={{ x: "150px", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ opacity: 0 }}
+          direction="row"
+          align="center"
+          spacing="sm"
         >
           <Button
             onClick={onCancel}
+            style={{ backgroundColor: "red" }}
             size="sm"
             type="button"
             variant="primary"
-            className="bg-red-600 rounded-xl font-medium"
           >
             Cancel
           </Button>
           <Button size="sm" type="submit" variant="primary">
             Save
           </Button>
-        </motion.div>
+        </MStack>
       ) : null}
     </AnimatePresence>
   );

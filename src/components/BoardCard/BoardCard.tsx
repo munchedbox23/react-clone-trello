@@ -17,6 +17,7 @@ import {
 } from "../../services/feature/boards/boardsSlice";
 import { useForm } from "../../hooks/useForm";
 import { useNavigate } from "react-router";
+import { MStack } from "munchedbox-ui";
 
 type TBoardCardProps = {
   hasOptions?: boolean;
@@ -67,15 +68,20 @@ export const BoardCard: FC<TBoardCardProps> = ({ hasOptions, data }) => {
   };
 
   return (
-    <div
+    <MStack
       style={{ backgroundImage: `url(${data.background.small}` }}
-      className={`${styles.boardBtn} p-4`}
+      className="p-4 w-72 min-h-32 bg-center bg-no-repeat bg-cover rounded-2xl cursor-pointer font-base font-medium relative border-1 border-solid border-gray-300"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      justify="center"
+      align="start"
+      direction="column"
       onClick={() => navigate(`/boards/${data.id}`)}
     >
       {hasOptions && (
         <FontAwesomeIcon
           icon={faEllipsis}
-          className={`${styles.cardIcon} ${isVisible && styles.active}`}
+          className="absolute top-1.5 text-xl right-2.5 z-10 text-primary-500 transition-colors duration-300 ease-in hover:text-white"
           onClick={handleOpenMenu}
         />
       )}
@@ -131,6 +137,6 @@ export const BoardCard: FC<TBoardCardProps> = ({ hasOptions, data }) => {
       ) : (
         <h4 className="font-medium text-lg mb-3">{data.name}</h4>
       )}
-    </div>
+    </MStack>
   );
 };

@@ -22,7 +22,7 @@ export const Panel: FC = () => {
   };
 
   return (
-    <nav className={`${styles.navMenu} pt-6 pl-3 pr-3`}>
+    <nav className={`${styles.navMenu} pt-6 pl-3 pr-3 flex-0 w-2/12`}>
       <Avatar>
         <h4 className="text-lg font-medium mt-3">{user?.name}</h4>
         <small className="text-sm">{user?.email}</small>

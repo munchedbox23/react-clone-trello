@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from "react";
-import styles from "./BoardList.module.css";
 import { BoardCard } from "../BoardCard/BoardCard";
 import { IBoard } from "../../types/boardsTypes";
+import { Text } from "munchedbox-ui";
 
 type TBoardListProps<T> = {
   title?: string;
@@ -18,12 +18,16 @@ export const BoardList: FC<PropsWithChildren<TBoardListProps<IBoard>>> = ({
   children,
 }) => {
   return (
-    <article className={`${styles.boardList} mt-6`}>
-      <header className={styles.heading}>
-        <h2 className="text-xl font-medium mb-2">{title}</h2>
-        <p className="text-sm font-normal mb-7">{subtitle}</p>
+    <article className="flex flex-col mt-6">
+      <header>
+        <Text as="h2" size="xl" weight="medium" className="mb-2">
+          {title}
+        </Text>
+        <Text as="p" size="sm" weight="normal" className="mb-7">
+          {subtitle}
+        </Text>
       </header>
-      <ul className={styles.list}>
+      <ul className="flex items-start gap-6">
         {array &&
           array.map((item) => (
             <BoardCard data={item} hasOptions={options} key={item.id} />

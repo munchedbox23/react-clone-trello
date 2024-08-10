@@ -8,6 +8,7 @@ import { userLogout } from "../../services/feature/user/auth";
 import { useAppDispatch, useAppSelector } from "../../app/appStore";
 import { FC } from "react";
 import { Avatar } from "../../ui/Avatar/Avatar";
+import { Text, Stack } from "munchedbox-ui";
 
 export const Panel: FC = () => {
   const dispatch = useAppDispatch();
@@ -24,10 +25,14 @@ export const Panel: FC = () => {
   return (
     <nav className={`${styles.navMenu} pt-6 pl-3 pr-3 flex-0 w-2/12`}>
       <Avatar>
-        <h4 className="text-lg font-medium mt-3">{user?.name}</h4>
-        <small className="text-sm">{user?.email}</small>
+        <Text as="h4" size="lg" weight="medium" className="mt-3">
+          {user?.name}
+        </Text>
+        <Text as="small" size="sm">
+          {user?.email}
+        </Text>
       </Avatar>
-      <ul className={styles.links}>
+      <ul className="flex flex-col gap-5 w-full">
         {panelLinks.map((link) => (
           <PanelLink
             key={link.id}
@@ -37,13 +42,18 @@ export const Panel: FC = () => {
           />
         ))}
       </ul>
-      <div
+      <Stack
+        spacing="sm"
+        align="center"
+        justify="start"
         onClick={handleLogout}
-        className={`${styles.logOut} pt-2 pr-4 pb-2 pl-4`}
+        className="absolute cursor-pointer bottom-8 rounded-2xl p-4 bg-zinc-300 duration-300 ease-in"
       >
-        <span className="text-lg font-medium">Logout</span>
+        <Text as="span" size="lg" weight="medium">
+          Logout
+        </Text>
         <FontAwesomeIcon icon={faArrowRightFromBracket} />
-      </div>
+      </Stack>
     </nav>
   );
 };

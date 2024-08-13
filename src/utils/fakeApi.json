@@ -51,6 +51,22 @@
           ]
         },
         {
+          "id": "49dd92ee-81f3-47f9-a22b-2ba0a72a9eb9",
+          "title": "TO DO",
+          "tasks": [
+            {
+              "id": "5d31619c-04ad-4fcc-9050-0460a168dde0",
+              "title": "Vacuum the floors",
+              "description": ""
+            },
+            {
+              "id": "a39107d2-484f-4bd8-bda3-7fdf6ebc36ed",
+              "title": "Help mom around the house",
+              "description": ""
+            }
+          ]
+        },
+        {
           "id": "da12df66-6d3c-4ee9-a07a-530088d8df93",
           "title": "Teams",
           "tasks": [
@@ -103,22 +119,6 @@
             {
               "id": "140d2b8a-6078-427a-b697-53d5a73b0c3e",
               "title": "Update Help Documentation",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "id": "49dd92ee-81f3-47f9-a22b-2ba0a72a9eb9",
-          "title": "TO DO",
-          "tasks": [
-            {
-              "id": "5d31619c-04ad-4fcc-9050-0460a168dde0",
-              "title": "Vacuum the floors",
-              "description": ""
-            },
-            {
-              "id": "a39107d2-484f-4bd8-bda3-7fdf6ebc36ed",
-              "title": "Help mom around the house",
               "description": ""
             }
           ]

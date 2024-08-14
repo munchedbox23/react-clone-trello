@@ -30,7 +30,7 @@ export const ColumnCard: FC<TColumnCard> = ({ task, boardId, columnId }) => {
         direction="row"
         justify="between"
         align="center"
-        className="relative min-h-9 bg-white rounded-lg cursor-pointer z-10 pt-1 pr-3 pb-1 pl-2 scroll-m-2 text-blue-950 shadow-trello-card hover:opacity-100 hover:outline-2 group"
+        className="relative min-h-9 bg-white rounded-lg cursor-pointer z-10 pt-1 pr-1 pb-1 pl-2 scroll-m-2 text-blue-950 shadow-trello-card hover:opacity-100 hover:outline-2 group"
       >
         <Text as="p" size="base" weight="normal" align="left">
           {task.title}

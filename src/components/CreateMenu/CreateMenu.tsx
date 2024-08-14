@@ -1,6 +1,5 @@
 import { useAppDispatch, useAppSelector } from "../../app/appStore";
 import { Form } from "../Form/Form";
-import styles from "./CreateMenu.module.css";
 import { useForm } from "../../hooks/useForm";
 import { BackgroundOption } from "../../ui/BackgroundOption/BackgroundOption";
 import { FormEvent, useState } from "react";
@@ -10,7 +9,7 @@ import { shallowEqual } from "react-redux";
 import { postBoards } from "../../services/feature/boards/boardsSlice";
 import { setModalOpen } from "../../services/feature/modal/modalSlice";
 import { IBackground } from "../../types/boardsTypes";
-import { Input } from "munchedbox-ui";
+import { Input, Stack } from "munchedbox-ui";
 
 export interface IFormBoard {
   name: string;
@@ -88,7 +87,13 @@ export const CreateMenu = () => {
         onChange={onChange}
         variant="rounded"
       />
-      <div className={`${styles.bgOptions} p-2`}>
+      <Stack
+        direction="row"
+        spacing="sm"
+        align="center"
+        justify="center"
+        className="p2 flex-wrap overflow-auto w-full max-w-80 max-h-44"
+      >
         {!optionsLoading && backgroundOptions ? (
           backgroundOptions
             .slice(0, 8)
@@ -104,7 +109,7 @@ export const CreateMenu = () => {
         ) : (
           <DotsLoader />
         )}
-      </div>
+      </Stack>
     </Form>
   );
 };

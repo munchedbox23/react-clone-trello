@@ -1,4 +1,4 @@
-import { FC, useEffect, useState, MouseEvent } from "react";
+  import { FC, useEffect, useState, MouseEvent } from "react";
 import styles from "./BoardCard.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -81,7 +81,7 @@ export const BoardCard: FC<TBoardCardProps> = ({ hasOptions, data }) => {
       {hasOptions && (
         <FontAwesomeIcon
           icon={faEllipsis}
-          className="absolute top-1.5 text-xl right-2.5 z-10 text-primary-500 transition-colors duration-300 ease-in hover:text-white"
+          className="absolute top-1.5 text-xl right-2.5 z-0 text-primary-500 transition-colors duration-300 ease-in hover:text-white"
           onClick={handleOpenMenu}
         />
       )}

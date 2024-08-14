@@ -1,6 +1,4 @@
 import { FC, useRef, useState } from "react";
-import columnStyles from "./ColumnList.module.css";
-import cn from "classnames";
 import { faEllipsis, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
@@ -11,6 +9,7 @@ import { ColumnCard } from "../ColumnCard/ColumnCard";
 import { useDrag, useDrop } from "react-dnd";
 import { Identifier } from "dnd-core";
 import { EditableTitle } from "../../ui/EditableTitle/EditableTitle";
+import { Stack, Text } from "munchedbox-ui";
 
 type TColumnListProps = {
   name: string;
@@ -130,12 +129,16 @@ export const ColumnList: FC<TColumnListProps> = ({
     <li
       data-handler-id={handlerId}
       data-testid="columnList"
-      className={columnStyles.column}
+      className="block shrink-0 self-start pr-1.5 h-full whitespace-nowrap"
       style={{ opacity }}
       ref={dndRef}
     >
-      <div className={cn(columnStyles.columnTarget, "px-2")}>
-        <header className={columnStyles.header}>
+      <Stack
+        direction="column"
+        justify="between"
+        className="px-2 relative w-72 max-h-full pb-2 rounded-xl whitespace-normal scroll-m-2 align-top text-blue-900 bg-gray-100 shadow-trello-column"
+      >
+        <header className="flex relative grow-0 pt-2 pr-0.5 flex-wrap items-start justify-between gap-x-0 mb-2">
           <EditableTitle
             initialValue={name}
             inputName="columnName"
@@ -144,7 +147,7 @@ export const ColumnList: FC<TColumnListProps> = ({
             }
           />
           <FontAwesomeIcon
-            className={columnStyles.columnIcon}
+            className="p-1 rounded-lg grow-0 shrink-0 cursor-pointer bg-transparent text-slate-500 hover:text-slate-600 hover:bg-black-primary"
             icon={faEllipsis}
             onClick={() =>
               setColumnState((prevState) => ({
@@ -156,16 +159,16 @@ export const ColumnList: FC<TColumnListProps> = ({
         </header>
         {isOptionsOpen && (
           <motion.div
-            className={columnStyles.options}
+            className="absolute z-40 top-12 right-2 cursor-pointer w-9 h-9 rounded-lg pt-1 pr-0.5 pb-1 pl-3 bg-neutral-300 ease-linear duration-100 transition-background-color hover:bg-neutral-200"
             initial={{ y: "-20px" }}
             animate={{ y: 0 }}
             exit={{ y: "-20px" }}
             onClick={() => deleteColumn(board.id, columnId)}
           >
-            <FontAwesomeIcon icon={faTrash} />
+            <FontAwesomeIcon icon={faTrash} className="text-red-500" />
           </motion.div>
         )}
-        <ol className={columnStyles.cardList}>
+        <ol className="flex gap-2 flex-col">
           {tasks.map((task) => (
             <ColumnCard
               key={task.id}
@@ -191,7 +194,7 @@ export const ColumnList: FC<TColumnListProps> = ({
           />
         ) : (
           <button
-            className={cn(columnStyles.columnFooter, "mt-3")}
+            className="mt-3 flex grow-1 justify-start items-center rounded-lg bg-black-primary gap-1 w-full pt-1 pr-3 pb-1 pl-2 text-slate-600"
             onClick={() =>
               setColumnState((prevState) => ({
                 ...prevState,
@@ -200,10 +203,12 @@ export const ColumnList: FC<TColumnListProps> = ({
             }
           >
             <FontAwesomeIcon icon={faPlus} />
-            <span className="text-base font-semibold">Add a card</span>
+            <Text size="base" weight="semibold">
+              Add a card
+            </Text>
           </button>
         )}
-      </div>
+      </Stack>
     </li>
   );
 };

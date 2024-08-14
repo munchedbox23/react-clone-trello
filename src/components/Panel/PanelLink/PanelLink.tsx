@@ -1,6 +1,6 @@
 import styles from "./PanelLink.module.css";
 import { NavLink } from "react-router-dom";
-import React, { FC } from "react";
+import { FC } from "react";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

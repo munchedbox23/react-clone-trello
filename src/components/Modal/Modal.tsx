@@ -1,8 +1,8 @@
 import { createPortal } from "react-dom";
-import modalStyles from "./Modal.module.css";
 import { FC, PropsWithChildren } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { Stack, Text } from "munchedbox-ui";
 
 type TModalProps = {
   title?: string;
@@ -35,21 +35,36 @@ export const Modal: FC<PropsWithChildren<TModalProps>> = ({
   // }, [onClose, handleCloseByEscape]);
 
   return createPortal(
-    <div className={modalStyles.modal}>
-      <div className={`${modalStyles.modalWrapper} m`}>
-        <h2 className="text-2xl font-semibold mt-5 mb-9">{title}</h2>
+    <Stack
+      align="center"
+      direction="row"
+      justify="center"
+      className="z-20 right-0 top-0 left-0 bottom-0 fixed transition-all duration-300 ease-linear"
+    >
+      <Stack
+        direction="row"
+        justify="center"
+        align="start"
+        className="relative z-30 w-2/5 min-h-96 text-center rounded-3xl bg-slate-100"
+      >
+        {title && (
+          <Text as="h2" size="2xl" weight="semibold" className="mt-5 mb-9">
+            {title}
+          </Text>
+        )}
         <FontAwesomeIcon
-          className={modalStyles.icon}
+          className="cursor-pointer absolute rounded-lg top-2.5 right-8 text-2xl transition-opacity duration-300 ease-linear hover:opacity-60"
           onClick={onClose}
           icon={faXmark}
         />
         <main className="h-full">{children}</main>
-      </div>
+      </Stack>
+
       <div
         onClick={onClose}
         className="fixed top-0 left-0 opacity-60 w-screen h-screen z-20 bg-black"
       ></div>
-    </div>,
+    </Stack>,
     document.getElementById("modal") as HTMLElement
   );
 };

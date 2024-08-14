@@ -159,7 +159,7 @@ export const ColumnList: FC<TColumnListProps> = ({
         </header>
         {isOptionsOpen && (
           <motion.div
-            className="absolute z-40 top-12 right-2 cursor-pointer w-9 h-9 rounded-lg pt-1 pr-0.5 pb-1 pl-3 bg-neutral-300 ease-linear duration-100 transition-background-color hover:bg-neutral-200"
+            className="absolute z-20 top-12 right-2 cursor-pointer w-9 h-9 rounded-lg pt-1.5 pr-0.5 pb-0.5 pl-3 bg-neutral-300 ease-linear duration-100 transition-background-color hover:bg-neutral-200"
             initial={{ y: "-20px" }}
             animate={{ y: 0 }}
             exit={{ y: "-20px" }}

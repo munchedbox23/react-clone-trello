@@ -1,4 +1,3 @@
-import styles from "./TablePage.module.css";
 import { useParams } from "react-router";
 import { TableHeader } from "../../components/TableHeader/TableHeader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,7 +5,6 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FC, useState, useEffect } from "react";
 import { IBoard, IColumn } from "../../types/boardsTypes";
 import { updateColumns } from "../../services/feature/boards/boardsSlice";
-import cn from "classnames";
 import { v4 as uuidv4 } from "uuid";
 import { AnimatePresence } from "framer-motion";
 import { ColumnList } from "../../components/ColumnList/ColumnList";
@@ -18,6 +16,7 @@ import { Modal } from "../../components/Modal/Modal";
 import { setModalOpen } from "../../services/feature/modal/modalSlice";
 import { TaskDetails } from "../../components/TaskDetails/TaskDetails";
 import { useAppSelector, useAppDispatch } from "../../app/appStore";
+import { Stack, Button, Text } from "munchedbox-ui";
 
 interface IState {
   isVisible: boolean;
@@ -148,12 +147,17 @@ export const TablePage: FC = () => {
     <>
       <div
         style={{ backgroundImage: `url(${currentBoard?.background.regular})` }}
-        className={styles.board}
+        className="w-screen h-screen bg-cover bg-no-repeat bg-center"
       >
         <TableHeader />
-        <div className={cn(styles.columnsContainer, "px-6 py-5")}>
+        <Stack
+          direction="row"
+          align="start"
+          spacing="md"
+          className="w-full px-6 py-5 h-table"
+        >
           <DndProvider backend={HTML5Backend}>
-            <ol className={styles.columnList}>
+            <ol className="flex overflow-x-auto h-full max-w-full items-center">
               {currentBoard?.columns.map((item: IColumn, index: number) => (
                 <ColumnList
                   index={index}
@@ -191,25 +195,26 @@ export const TablePage: FC = () => {
                 areaName="columnName"
               />
             ) : (
-              <button
-                className={styles.addColumnBtn}
+              <Button
                 type="button"
+                size="sm"
+                variant="secondary"
                 data-testid="list-composer-button"
-                onClick={() =>
+                onClick={() => {
                   setState({
                     ...state,
                     isVisible: true,
-                  })
-                }
+                  });
+                }}
               >
                 <FontAwesomeIcon icon={faPlus} />
-                <span className="text-base font-semibold">
+                <Text size="base" weight="semibold">
                   Add another column
-                </span>
-              </button>
+                </Text>
+              </Button>
             )}
           </AnimatePresence>
-        </div>
+        </Stack>
       </div>
       {isModalOpen && (
         <Modal onClose={() => dispatch(setModalOpen())}>

@@ -57,7 +57,7 @@ export const Modal: FC<PropsWithChildren<TModalProps>> = ({
           onClick={onClose}
           icon={faXmark}
         />
-        <main className="h-full">{children}</main>
+        <main className="h-full w-full">{children}</main>
       </Stack>
 
       <div

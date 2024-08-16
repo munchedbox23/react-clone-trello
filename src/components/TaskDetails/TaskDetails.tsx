@@ -1,13 +1,12 @@
 import { useAppSelector } from "../../app/appStore";
-import styles from "./TaskDetails.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBarsStaggered,
   faWindowMaximize,
 } from "@fortawesome/free-solid-svg-icons";
-import cn from "classnames";
 import { EditableTitle } from "../../ui/EditableTitle/EditableTitle";
 import { FC } from "react";
+import { Stack, Text } from "munchedbox-ui";
 
 type TTaskDetailsProps = {
   onUpdateTaskName: (
@@ -26,10 +25,10 @@ export const TaskDetails: FC<TTaskDetailsProps> = ({ onUpdateTaskName }) => {
   const { task, boardId, columnId } = selectedTask;
 
   return (
-    <div className={styles.cardBanner}>
-      <header className={styles.cardDetailHeader}>
+    <Stack direction="column" justify="start" align="start" className="w-96">
+      <header className="min-h-8 relative flex items-center gap-3 w-full pt-2 pr-12 pb-2 pl-14">
         <FontAwesomeIcon icon={faWindowMaximize} />
-        <div className={cn(styles.windowTitle)}>
+        <div className="w-full">
           <EditableTitle
             inputName="cardName"
             initialValue={task.title}
@@ -39,13 +38,14 @@ export const TaskDetails: FC<TTaskDetailsProps> = ({ onUpdateTaskName }) => {
           />
         </div>
       </header>
-      <div className={cn(styles.cardDescription, "mt-8")}>
-        <div className={styles.descriptionTitle}>
+      <div className="mt-8 pl-14 items-start">
+        <Stack align="center" spacing="sm" direction="row">
           <FontAwesomeIcon icon={faBarsStaggered} />
-          <h3 className="text-base font-bold">Description</h3>
-        </div>
-        <div className={styles.descriptionContent}></div>
+          <Text as="h3" size="base" weight="bold">
+            Description
+          </Text>
+        </Stack>
       </div>
-    </div>
+    </Stack>
   );
 };

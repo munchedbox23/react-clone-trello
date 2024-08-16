@@ -36,7 +36,6 @@ export const Form = forwardRef<HTMLDivElement, PropsWithChildren<TFormProps>>(
           <Text as="h2" weight="medium" size="3xl">
             {title}
           </Text>
-          <h2 className="font-medium text-3xl mb-5 text-gray-600"></h2>
           {children}
           <Button
             type="submit"

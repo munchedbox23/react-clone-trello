@@ -17,7 +17,7 @@ export const MainLayout: FC = () => {
       <AppHeader />
       <Stack direction="row" align="start" spacing="lg">
         <Panel />
-        <main className="flex-1 w-10/12">
+        <main className="flex-1 w-10/12 overflow-hidden">
           <Outlet />
         </main>
       </Stack>

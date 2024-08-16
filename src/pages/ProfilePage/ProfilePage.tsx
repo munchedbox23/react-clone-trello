@@ -1,4 +1,3 @@
-import styles from "./ProfilePage.module.css";
 import { useForm } from "../../hooks/useForm";
 import { IUser } from "../../types/userTypes";
 import { FormEvent, FC, useEffect, useState } from "react";
@@ -56,12 +55,12 @@ export const ProfilePage: FC = () => {
 
   return (
     <motion.section
-      className={`${styles.profilePage} pt-20`}
+      className="flex flex-col items-center max-w-full pt-20"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <form onSubmit={onSubmit} className={styles.form}>
+      <form onSubmit={onSubmit} className="flex flex-col items-center gap-6">
         <motion.h1
           className="text-4xl font-medium underline"
           initial={{ y: "-200px" }}

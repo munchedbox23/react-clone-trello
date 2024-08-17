@@ -1,4 +1,4 @@
-import { PanelLink } from "./PanelLink/PanelLink";
+import { PanelLink } from "./PanelLink";
 import { ROUTE, panelLinks } from "../../utils/constants";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

@@ -72,7 +72,7 @@
   --ds-text-accent-gray-bolder: #091e42;
   --ds-text-disabled: #091e424f;
   --ds-text-inverse: #ffffff;
-  --ds-text-selected: #0c66e4;
+  --ds-text-selected: rgb(12, 102, 228);
   --ds-text-brand: #0c66e4;
   --ds-text-danger: #ae2e24;
   --ds-text-warning: #a54800;
@@ -85,7 +85,7 @@
   --ds-link: #0c66e4;
   --ds-link-pressed: #0055cc;
   --ds-link-visited: #5e4db2;
-  --ds-icon: #44546f;
+  --ds-icon: rgb(68, 84, 111);
   --ds-icon-accent-lime: #6a9a23;
   --ds-icon-accent-red: #c9372c;
   --ds-icon-accent-orange: #e56910;
@@ -100,7 +100,7 @@
   --ds-icon-inverse: #ffffff;
   --ds-shadows-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --ds-background-selected: #e9f2ff;
+  --ds-background-selected: rgb(233, 242, 255);
   --border-radius: 16px;
 }
 

@@ -1,5 +1,4 @@
-  import { FC, useEffect, useState, MouseEvent } from "react";
-import styles from "./BoardCard.module.css";
+import { FC, useEffect, useState, MouseEvent } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEllipsis,
@@ -17,7 +16,7 @@ import {
 } from "../../services/feature/boards/boardsSlice";
 import { useForm } from "../../hooks/useForm";
 import { useNavigate } from "react-router";
-import { MStack } from "munchedbox-ui";
+import { MStack, Text } from "munchedbox-ui";
 
 type TBoardCardProps = {
   hasOptions?: boolean;
@@ -88,7 +87,7 @@ export const BoardCard: FC<TBoardCardProps> = ({ hasOptions, data }) => {
       <AnimatePresence>
         {isVisible && (
           <motion.div
-            className={`${styles.cardMenu} p-4`}
+            className="h-4/5 px-4 pt-1 absolute w-full z-40 bottom-0 left-0 flex flex-col bg-transparent gap-2"
             initial={{ opacity: 0, clipPath: "circle(0.4% at 100% 0)" }}
             animate={{ opacity: 1, clipPath: "circle(141.2% at 100% 0)" }}
             transition={{ duration: 0.3 }}
@@ -96,13 +95,16 @@ export const BoardCard: FC<TBoardCardProps> = ({ hasOptions, data }) => {
           >
             <button
               onClick={(e) => handleDelete(e, data.id)}
-              className={styles.menuBtn}
+              className="w-full h-10 flex items-center justify-between rounded gap-12 px-2 bg-gray-200 transition-background-color duration-500 ease-in-out hover:bg-neutral-200"
             >
-              <span>Delete</span>
+              <Text align="left">Delete</Text>
               <FontAwesomeIcon icon={faTrash} style={{ color: "#ff0000" }} />
             </button>
-            <button className={styles.menuBtn} onClick={handleUpdate}>
-              <span>Edit</span>
+            <button
+              className="w-full h-10 flex items-center justify-between rounded gap-12 px-2 bg-gray-200 transition-background-color duration-500 ease-in-out hover:bg-neutral-200"
+              onClick={handleUpdate}
+            >
+              <Text align="left">Edit</Text>
               <FontAwesomeIcon
                 icon={faPenToSquare}
                 style={{ color: "#477eff" }}
@@ -112,13 +114,13 @@ export const BoardCard: FC<TBoardCardProps> = ({ hasOptions, data }) => {
         )}
       </AnimatePresence>
       {isEditing ? (
-        <div className={styles.editForm}>
+        <MStack spacing="sm" direction="row">
           <input
             type="text"
             value={formState.name}
             onChange={onChange}
             name="name"
-            className={styles.editInput}
+            className="w-3/5 outline-none px-1 pl-4 rounded-lg"
             onClick={(e) => e.stopPropagation()}
           />
           <button
@@ -133,9 +135,11 @@ export const BoardCard: FC<TBoardCardProps> = ({ hasOptions, data }) => {
           >
             <FontAwesomeIcon icon={faTimes} />
           </button>
-        </div>
+        </MStack>
       ) : (
-        <h4 className="font-medium text-lg mb-3">{data.name}</h4>
+        <Text as="h4" size="lg" className="mb-3" weight="medium">
+          {data.name}
+        </Text>
       )}
     </MStack>
   );

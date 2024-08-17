@@ -10,7 +10,7 @@ module.exports = {
         'primary-600': '#0055cc', 
         'sky-500': '#0ea5e9', 
         "black-primary": "#091e4224",
-        "header": "#0000001a"
+        "header": "#0000001a",
       },
       boxShadow: {
         'custom': '5px 0px 5px -5px rgba(34, 60, 80, 0.43)',

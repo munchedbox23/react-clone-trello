@@ -137,7 +137,7 @@ export const BoardCard: FC<TBoardCardProps> = ({ hasOptions, data }) => {
           </button>
         </MStack>
       ) : (
-        <Text as="h4" size="lg" className="mb-3" weight="medium">
+        <Text as="h4" size="lg" className="mb-3 text-violet-900" weight="medium">
           {data.name}
         </Text>
       )}

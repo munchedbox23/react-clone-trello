@@ -13,7 +13,7 @@ export const PanelLink: FC<TPanelLinkProps> = ({ route, icon, text }) => {
   return (
     <NavLink
       className={({ isActive }) =>
-        `w-full bg-transparent rounded-lg flex items-center min-h-5 text-sm font-medium text-blue-950 transition-colors transition-shadow duration-75 ease-in hover:bg-black-primary ${isActive && "bg-indigo-100 text-blue-600"} pr-4 pl-4`
+        `w-full rounded-lg flex items-center min-h-5 text-sm font-medium transition-colors transition-shadow duration-75 ease-in hover:bg-black-primary px-4 ${isActive ? "text-blue-600 bg-indigo-100" : "text-blue-950 bg-transparent"} `
       }
       to={route}
     >

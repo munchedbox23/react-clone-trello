@@ -5,11 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { userLogout } from "../../services/feature/user/auth";
 import { useAppDispatch, useAppSelector } from "../../app/appStore";
-import { FC } from "react";
+import { FC, memo } from "react";
 import { Avatar } from "../../ui/Avatar/Avatar";
 import { Text, Stack } from "munchedbox-ui";
 
-export const Panel: FC = () => {
+export const Panel: FC = memo(() => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -49,7 +49,7 @@ export const Panel: FC = () => {
         direction="row"
         justify="start"
         onClick={handleLogout}
-        className="absolute cursor-pointer bottom-8 rounded-2xl p-4 bg-zinc-300 duration-300 ease-in hover:opacity-85"
+        className="absolute cursor-pointer bottom-8 rounded-2xl p-3 bg-zinc-300 duration-300 ease-in hover:opacity-85"
       >
         <Text as="span" size="lg" weight="medium">
           Logout
@@ -58,4 +58,4 @@ export const Panel: FC = () => {
       </Stack>
     </nav>
   );
-};
+});

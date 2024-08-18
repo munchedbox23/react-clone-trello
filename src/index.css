@@ -81,7 +81,7 @@
   --ds-text-discovery: #5e4db2;
   --ds-text-information: #0055cc;
   --ds-text-subtlest: #626f86;
-  --ds-text-subtle: #44546f;
+  --ds-text-subtle: rgb(68, 84, 111);
   --ds-link: #0c66e4;
   --ds-link-pressed: #0055cc;
   --ds-link-visited: #5e4db2;

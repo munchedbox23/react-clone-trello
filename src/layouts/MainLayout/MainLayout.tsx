@@ -15,7 +15,12 @@ export const MainLayout: FC = () => {
   ) : (
     <>
       <AppHeader />
-      <Stack direction="row" align="start" spacing="lg">
+      <Stack
+        direction="row"
+        align="start"
+        spacing="lg"
+        className="max-h-custom"
+      >
         <Panel />
         <main className="flex-1 w-10/12 overflow-hidden">
           <Outlet />

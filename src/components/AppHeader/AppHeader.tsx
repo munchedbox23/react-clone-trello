@@ -1,5 +1,4 @@
 import { ChangeEvent, FC, useState } from "react";
-import headerStyles from "./AppHeader.module.css";
 import Logo from "../../assets/images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faPlus } from "@fortawesome/free-solid-svg-icons";
@@ -8,10 +7,10 @@ import { setModalOpen } from "../../services/feature/modal/modalSlice";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { selectBoardsByUser } from "../../services/feature/boards/boardSelectors";
 import { Link } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { filteredBoardsByName } from "../../services/feature/boards/boardsSlice";
 import { IBoard } from "../../types/boardsTypes";
-import { Button, Stack, Text } from "munchedbox-ui";
+import { Button, MStack, Text } from "munchedbox-ui";
 
 export const AppHeader: FC = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -37,10 +36,10 @@ export const AppHeader: FC = () => {
   };
 
   return (
-    <header className={`${headerStyles.header} p-6`}>
+    <header className="flex items-center justify-between w-full relative top-0 left-0 z-10 h-20 bg-neutral-100 shadow-custom-header p-6">
       <img src={Logo} alt="Trello Logo" />
       <form className="flex relative flex-col items-center">
-        <Stack
+        <MStack
           align="center"
           direction="row"
           justify="between"
@@ -52,7 +51,7 @@ export const AppHeader: FC = () => {
             className="absolute w-4 h-4 top-1.7 left-2 text-blue-950	"
           />
           <input
-            className={headerStyles.input}
+            className="h-full outline-none pr-3 pl-7 w-52 rounded-2xl focus:w-96 bg-stone-50 transition-width duration-700 ease-linear text-sky-800"
             type="text"
             name="search"
             placeholder="Search board"
@@ -63,11 +62,12 @@ export const AppHeader: FC = () => {
             onBlur={handleClearSearch}
             autoComplete="off"
           />
-        </Stack>
+        </MStack>
         <AnimatePresence mode="wait">
           {showDropdown && (
-            <motion.div
-              className={`${headerStyles.dropdown} text-center mt-2 py-2 px-3`}
+            <MStack
+              spacing="sm"
+              className="text-center mt-2 py-2 px-3 w-full absolute top-full max-h-52 overflow-y-auto left-0 bg-white rounded-lg border border-solid "
               initial={{ height: 0 }}
               animate={{ height: "200px" }}
               exit={{ height: 0, opacity: 0 }}
@@ -95,7 +95,7 @@ export const AppHeader: FC = () => {
                   You don't have any active boards
                 </Text>
               )}
-            </motion.div>
+            </MStack>
           )}
         </AnimatePresence>
       </form>
@@ -107,7 +107,7 @@ export const AppHeader: FC = () => {
         onClick={() => handleModalOpen("create-board")}
       >
         <FontAwesomeIcon icon={faPlus} className="mr-1" />
-        <span>Create</span>
+        <Text>Create</Text>
       </Button>
     </header>
   );

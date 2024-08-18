@@ -55,7 +55,7 @@ export const ProfilePage: FC = () => {
 
   return (
     <motion.section
-      className="flex flex-col items-center max-w-full pt-20"
+      className="flex flex-col items-center max-w-full w-4/5 pt-20"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

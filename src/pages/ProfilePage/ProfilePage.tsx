@@ -1,5 +1,5 @@
 import { useForm } from "../../hooks/useForm";
-import { IUser } from "../../types/userTypes";
+import { IUser } from "../../app/types/userTypes";
 import { FormEvent, FC, useEffect, useState } from "react";
 import { editUser } from "../../services/feature/user/auth";
 import { ProfileButtons } from "../../ui/ProfileButtons/ProfileButtons";

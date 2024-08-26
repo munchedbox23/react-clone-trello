@@ -1,5 +1,5 @@
 import { API } from "./constants";
-import { IRefreshTokenResponse, TTokenError } from "../types/tokenTypes";
+import { IRefreshTokenResponse, TTokenError } from "../app/types/tokenTypes";
 import { cookies } from "../services/feature/user/auth";
 
 export const checkResponse = <T>(respose: Response): Promise<T> => {

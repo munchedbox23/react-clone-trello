@@ -10,7 +10,6 @@ import { Modal } from "../../components/Modal/Modal";
 import { CreateMenu } from "../../components/CreateMenu/CreateMenu";
 import { selectBoardsByUser } from "../../services/feature/boards/boardSelectors";
 import { useAppDispatch, useAppSelector } from "../../app/appStore";
-import { Text } from "munchedbox-ui";
 
 export const BoardPage: FC = () => {
   const dispatch = useAppDispatch();
@@ -45,9 +44,7 @@ export const BoardPage: FC = () => {
           onClick={() => handleModalOpen("create-board")}
           className={styles.createBtn}
         >
-          <Text weight="medium" size="lg" className="mr-2">
-            Create new board
-          </Text>
+          <span className="mr-2 text-lg font-medium">Create new board</span>
           <FontAwesomeIcon icon={faPlus} />
         </button>
       </BoardList>

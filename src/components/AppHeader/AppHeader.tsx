@@ -9,7 +9,7 @@ import { selectBoardsByUser } from "../../services/feature/boards/boardSelectors
 import { Link } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { filteredBoardsByName } from "../../services/feature/boards/boardsSlice";
-import { IBoard } from "../../types/boardsTypes";
+import { IBoard } from "../../app/types/boardsTypes";
 import { Button, MStack, Text } from "munchedbox-ui";
 
 export const AppHeader: FC = () => {

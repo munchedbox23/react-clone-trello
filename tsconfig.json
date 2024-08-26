@@ -7,7 +7,7 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     },
 
     /* Bundler mode */
@@ -38,5 +38,5 @@
     "rootDir": "./",
     "types": ["node", "jest", "react-dom/test-utils", "react-dom"]
   },
-  "include": ["src", "declaration.d.ts"]
+  "include": ["src", "declaration.d.ts", "./src/**/*.ts", "./src/**/*.tsx"]
 }

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IUser } from "../../../types/userTypes";
+import { IUser } from "../../../app/types/userTypes";
 import {
   userRegister,
   userLogin,

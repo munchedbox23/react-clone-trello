@@ -4,7 +4,7 @@ import { faHighlighter } from "@fortawesome/free-solid-svg-icons";
 import { useAppDispatch } from "../../app/appStore";
 import { setModalOpen } from "../../services/feature/modal/modalSlice";
 import { setSelectedTask } from "../../services/feature/boards/boardsSlice";
-import { ITask } from "../../types/boardsTypes";
+import { ITask } from "../../app/types/boardsTypes";
 import { Stack, Text } from "munchedbox-ui";
 
 type TColumnCard = {

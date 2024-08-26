@@ -9,7 +9,7 @@ export const AuthLayout = () => {
   );
   return (
     <section className="pt-20 flex flex-col items-center justify-center">
-      <img src={Logo} alt="Logo trello" />
+      <img className="w-max" src={Logo} alt="Logo trello" />
       {isRequestLoading ? <Preloader /> : <Outlet />}
     </section>
   );

@@ -8,7 +8,7 @@ import { DotsLoader } from "../../ui/Preloader/DotsLoader/DotsLoader";
 import { shallowEqual } from "react-redux";
 import { postBoards } from "../../services/feature/boards/boardsSlice";
 import { setModalOpen } from "../../services/feature/modal/modalSlice";
-import { IBackground } from "../../types/boardsTypes";
+import { IBackground } from "../../app/types/boardsTypes";
 import { Input, Stack } from "munchedbox-ui";
 
 export interface IFormBoard {
@@ -92,7 +92,7 @@ export const CreateMenu = () => {
         spacing="sm"
         align="center"
         justify="center"
-        className="p2 flex-wrap overflow-auto w-full max-w-80 max-h-44"
+        className="p-2 flex-wrap overflow-auto w-full max-w-96 max-h-44"
       >
         {!optionsLoading && backgroundOptions ? (
           backgroundOptions

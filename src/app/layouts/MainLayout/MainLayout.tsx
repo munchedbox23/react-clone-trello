@@ -1,9 +1,9 @@
 import { FC } from "react";
-import { AppHeader } from "../../components/AppHeader/AppHeader";
+import { AppHeader } from "../../../components/AppHeader/AppHeader";
 import { Outlet } from "react-router";
-import { Preloader } from "../../ui/Preloader/Preloader";
-import { Panel } from "../../components/Panel/Panel";
-import { useAppSelector } from "../../app/appStore";
+import { Preloader } from "../../../ui/Preloader/Preloader";
+import { Panel } from "../../../components/Panel/Panel";
+import { useAppSelector } from "../../appStore";
 import { Stack } from "munchedbox-ui";
 
 export const MainLayout: FC = () => {
@@ -11,7 +11,9 @@ export const MainLayout: FC = () => {
     (store) => store.user.isRequestLoading
   );
   return isRequestLoading ? (
-    <Preloader />
+    <div className="w-screen h-screen flex justify-center relative">
+      <Preloader />
+    </div>
   ) : (
     <>
       <AppHeader />

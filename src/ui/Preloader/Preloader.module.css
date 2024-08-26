@@ -4,11 +4,10 @@
   border: 3px solid #6e82e5;
   border-radius: 50%;
   display: inline-block;
-  box-sizing: border-box;
+  margin: 0 auto;
   animation: rotation 1s linear infinite;
   position: absolute;
   top: 50%;
-  left: 50%;
 }
 .loader::after {
   content: "";
@@ -23,7 +22,6 @@
   border-radius: 50%;
   border: 3px solid transparent;
   border-bottom-color: red;
-  /* border-bottom-color: #ff3d00; */
 }
 
 @keyframes rotation {

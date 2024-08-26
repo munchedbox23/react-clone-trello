@@ -3,7 +3,7 @@ import { TableHeader } from "../../components/TableHeader/TableHeader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FC, useState, useEffect } from "react";
-import { IBoard, IColumn } from "../../types/boardsTypes";
+import { IBoard, IColumn } from "../../app/types/boardsTypes";
 import { updateColumns } from "../../services/feature/boards/boardsSlice";
 import { v4 as uuidv4 } from "uuid";
 import { AnimatePresence } from "framer-motion";
@@ -154,10 +154,10 @@ export const TablePage: FC = () => {
           direction="row"
           align="start"
           spacing="md"
-          className="w-full px-6 py-5 h-table"
+          className="w-full px-6 py-5 h-table overflow-x-auto"
         >
           <DndProvider backend={HTML5Backend}>
-            <ol className="flex overflow-x-auto h-full max-w-full items-center">
+            <ol className="flex h-full items-center">
               {currentBoard?.columns.map((item: IColumn, index: number) => (
                 <ColumnList
                   index={index}
@@ -200,6 +200,7 @@ export const TablePage: FC = () => {
                 size="sm"
                 variant="secondary"
                 data-testid="list-composer-button"
+                className="min-w-40"
                 onClick={() => {
                   setState({
                     ...state,

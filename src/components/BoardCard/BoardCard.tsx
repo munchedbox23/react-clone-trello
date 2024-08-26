@@ -8,7 +8,7 @@ import {
   faSave,
 } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence, motion } from "framer-motion";
-import { IBoard } from "../../types/boardsTypes";
+import { IBoard } from "../../app/types/boardsTypes";
 import { useAppDispatch } from "../../app/appStore";
 import {
   deleteBoard,
@@ -137,7 +137,7 @@ export const BoardCard: FC<TBoardCardProps> = ({ hasOptions, data }) => {
           </button>
         </MStack>
       ) : (
-        <Text as="h4" size="lg" className="mb-3 text-violet-900" weight="medium">
+        <Text as="h4" size="lg" className="mb-3 text-sky-950" weight="medium">
           {data.name}
         </Text>
       )}

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { MCardForm } from "../../ui/CardForm/CardForm";
 import { useForm } from "../../hooks/useForm";
-import { IBoard, ITask } from "../../types/boardsTypes";
+import { IBoard, ITask } from "../../app/types/boardsTypes";
 import { ColumnCard } from "../ColumnCard/ColumnCard";
 import { useDrag, useDrop } from "react-dnd";
 import { Identifier } from "dnd-core";

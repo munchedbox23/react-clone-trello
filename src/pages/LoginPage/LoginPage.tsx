@@ -3,7 +3,7 @@ import { LoginLinks } from "../../components/Form/FormLinks/FormLinks";
 import { FC } from "react";
 import { useForm } from "../../hooks/useForm";
 import { userLogin } from "../../services/feature/user/auth";
-import { IUserLogin } from "../../types/userTypes";
+import { IUserLogin } from "../../app/types/userTypes";
 import { formVariants } from "../../utils/animationVariants";
 import { Input } from "munchedbox-ui";
 

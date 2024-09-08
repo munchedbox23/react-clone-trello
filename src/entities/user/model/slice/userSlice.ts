@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IUser } from "../../../app/types/userTypes";
+import { IUser } from "../types/userTypes";
 import {
-  userRegister,
+  checkUserAuth,
+  editUser,
   userLogin,
   userLogout,
-  editUser,
-  checkUserAuth,
-} from "./auth";
+  userRegister,
+} from "../../api/userApi";
 
 type TUserState = {
   user: IUser | null;

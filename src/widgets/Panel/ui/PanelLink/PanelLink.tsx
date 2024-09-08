@@ -1,13 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { FC } from "react";
-import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-type TPanelLinkProps = {
-  route: string;
-  icon: IconDefinition;
-  text: string;
-};
+import { TPanelLinkProps } from "../../model/types/panel-types";
 
 export const PanelLink: FC<TPanelLinkProps> = ({ route, icon, text }) => {
   return (

@@ -1,5 +1,4 @@
 import { useParams } from "react-router";
-import { TableHeader } from "../../components/TableHeader/TableHeader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FC, useState, useEffect } from "react";
@@ -14,9 +13,13 @@ import { Modal } from "../../components/Modal/Modal";
 import { setModalOpen } from "../../services/feature/modal/modalSlice";
 import { TaskDetails } from "../../components/TaskDetails/TaskDetails";
 import { Stack, Button, Text } from "munchedbox-ui";
-import { useAppSelector, useAppDispatch } from "../../app/providers/StoreProvider";
+import {
+  useAppSelector,
+  useAppDispatch,
+} from "../../app/providers/StoreProvider";
 import { useForm } from "../../shared/hooks/useForm";
 import { MCardForm } from "../../shared/ui/CardForm/CardForm";
+import { TableHeader } from "../../widgets/TableHeader";
 
 interface IState {
   isVisible: boolean;

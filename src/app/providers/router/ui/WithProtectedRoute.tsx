@@ -1,8 +1,8 @@
 import { Navigate, useLocation } from "react-router";
 import { FC, ReactElement } from "react";
-import { createSelector } from "@reduxjs/toolkit";
 import { ROUTE } from "../../../../shared/helpers/constants";
-import { RootState, useAppSelector } from "../../StoreProvider";
+import { useAppSelector } from "../../StoreProvider";
+import { shallowEqual } from "react-redux";
 
 type IWithProtectedRouteProps = {
   component: ReactElement;
@@ -13,12 +13,14 @@ export const WithProtectedRoute: FC<IWithProtectedRouteProps> = ({
   component,
   onlyUnAuth = false,
 }) => {
-  const selectUser = (state: RootState) => state.user;
-  const selectUserInfo = createSelector(selectUser, (user) => ({
-    user: user.user,
-    isAuthChecked: user.isAuthChecked,
-  }));
-  const { user, isAuthChecked } = useAppSelector(selectUserInfo);
+  const { user, isAuthChecked } = useAppSelector(
+    (state) => ({
+      user: state.user.user,
+      isAuthChecked: state.user.isAuthChecked,
+    }),
+    shallowEqual
+  );
+
   const location = useLocation();
 
   if (!isAuthChecked) return null;

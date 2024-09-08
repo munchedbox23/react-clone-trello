@@ -1,12 +1,12 @@
 import { MForm } from "../../../components/Form/Form";
 import { ForgotLinks } from "../../../components/Form/FormLinks/FormLinks";
 import { FC, FormEvent } from "react";
-import { resetPassword } from "../../../services/feature/user/auth";
 import { Navigate, useNavigate } from "react-router";
 import { ROUTE } from "../../../shared/helpers/constants";
 import { formVariants } from "../../../shared/helpers/animationVariants";
 import { Input } from "munchedbox-ui";
 import { useForm } from "../../../shared/hooks/useForm";
+import { resetPassword } from "../../../entities/user/api/userApi";
 
 export const ResetPasswordPage: FC = () => {
   const { formState, isFormValid, onChange, setFormState } = useForm<{

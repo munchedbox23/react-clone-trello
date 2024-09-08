@@ -1,11 +1,11 @@
-import { MForm } from "../../components/Form/Form";
-import { RegisterLinks } from "../../components/Form/FormLinks/FormLinks";
 import { FC } from "react";
-import { userRegister } from "../../services/feature/user/auth";
-import { IUserRegister } from "../../app/types/userTypes";
-import { formVariants } from "../../shared/helpers/animationVariants";
 import { Input } from "munchedbox-ui";
-import { useForm } from "../../shared/hooks/useForm";
+import { MForm } from "../../../components/Form/Form";
+import { RegisterLinks } from "../../../components/Form/FormLinks/FormLinks";
+import { IUserRegister } from "../../../entities/user";
+import { userRegister } from "../../../entities/user/api/userApi";
+import { formVariants } from "../../../shared/helpers/animationVariants";
+import { useForm } from "../../../shared/hooks/useForm";
 
 export const RegisterPage: FC = () => {
   const { formState, onChange, onSubmit, isFormValid } = useForm<IUserRegister>(

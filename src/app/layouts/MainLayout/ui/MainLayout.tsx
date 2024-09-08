@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { Outlet } from "react-router";
 import { Preloader } from "../../../../shared/ui/Preloader/Preloader";
-import { Panel } from "../../../../components/Panel/Panel";
 import { Stack } from "munchedbox-ui";
-import { AppHeader } from "../../../../widgets/AppHeader/AppHeader";
 import { useAppSelector } from "../../../providers/StoreProvider";
+import { AppHeader } from "../../../../widgets/AppHeader";
+import { Panel } from "../../../../widgets/Panel";
 
 export const MainLayout: FC = () => {
   const isRequestLoading = useAppSelector(

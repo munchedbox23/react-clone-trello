@@ -1,16 +1,19 @@
 import { ChangeEvent, FC, useState } from "react";
-import Logo from "../../shared/assets/images/logo.png";
+import Logo from "../../../shared/assets/images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faPlus } from "@fortawesome/free-solid-svg-icons";
-import { setModalOpen } from "../../services/feature/modal/modalSlice";
+import { setModalOpen } from "../../../services/feature/modal/modalSlice";
 import { useLocation, useSearchParams } from "react-router-dom";
-import { selectBoardsByUser } from "../../services/feature/boards/boardSelectors";
+import { selectBoardsByUser } from "../../../services/feature/boards/boardSelectors";
 import { Link } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import { filteredBoardsByName } from "../../services/feature/boards/boardsSlice";
-import { IBoard } from "../../app/types/boardsTypes";
+import { filteredBoardsByName } from "../../../services/feature/boards/boardsSlice";
+import { IBoard } from "../../../app/types/boardsTypes";
 import { Button, MStack, Text } from "munchedbox-ui";
-import { useAppDispatch, useAppSelector } from "../../app/providers/StoreProvider";
+import {
+  useAppDispatch,
+  useAppSelector,
+} from "../../../app/providers/StoreProvider";
 
 export const AppHeader: FC = () => {
   const [showDropdown, setShowDropdown] = useState(false);

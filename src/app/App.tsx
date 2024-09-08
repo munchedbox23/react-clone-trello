@@ -1,6 +1,5 @@
 import { RouterProvider } from "react-router-dom";
 import { useEffect } from "react";
-import { checkUserAuth } from "../services/feature/user/auth";
 import { AnimatePresence } from "framer-motion";
 import {
   getBoards,
@@ -9,6 +8,7 @@ import {
 import { getBackgroundOptions } from "../services/feature/modal/modalSlice";
 import { useAppDispatch } from "./providers/StoreProvider";
 import { router } from "./providers/router";
+import { checkUserAuth } from "../entities/user/api/userApi";
 
 const App = () => {
   const dispatch = useAppDispatch();

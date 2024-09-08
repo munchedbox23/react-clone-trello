@@ -7,7 +7,7 @@ import {
   IUserResponse,
   IUserResetPassword,
   IUserAuth,
-} from "../../../app/types/userTypes";
+} from "../model/types/userTypes";
 import { request } from "../../../shared/api/requests";
 import { API } from "../../../shared/helpers/constants";
 import { fetchWithRefresh } from "../../../shared/api/requests";

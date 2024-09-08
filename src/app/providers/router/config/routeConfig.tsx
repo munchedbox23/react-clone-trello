@@ -1,5 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import { OnlyAuth, OnlyUnAuth } from "../ui/WithProtectedRoute";
+import { ROUTE } from "../../../../shared/helpers/constants";
+import { AuthLayout } from "../../../layouts/AuthLayout";
+import { MainLayout } from "../../../layouts/MainLayout";
 import {
   BoardPage,
   ProfilePage,
@@ -10,9 +13,6 @@ import {
   TablePage,
   NotFound,
 } from "../../../../pages";
-import { ROUTE } from "../../../../shared/helpers/constants";
-import { AuthLayout } from "../../../layouts/AuthLayout";
-import { MainLayout } from "../../../layouts/MainLayout";
 
 export const router = createBrowserRouter([
   {

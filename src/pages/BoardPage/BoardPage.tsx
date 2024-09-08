@@ -9,7 +9,7 @@ import { shallowEqual } from "react-redux";
 import { Modal } from "../../components/Modal/Modal";
 import { CreateMenu } from "../../components/CreateMenu/CreateMenu";
 import { selectBoardsByUser } from "../../services/feature/boards/boardSelectors";
-import { useAppDispatch, useAppSelector } from "../../app/appStore";
+import { useAppDispatch, useAppSelector } from "../../app/providers/StoreProvider";
 
 export const BoardPage: FC = () => {
   const dispatch = useAppDispatch();

@@ -1,9 +1,8 @@
 import { Navigate, useLocation } from "react-router";
-import { useAppSelector } from "../../app/appStore";
 import { FC, ReactElement } from "react";
-import { ROUTE } from "../../utils/constants";
 import { createSelector } from "@reduxjs/toolkit";
-import { RootState } from "../../app/appStore";
+import { ROUTE } from "../../../../shared/helpers/constants";
+import { RootState, useAppSelector } from "../../StoreProvider";
 
 type IWithProtectedRouteProps = {
   component: ReactElement;

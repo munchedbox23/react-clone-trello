@@ -1,13 +1,13 @@
 import { PanelLink } from "./PanelLink";
-import { ROUTE, panelLinks } from "../../utils/constants";
+import { ROUTE, panelLinks } from "../../shared/helpers/constants";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { userLogout } from "../../services/feature/user/auth";
-import { useAppDispatch, useAppSelector } from "../../app/appStore";
 import { FC, memo } from "react";
-import { Avatar } from "../../ui/Avatar/Avatar";
+import { Avatar } from "../../shared/ui/Avatar/Avatar";
 import { Text, Stack } from "munchedbox-ui";
+import { useAppDispatch, useAppSelector } from "../../app/providers/StoreProvider";
 
 export const Panel: FC = memo(() => {
   const dispatch = useAppDispatch();

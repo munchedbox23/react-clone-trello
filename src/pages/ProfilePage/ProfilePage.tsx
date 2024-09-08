@@ -1,12 +1,12 @@
-import { useForm } from "../../hooks/useForm";
 import { IUser } from "../../app/types/userTypes";
 import { FormEvent, FC, useEffect, useState } from "react";
 import { editUser } from "../../services/feature/user/auth";
-import { ProfileButtons } from "../../ui/ProfileButtons/ProfileButtons";
+import { ProfileButtons } from "../../shared/ui/ProfileButtons/ProfileButtons";
 import { motion } from "framer-motion";
-import { inputVariants } from "../../utils/animationVariants";
+import { inputVariants } from "../../shared/helpers/animationVariants";
 import { MInput } from "munchedbox-ui";
-import { useAppDispatch, useAppSelector } from "../../app/appStore";
+import { useAppDispatch, useAppSelector } from "../../app/providers/StoreProvider";
+import { useForm } from "../../shared/hooks/useForm";
 
 export interface IProfileForm extends IUser {
   password?: string;

@@ -1,12 +1,12 @@
-import { useAppSelector } from "../../app/appStore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBarsStaggered,
   faWindowMaximize,
 } from "@fortawesome/free-solid-svg-icons";
-import { EditableTitle } from "../../ui/EditableTitle/EditableTitle";
+import { EditableTitle } from "../../shared/ui/EditableTitle/EditableTitle";
 import { FC } from "react";
 import { Stack, Text } from "munchedbox-ui";
+import { useAppSelector } from "../../app/providers/StoreProvider";
 
 type TTaskDetailsProps = {
   onUpdateTaskName: (

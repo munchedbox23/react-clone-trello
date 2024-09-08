@@ -1,11 +1,11 @@
 import { FC } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHighlighter } from "@fortawesome/free-solid-svg-icons";
-import { useAppDispatch } from "../../app/appStore";
 import { setModalOpen } from "../../services/feature/modal/modalSlice";
 import { setSelectedTask } from "../../services/feature/boards/boardsSlice";
 import { ITask } from "../../app/types/boardsTypes";
 import { Stack, Text } from "munchedbox-ui";
+import { useAppDispatch } from "../../app/providers/StoreProvider";
 
 type TColumnCard = {
   task: ITask;

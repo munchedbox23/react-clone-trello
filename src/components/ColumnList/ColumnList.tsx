@@ -2,14 +2,14 @@ import { FC, useRef, useState } from "react";
 import { faEllipsis, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
-import { MCardForm } from "../../ui/CardForm/CardForm";
-import { useForm } from "../../hooks/useForm";
 import { IBoard, ITask } from "../../app/types/boardsTypes";
 import { ColumnCard } from "../ColumnCard/ColumnCard";
 import { useDrag, useDrop } from "react-dnd";
 import { Identifier } from "dnd-core";
-import { EditableTitle } from "../../ui/EditableTitle/EditableTitle";
+import { EditableTitle } from "../../shared/ui/EditableTitle/EditableTitle";
 import { Stack, Text } from "munchedbox-ui";
+import { useForm } from "../../shared/hooks/useForm";
+import { MCardForm } from "../../shared/ui/CardForm/CardForm";
 
 type TColumnListProps = {
   name: string;

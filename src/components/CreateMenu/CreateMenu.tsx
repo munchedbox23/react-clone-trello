@@ -1,15 +1,15 @@
-import { useAppDispatch, useAppSelector } from "../../app/appStore";
 import { Form } from "../Form/Form";
-import { useForm } from "../../hooks/useForm";
-import { BackgroundOption } from "../../ui/BackgroundOption/BackgroundOption";
+import { BackgroundOption } from "../../shared/ui/BackgroundOption/BackgroundOption";
 import { FormEvent, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { DotsLoader } from "../../ui/Preloader/DotsLoader/DotsLoader";
 import { shallowEqual } from "react-redux";
 import { postBoards } from "../../services/feature/boards/boardsSlice";
 import { setModalOpen } from "../../services/feature/modal/modalSlice";
 import { IBackground } from "../../app/types/boardsTypes";
 import { Input, Stack } from "munchedbox-ui";
+import { useAppSelector, useAppDispatch } from "../../app/providers/StoreProvider";
+import { useForm } from "../../shared/hooks/useForm";
+import { DotsLoader } from "../../shared/ui/Preloader/DotsLoader/DotsLoader";
 
 export interface IFormBoard {
   name: string;

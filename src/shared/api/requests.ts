@@ -1,6 +1,6 @@
-import { API } from "./constants";
-import { IRefreshTokenResponse, TTokenError } from "../app/types/tokenTypes";
-import { cookies } from "../services/feature/user/auth";
+import { API } from "../helpers/constants";
+import { IRefreshTokenResponse, TTokenError } from "../../app/types/tokenTypes";
+import { cookies } from "../../services/feature/user/auth";
 
 export const checkResponse = <T>(respose: Response): Promise<T> => {
   return respose.ok

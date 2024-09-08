@@ -1,11 +1,11 @@
-import { MForm } from "../../components/Form/Form";
-import { LoginLinks } from "../../components/Form/FormLinks/FormLinks";
+import { MForm } from "../../../components/Form/Form";
+import { LoginLinks } from "../../../components/Form/FormLinks/FormLinks";
 import { FC } from "react";
-import { useForm } from "../../hooks/useForm";
-import { userLogin } from "../../services/feature/user/auth";
-import { IUserLogin } from "../../app/types/userTypes";
-import { formVariants } from "../../utils/animationVariants";
+import { userLogin } from "../../../services/feature/user/auth";
+import { IUserLogin } from "../../../app/types/userTypes";
+import { formVariants } from "../../../shared/helpers/animationVariants";
 import { Input } from "munchedbox-ui";
+import { useForm } from "../../../shared/hooks/useForm";
 
 export const LoginPage: FC = () => {
   const { formState, onChange, onSubmit, isFormValid } = useForm<IUserLogin>({

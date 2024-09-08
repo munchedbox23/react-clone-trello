@@ -1,13 +1,13 @@
-import { MForm } from "../../components/Form/Form";
-import { ForgotLinks } from "../../components/Form/FormLinks/FormLinks";
+import { MForm } from "../../../components/Form/Form";
+import { ForgotLinks } from "../../../components/Form/FormLinks/FormLinks";
 import { FC, FormEvent, useState } from "react";
-import { useForm } from "../../hooks/useForm";
-import { forgotPassword } from "../../services/feature/user/auth";
+import { forgotPassword } from "../../../services/feature/user/auth";
 import { useNavigate } from "react-router";
-import { ROUTE } from "../../utils/constants";
-import { Preloader } from "../../ui/Preloader/Preloader";
-import { formVariants } from "../../utils/animationVariants";
+import { ROUTE } from "../../../shared/helpers/constants";
+import { Preloader } from "../../../shared/ui/Preloader/Preloader";
+import { formVariants } from "../../../shared/helpers/animationVariants";
 import { Input } from "munchedbox-ui";
+import { useForm } from "../../../shared/hooks/useForm";
 
 export const ForgotPasswordPage: FC = () => {
   const { formState, setFormState, onChange, isFormValid } = useForm<{

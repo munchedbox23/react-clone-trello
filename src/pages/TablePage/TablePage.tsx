@@ -8,15 +8,15 @@ import { updateColumns } from "../../services/feature/boards/boardsSlice";
 import { v4 as uuidv4 } from "uuid";
 import { AnimatePresence } from "framer-motion";
 import { ColumnList } from "../../components/ColumnList/ColumnList";
-import { MCardForm } from "../../ui/CardForm/CardForm";
-import { useForm } from "../../hooks/useForm";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { Modal } from "../../components/Modal/Modal";
 import { setModalOpen } from "../../services/feature/modal/modalSlice";
 import { TaskDetails } from "../../components/TaskDetails/TaskDetails";
-import { useAppSelector, useAppDispatch } from "../../app/appStore";
 import { Stack, Button, Text } from "munchedbox-ui";
+import { useAppSelector, useAppDispatch } from "../../app/providers/StoreProvider";
+import { useForm } from "../../shared/hooks/useForm";
+import { MCardForm } from "../../shared/ui/CardForm/CardForm";
 
 interface IState {
   isVisible: boolean;

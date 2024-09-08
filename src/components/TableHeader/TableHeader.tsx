@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router";
-import { ROUTE } from "../../utils/constants";
+import { ROUTE } from "../../shared/helpers/constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
-import { Avatar } from "../../ui/Avatar/Avatar";
+import { Avatar } from "../../shared/ui/Avatar/Avatar";
 import { Text, Stack } from "munchedbox-ui";
 
 export const TableHeader = () => {

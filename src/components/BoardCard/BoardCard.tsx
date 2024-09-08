@@ -9,14 +9,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence, motion } from "framer-motion";
 import { IBoard } from "../../app/types/boardsTypes";
-import { useAppDispatch } from "../../app/appStore";
 import {
   deleteBoard,
   updateBoard,
 } from "../../services/feature/boards/boardsSlice";
-import { useForm } from "../../hooks/useForm";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { MStack, Text } from "munchedbox-ui";
+import { useAppDispatch } from "../../app/providers/StoreProvider";
+import { useForm } from "../../shared/hooks/useForm";
 
 type TBoardCardProps = {
   hasOptions?: boolean;

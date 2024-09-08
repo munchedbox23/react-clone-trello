@@ -8,9 +8,9 @@ import {
   IUserResetPassword,
   IUserAuth,
 } from "../../../app/types/userTypes";
-import { request } from "../../../utils/requests";
-import { API } from "../../../utils/constants";
-import { fetchWithRefresh } from "../../../utils/requests";
+import { request } from "../../../shared/api/requests";
+import { API } from "../../../shared/helpers/constants";
+import { fetchWithRefresh } from "../../../shared/api/requests";
 import { IProfileForm } from "../../../pages/ProfilePage/ProfilePage";
 
 export const cookies = new Cookies();

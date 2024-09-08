@@ -1,7 +1,7 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
-import { useAppDispatch } from "../app/appStore";
 import { useNavigate } from "react-router";
-import { ROUTE } from "../utils/constants";
+import { useAppDispatch } from "../../app/providers/StoreProvider";
+import { ROUTE } from "../helpers/constants";
 
 interface IFormValues {
   email?: string;

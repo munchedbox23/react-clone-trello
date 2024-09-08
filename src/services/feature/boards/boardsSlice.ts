@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IBoard, IColumn, ITask } from "../../../app/types/boardsTypes";
-import { request } from "../../../utils/requests";
+import { request } from "../../../shared/api/requests";
 import { IFormBoard } from "../../../components/CreateMenu/CreateMenu";
 import { v4 as uuidv4 } from "uuid";
 

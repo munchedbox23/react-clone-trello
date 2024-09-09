@@ -1,6 +1,6 @@
 import { createSelector } from "reselect";
-import { RootState } from "../../../app/appStore";
-import { IBoard } from "../../../app/types/boardsTypes";
+import { RootState } from "../../../../app/providers/StoreProvider";
+import { IBoard } from "../types/boardsTypes";
 
 const selectBoards = (state: RootState) => state.boards.boards;
 const selectUser = (state: RootState) => state.user.user;

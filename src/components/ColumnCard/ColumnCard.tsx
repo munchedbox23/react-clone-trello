@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHighlighter } from "@fortawesome/free-solid-svg-icons";
-import { setModalOpen } from "../../services/feature/modal/modalSlice";
-import { setSelectedTask } from "../../services/feature/boards/boardsSlice";
-import { ITask } from "../../app/types/boardsTypes";
+import { setModalOpen } from "../../features/createBoardForm/model/slice/modalSlice";
+import { setSelectedTask } from "../../entities/boards/model/slice/boardsSlice";
+import { ITask } from "../../entities/boards/model/types/boardsTypes";
 import { Stack, Text } from "munchedbox-ui";
 import { useAppDispatch } from "../../app/providers/StoreProvider";
 

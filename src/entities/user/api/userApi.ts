@@ -8,10 +8,10 @@ import {
   IUserResetPassword,
   IUserAuth,
 } from "../model/types/userTypes";
-import { request } from "../../../shared/api/requests";
+import { request } from "../../../shared/lib/requests";
 import { API } from "../../../shared/helpers/constants";
-import { fetchWithRefresh } from "../../../shared/api/requests";
-import { IProfileForm } from "../../../pages/ProfilePage/ProfilePage";
+import { fetchWithRefresh } from "../../../shared/lib/requests";
+import { IProfileForm } from "../../../pages/ProfilePage/ui/ProfilePage";
 
 export const cookies = new Cookies();
 

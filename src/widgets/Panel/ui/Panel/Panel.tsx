@@ -10,7 +10,7 @@ import {
 import { userLogout } from "../../../../entities/user/api/userApi";
 import { ROUTE, panelLinks } from "../../../../shared/helpers/constants";
 import { PanelLink } from "../PanelLink/PanelLink";
-import { Avatar } from "../../../../shared/ui/Avatar/Avatar";
+import { Avatar } from "../../../../shared/ui/Avatar/ui/Avatar";
 
 export const Panel: FC = memo(() => {
   const dispatch = useAppDispatch();

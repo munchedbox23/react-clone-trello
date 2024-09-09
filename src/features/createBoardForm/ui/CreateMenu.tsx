@@ -1,15 +1,18 @@
-import { Form } from "../Form/Form";
-import { BackgroundOption } from "../../shared/ui/BackgroundOption/BackgroundOption";
+import { Form } from "../../../components/Form/Form";
+import { BackgroundOption } from "../../../shared/ui/BackgroundOption/BackgroundOption";
 import { FormEvent, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { shallowEqual } from "react-redux";
-import { postBoards } from "../../services/feature/boards/boardsSlice";
-import { setModalOpen } from "../../services/feature/modal/modalSlice";
-import { IBackground } from "../../app/types/boardsTypes";
+import { postBoards } from "../../../entities/boards/model/slice/boardsSlice";
+import { setModalOpen } from "../model/slice/modalSlice";
+import { IBackground } from "../../../entities/boards/model/types/boardsTypes";
 import { Input, Stack } from "munchedbox-ui";
-import { useAppSelector, useAppDispatch } from "../../app/providers/StoreProvider";
-import { useForm } from "../../shared/hooks/useForm";
-import { DotsLoader } from "../../shared/ui/Preloader/DotsLoader/DotsLoader";
+import {
+  useAppSelector,
+  useAppDispatch,
+} from "../../../app/providers/StoreProvider";
+import { useForm } from "../../../shared/hooks/useForm";
+import { DotsLoader } from "../../../shared/ui/Preloader/DotsLoader/DotsLoader";
 
 export interface IFormBoard {
   name: string;

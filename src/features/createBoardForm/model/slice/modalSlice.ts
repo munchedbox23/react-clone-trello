@@ -1,6 +1,6 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { request } from "../../../shared/api/requests";
-import { IPhoto } from "../../../app/types/boardsTypes";
+import { request } from "../../../../shared/lib/requests";
+import { IPhoto } from "../../../../entities/boards/model/types/boardsTypes";
 
 type TModalContent = { content: string; title: string; placeholder: string };
 

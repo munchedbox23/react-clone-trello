@@ -1,4 +1,4 @@
-import { IUserResponse } from "../../entities/user/model/types/userTypes";
+import { IUserResponse } from "./userTypes";
 
 export interface IRefreshTokenResponse extends Omit<IUserResponse, "user"> {}
 

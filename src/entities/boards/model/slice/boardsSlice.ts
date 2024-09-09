@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IBoard, IColumn, ITask } from "../../../app/types/boardsTypes";
-import { request } from "../../../shared/api/requests";
-import { IFormBoard } from "../../../components/CreateMenu/CreateMenu";
+import { IBoard, IColumn, ITask } from "../types/boardsTypes";
+import { request } from "../../../../shared/lib/requests";
+import { IFormBoard } from "../../../../features/createBoardForm/ui/CreateMenu";
 import { v4 as uuidv4 } from "uuid";
 
 export type TBoardsSliceState = {

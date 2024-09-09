@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from "react";
-import { BoardCard } from "../BoardCard/BoardCard";
-import { IBoard } from "../../app/types/boardsTypes";
+import { BoardCard } from "../../../../components/BoardCard/BoardCard";
+import { IBoard } from "../../../../entities/boards/model/types/boardsTypes";
 import { Text } from "munchedbox-ui";
 
 type TBoardListProps<T> = {

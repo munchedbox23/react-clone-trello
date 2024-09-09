@@ -1,15 +1,18 @@
 import { FC } from "react";
 import styles from "./BoardPage.module.css";
 import { motion } from "framer-motion";
-import { BoardList } from "../../components/BoardList/BoardList";
-import { setModalOpen } from "../../services/feature/modal/modalSlice";
+import { BoardList } from "../../widgets/Board/ui/BoardList/BoardList";
+import { setModalOpen } from "../../features/createBoardForm/model/slice/modalSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { shallowEqual } from "react-redux";
-import { Modal } from "../../components/Modal/Modal";
-import { CreateMenu } from "../../components/CreateMenu/CreateMenu";
-import { selectBoardsByUser } from "../../services/feature/boards/boardSelectors";
-import { useAppDispatch, useAppSelector } from "../../app/providers/StoreProvider";
+import { Modal } from "../../shared/ui/Modal/ui/Modal";
+import { CreateMenu } from "../../features/createBoardForm/ui/CreateMenu";
+import { selectBoardsByUser } from "../../entities/boards/model/selectors/boardSelectors";
+import {
+  useAppDispatch,
+  useAppSelector,
+} from "../../app/providers/StoreProvider";
 
 export const BoardPage: FC = () => {
   const dispatch = useAppDispatch();

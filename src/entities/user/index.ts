@@ -1,4 +1,8 @@
 export type {
+  TTokenError,
+  IRefreshTokenResponse,
+} from "./model/types/tokenTypes";
+export type {
   IUser,
   IUserLogin,
   IUserRegister,

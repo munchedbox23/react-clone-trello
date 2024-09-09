@@ -8,11 +8,11 @@ import {
   faSave,
 } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence, motion } from "framer-motion";
-import { IBoard } from "../../app/types/boardsTypes";
+import { IBoard } from "../../entities/boards/model/types/boardsTypes";
 import {
   deleteBoard,
   updateBoard,
-} from "../../services/feature/boards/boardsSlice";
+} from "../../entities/boards/model/slice/boardsSlice";
 import { useNavigate } from "react-router-dom";
 import { MStack, Text } from "munchedbox-ui";
 import { useAppDispatch } from "../../app/providers/StoreProvider";

@@ -2,7 +2,7 @@ import { FC, useRef, useState } from "react";
 import { faEllipsis, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
-import { IBoard, ITask } from "../../app/types/boardsTypes";
+import { IBoard, ITask } from "../../entities/boards/model/types/boardsTypes";
 import { ColumnCard } from "../ColumnCard/ColumnCard";
 import { useDrag, useDrop } from "react-dnd";
 import { Identifier } from "dnd-core";

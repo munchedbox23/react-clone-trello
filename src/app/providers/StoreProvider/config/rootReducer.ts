@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
-import boardsSlice from "../../../../services/feature/boards/boardsSlice";
-import modalSlice from "../../../../services/feature/modal/modalSlice";
+import boardsSlice from "../../../../entities/boards/model/slice/boardsSlice";
 import userSlice from "../../../../entities/user/model/slice/userSlice";
+import modalSlice from "../../../../features/createBoardForm/model/slice/modalSlice";
 
 export const rootReducer = combineReducers({
   user: userSlice,

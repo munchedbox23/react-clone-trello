@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { Text, Stack } from "munchedbox-ui";
 import { ROUTE } from "../../../shared/helpers/constants";
-import { Avatar } from "../../../shared/ui/Avatar/Avatar";
+import { Avatar } from "../../../shared/ui/Avatar/ui/Avatar";
 
 export const TableHeader = () => {
   const navigate = useNavigate();
